@@ -19,6 +19,7 @@ __pycache__
 /tts
 /.vscode
 /.bash_history
+/lost+found
 
 # Specific file ignores
 /.uuid
