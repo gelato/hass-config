@@ -20,6 +20,7 @@ __pycache__
 /.vscode
 /.bash_history
 /lost+found
+/logs
 
 # Specific file ignores
 /.uuid
