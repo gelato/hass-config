@@ -1,0 +1,497 @@
+- id: '1708154504615'
+  alias: Frigate - Telegram Notification | Guests
+  description: ''
+  use_blueprint:
+    path: gelato/Frigate - Telegram Notification(ru).yaml
+    input:
+      camera: gates
+      target_chat: '-1002003155608'
+      user_message: '>>>==> У нас гости. Кто-то стоит перед воротами.'
+      notification: 'false'
+      base_url: https://hass.skynerv.com
+      zone_filter: false
+      zones:
+      - guests
+      labels:
+      - person
+- id: '1708154632525'
+  alias: Frigate - Telegram Notification | Entryway
+  description: ''
+  use_blueprint:
+    path: gelato/Frigate - Telegram Notification(ru).yaml
+    input:
+      camera: gates
+      target_chat: '-1002003155608'
+      user_message: Какой-то баран припарковался у выезда
+      notification: 'false'
+      base_url: https://hass.skynerv.com
+      zone_filter: false
+      zones:
+      - entryway
+      labels:
+      - car
+      - bus
+- id: '1708154993295'
+  alias: Frigate - Telegram Notification | Inside gates street
+  description: ''
+  use_blueprint:
+    path: gelato/Frigate - Telegram Notification(ru).yaml
+    input:
+      camera: gates
+      target_chat: '-1002003155608'
+      user_message: '>>>!Внимание!<<< Кто-то вошел в ворота'
+      notification: 'false'
+      base_url: https://hass.skynerv.com
+      zones:
+      - inside_gates
+      labels:
+      - person
+      zone_filter: false
+- id: '1713611649462'
+  alias: Frigate - Telegram Notification | Near_the_door
+  description: ''
+  use_blueprint:
+    path: gelato/Frigate - Telegram Notification(ru).yaml
+    input:
+      camera: door
+      target_chat: '-1002003155608'
+      user_message: Кто-то трется у входной двери
+      base_url: https://hass.skynerv.com
+      zones:
+      - near_the_door
+      labels:
+      - person
+- id: '1713611757748'
+  alias: Frigate - Telegram Notification | Dvor
+  description: ''
+  use_blueprint:
+    path: gelato/Frigate - Telegram Notification(ru).yaml
+    input:
+      camera: door
+      target_chat: '-1002003155608'
+      user_message: Кто-то шоркается по двору рядом с дверью
+      base_url: https://hass.skynerv.com
+      zones:
+      - dvor
+      labels:
+      - person
+- id: '1713611827511'
+  alias: Frigate - Telegram Notification | Parkovka
+  description: ''
+  use_blueprint:
+    path: gelato/Frigate - Telegram Notification(ru).yaml
+    input:
+      camera: door
+      target_chat: '-1002003155608'
+      user_message: Кто-то бродит рядом с машиной во дворе
+      base_url: https://hass.skynerv.com
+      zones:
+      - parkovka
+      labels:
+      - person
+- id: '1713611894184'
+  alias: Frigate - Telegram Notification
+  description: ''
+  use_blueprint:
+    path: gelato/Frigate - Telegram Notification(ru).yaml
+    input:
+      camera: door
+      target_chat: '-1002003155608'
+      base_url: https://hass.skynerv.com
+      user_message: Кто-то ходит по тропинке в глубине двора
+      zones:
+      - tropinka
+      labels:
+      - person
+- id: '1713615465007'
+  alias: Frigate - Telegram Notification | Cat
+  description: ''
+  use_blueprint:
+    path: gelato/Frigate - Telegram Notification(ru).yaml
+    input:
+      target_chat: '-1002003155608'
+      camera: door
+      user_message: Котэ во дворе, Шатик с Ночкой на месте?
+      zones:
+      - dvor
+      - near_the_door
+      - sad
+      - parkovka
+      - tropinka
+      labels:
+      - cat
+      base_url: https://hass.skynerv.com
+- id: '1713997144194'
+  alias: Frigate - Telegram Notification | Inside gates
+  description: ''
+  use_blueprint:
+    path: gelato/Frigate - Telegram Notification(ru).yaml
+    input:
+      camera: dvor_gates
+      target_chat: '-1002003155608'
+      user_message: Человек рядом с воротами - вошел или вышел
+      base_url: https://hass.skynerv.com
+      zones:
+      - before_gates
+      labels:
+      - person
+      zone_filter: false
+- id: '1713997291711'
+  alias: Frigate - Telegram Notification | At the door
+  description: ''
+  use_blueprint:
+    path: gelato/Frigate - Telegram Notification(ru).yaml
+    input:
+      camera: dvor_gates
+      target_chat: '-1002003155608'
+      user_message: Человек стоит у нашей двери
+      base_url: https://hass.skynerv.com
+      zones:
+      - at_the_door
+      labels:
+      - person
+      zone_filter: false
+- id: '1713997376757'
+  alias: Frigate - Telegram Notification | In the garden
+  description: ''
+  use_blueprint:
+    path: gelato/Frigate - Telegram Notification(ru).yaml
+    input:
+      camera: dvor_gates
+      target_chat: '-1002003155608'
+      user_message: '>>> Человек ходит по нашему саду <<<'
+      base_url: https://hass.skynerv.com
+      zones:
+      - in_the_garden
+      labels:
+      - person
+      zone_filter: false
+- id: '1720373352724'
+  alias: Кубик - белый свет спальня
+  description: ''
+  trigger:
+  - device_id: 3c7c1c8885cd5fed1b297dbb32036b7f
+    domain: zha
+    platform: device
+    type: device_flipped
+    subtype: face_1
+  condition: []
+  action:
+  - service: light.turn_on
+    metadata: {}
+    data:
+      color_temp: 153
+      brightness: 255
+    target:
+      area_id: spalnia
+  mode: single
+- id: '1720373514775'
+  alias: Кубик - желтый свет в спальне
+  description: ''
+  trigger:
+  - device_id: 3c7c1c8885cd5fed1b297dbb32036b7f
+    domain: zha
+    platform: device
+    type: device_flipped
+    subtype: face_2
+  condition: []
+  action:
+  - service: light.turn_on
+    metadata: {}
+    data:
+      rgb_color:
+      - 255
+      - 255
+      - 255
+    target:
+      area_id: spalnia
+  mode: single
+- id: '1720373613068'
+  alias: Кубик - свет в спальне темнее
+  description: ''
+  trigger:
+  - device_id: 3c7c1c8885cd5fed1b297dbb32036b7f
+    domain: zha
+    platform: device
+    type: device_flipped
+    subtype: face_3
+  condition: []
+  action:
+  - service: light.turn_on
+    metadata: {}
+    data:
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      color_temp: 435
+      brightness: 255
+    target:
+      area_id: spalnia
+  mode: single
+- id: '1720373720068'
+  alias: Кубик - темный свет в спальне
+  description: ''
+  trigger:
+  - device_id: 3c7c1c8885cd5fed1b297dbb32036b7f
+    domain: zha
+    platform: device
+    type: device_flipped
+    subtype: face_4
+  condition: []
+  action:
+  - service: light.turn_on
+    metadata: {}
+    data:
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      color_temp: 500
+      brightness: 255
+    target:
+      area_id: spalnia
+  mode: single
+- id: '1720373781293'
+  alias: Кубик - выключить свет в спальне
+  description: ''
+  trigger:
+  - device_id: 3c7c1c8885cd5fed1b297dbb32036b7f
+    domain: zha
+    platform: device
+    type: device_flipped
+    subtype: face_5
+  condition: []
+  action:
+  - service: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      area_id: spalnia
+  mode: single
+- id: '1723752969202'
+  alias: Тусклый свет на кухне
+  description: ' '
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.tusklyi_svet_na_kukhne
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      kelvin: 2000
+      brightness_pct: 20
+    target:
+      area_id: kukhnia
+  - action: input_boolean.turn_off
+    target:
+      entity_id:
+      - input_boolean.iarkii_svet_na_kukhne
+    data: {}
+  mode: single
+- id: '1723753097753'
+  alias: Яркий свет на кухне
+  description: ' '
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.iarkii_svet_na_kukhne
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      kelvin: 6500
+      brightness_pct: 100
+    target:
+      area_id: kukhnia
+  - action: input_boolean.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: input_boolean.tusklyi_svet_na_kukhne
+    enabled: true
+  mode: single
+- id: '1724800362490'
+  alias: Тусклый свет в гостиной
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.tusklyi_svet_v_gostinoi
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      kelvin: 2000
+      brightness_pct: 10
+    target:
+      device_id: e4cfc9c939b1bad610e38df9d321b228
+  - action: light.turn_on
+    metadata: {}
+    data:
+      brightness_pct: 100
+      rgb_color:
+      - 69
+      - 14
+      - 89
+    target:
+      entity_id: light.colorful_ceiling_light_36w_osveshchenie_2
+  - action: input_boolean.turn_off
+    target:
+      entity_id:
+      - input_boolean.iarkii_svet_v_gostinoi
+    data: {}
+  mode: single
+- id: '1724800580698'
+  alias: Яркий свет в гостиной
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - input_boolean.iarkii_svet_v_gostinoi
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      kelvin: 6500
+      brightness_pct: 100
+    target:
+      device_id: e4cfc9c939b1bad610e38df9d321b228
+  - action: light.turn_on
+    metadata: {}
+    data:
+      rgb_color:
+      - 0
+      - 249
+      - 0
+      brightness_pct: 100
+    target:
+      entity_id: light.colorful_ceiling_light_36w_osveshchenie_2
+  - action: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.tusklyi_svet_v_gostinoi
+  mode: single
+- id: '1724801709852'
+  alias: Ночное время
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.noch
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - action: fan.set_preset_mode
+    target:
+      entity_id: fan.dmaker_p45_cfbf_fan
+    data:
+      preset_mode: Sleep
+  - action: light.turn_on
+    metadata: {}
+    data:
+      brightness_pct: 20
+    target:
+      entity_id: light.bedroom_light_nightlight
+  - action: light.turn_on
+    metadata: {}
+    data:
+      brightness_pct: 20
+    target:
+      entity_id: light.dining_room_light_nightlight
+  mode: single
+- id: '1724802355139'
+  alias: Дневное время
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.den
+    from: 'off'
+    to: 'on'
+  condition: []
+  action:
+  - action: fan.set_preset_mode
+    metadata: {}
+    data:
+      preset_mode: Natural Wind
+    target:
+      entity_id: fan.dmaker_p45_cfbf_fan
+  - action: fan.set_percentage
+    target:
+      entity_id: fan.dmaker_p45_cfbf_fan
+    data:
+      percentage: 100
+  - type: turn_on
+    device_id: 0a5bd757648d4752cbe403817b630586
+    entity_id: 67168fd29140d8071534dfc2f43bfe30
+    domain: light
+  - type: turn_on
+    device_id: fc3c718cfb9df856ba26b49245cc78d2
+    entity_id: eb97dedd436267e16266b0f44d22ee04
+    domain: light
+  - type: turn_off
+    device_id: fc3c718cfb9df856ba26b49245cc78d2
+    entity_id: eb97dedd436267e16266b0f44d22ee04
+    domain: light
+  - type: turn_on
+    device_id: c248c6b040d50f4b6c9ef91dfc1bb913
+    entity_id: e46b789d6e80c45a0de8b1b301eb554d
+    domain: light
+  - type: turn_off
+    device_id: c248c6b040d50f4b6c9ef91dfc1bb913
+    entity_id: e46b789d6e80c45a0de8b1b301eb554d
+    domain: light
+  mode: single
+- id: '1724884420814'
+  alias: Включить свет в столовой обнаружив движение
+  description: ''
+  trigger:
+  - type: occupied
+    platform: device
+    device_id: 1fc041decf972b87570a25d5af28115e
+    entity_id: 9551a09f8883a968386f28aad02bc437
+    domain: binary_sensor
+  condition: []
+  action:
+  - action: light.turn_on
+    metadata: {}
+    data: {}
+    target:
+      area_id: stolovaia
+  mode: single
+- id: '1724884509966'
+  alias: Выключить свет в столовой если нет движения
+  description: ''
+  trigger:
+  - type: not_occupied
+    platform: device
+    device_id: 1fc041decf972b87570a25d5af28115e
+    entity_id: 9551a09f8883a968386f28aad02bc437
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  condition: []
+  action:
+  - action: light.turn_off
+    metadata: {}
+    data: {}
+    target:
+      area_id: stolovaia
+  mode: single
