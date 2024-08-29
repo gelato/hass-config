@@ -28,6 +28,9 @@ notify:
     name: "mizery"
     chat_id: !secret telegram_chat_id
 
+shell_command:
+  update_config: cd /config && git pull
+
 zha_toolkit:
 
 default_config:

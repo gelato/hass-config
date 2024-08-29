@@ -1,3 +1,13 @@
+- id: update_config_github_push_event
+  alias: Update Configuration on Github Push Event
+
+  trigger:
+  - platform: webhook
+    webhook_id: update_config
+    local_only: false
+  action:
+  - service: shell_command.update_config
+  - service: homeassistant.restart
 - id: '1708154504615'
   alias: Frigate - Telegram Notification | Guests
   description: ''
