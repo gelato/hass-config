@@ -28,7 +28,7 @@ notify:
     name: "mizery"
     chat_id: !secret telegram_chat_id
 
-#Updating config the GitOps way
+# Updating config the GitOps way
 shell_command:
   update_config: cd /config && git pull
 
