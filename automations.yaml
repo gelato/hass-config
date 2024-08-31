@@ -15,7 +15,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: gates
-      target_chat: '-1002003155608'
+      target_chat: '!secret telegram_chat_id'
       user_message: '>>>==> У нас гости. Кто-то стоит перед воротами.'
       notification: 'false'
       base_url: https://hass.skynerv.com
