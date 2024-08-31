@@ -417,6 +417,10 @@
       brightness_pct: 20
     target:
       entity_id: light.bedroom_light_nightlight
+  - type: turn_on
+    device_id: 0a5bd757648d4752cbe403817b630586
+    entity_id: 67168fd29140d8071534dfc2f43bfe30
+    domain: light
   - action: light.turn_on
     metadata: {}
     data:
