@@ -399,8 +399,11 @@
   alias: Ночное время
   description: ''
   trigger:
-  - platform: time
-    at: "23:00:00"
+  - platform: state
+    entity_id:
+    - binary_sensor.noch
+    from: 'off'
+    to: 'on'
   condition: []
   action:
   - action: fan.set_preset_mode
@@ -429,8 +432,11 @@
   alias: Дневное время
   description: ''
   trigger:
-  - platform: time
-    at: "07:00:00"
+  - platform: state
+    entity_id:
+    - binary_sensor.den
+    from: 'off'
+    to: 'on'
   condition: []
   action:
   - action: fan.set_preset_mode
