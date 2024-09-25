@@ -66,7 +66,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: gates
-      target_chat: !secret telegram_chat_id_str
+      target_chat: input_text.secret_pin
       user_message: '>>>==> У нас гости. Кто-то стоит перед воротами.'
       notification: 'false'
       base_url: https://hass.skynerv.com
@@ -82,7 +82,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: gates
-      target_chat: !secret telegram_chat_id_str
+      target_chat: input_text.secret_pin
       user_message: Какой-то баран припарковался у выезда
       notification: 'false'
       base_url: https://hass.skynerv.com
@@ -99,7 +99,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: gates
-      target_chat: !secret telegram_chat_id_str
+      target_chat: input_text.secret_pin
       user_message: '>>>!Внимание!<<< Кто-то вошел в ворота'
       notification: 'false'
       base_url: https://hass.skynerv.com
@@ -115,7 +115,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: door
-      target_chat: !secret telegram_chat_id_str
+      target_chat: input_text.secret_pin
       user_message: Кто-то трется у входной двери
       base_url: https://hass.skynerv.com
       zones:
@@ -129,7 +129,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: door
-      target_chat: !secret telegram_chat_id_str
+      target_chat: input_text.secret_pin
       user_message: Кто-то шоркается по двору рядом с дверью
       base_url: https://hass.skynerv.com
       zones:
@@ -143,7 +143,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: door
-      target_chat: !secret telegram_chat_id_str
+      target_chat: input_text.secret_pin
       user_message: Кто-то бродит рядом с машиной во дворе
       base_url: https://hass.skynerv.com
       zones:
@@ -157,7 +157,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: door
-      target_chat: !secret telegram_chat_id_str
+      target_chat: input_text.secret_pin
       base_url: https://hass.skynerv.com
       user_message: Кто-то ходит по тропинке в глубине двора
       zones:
@@ -170,7 +170,7 @@
   use_blueprint:
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
-      target_chat: !secret telegram_chat_id_str
+      target_chat: input_text.secret_pin
       camera: door
       user_message: Котэ во дворе, Шатик с Ночкой на месте?
       zones:
@@ -189,7 +189,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: dvor_gates
-      target_chat: !secret telegram_chat_id_str
+      target_chat: input_text.secret_pin
       user_message: Человек рядом с воротами - вошел или вышел
       base_url: https://hass.skynerv.com
       zones:
@@ -204,7 +204,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: dvor_gates
-      target_chat: !secret telegram_chat_id_str
+      target_chat: input_text.secret_pin
       user_message: Человек стоит у нашей двери
       base_url: https://hass.skynerv.com
       zones:
@@ -219,7 +219,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: dvor_gates
-      target_chat: !secret telegram_chat_id_str
+      target_chat: input_text.secret_pin
       user_message: '>>> Человек ходит по нашему саду <<<'
       base_url: https://hass.skynerv.com
       zones:

@@ -35,3 +35,9 @@ shell_command:
 zha_toolkit:
 
 default_config:
+
+
+input_text:
+  secret_pin:
+    name: tgid
+    initial: !secret telegram_chat_id_str
