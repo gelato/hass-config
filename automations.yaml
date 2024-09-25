@@ -1,3 +1,39 @@
+- id: Dining_button_long_push
+  description: ""
+  mode: single
+  trigger:
+    - platform: state
+      entity_id:
+        - event.aqara_wireless_mini_switch_t1_knopka
+      attribute: event_type
+      from: long_press
+  condition: []
+  action:
+    - type: turn_off
+      device_id: fc3c718cfb9df856ba26b49245cc78d2
+      entity_id: eb97dedd436267e16266b0f44d22ee04
+      domain: light
+    - type: turn_off
+      device_id: fc3c718cfb9df856ba26b49245cc78d2
+      entity_id: b7959698f19f33fb80b13d707eda1af6
+      domain: light
+- id: Dining_button_two_pushes
+  description: ""
+  mode: single
+  trigger:
+    - platform: state
+      entity_id:
+        - event.aqara_wireless_mini_switch_t1_knopka
+      attribute: event_type
+      from: multi_press_2
+  condition: []
+  action:
+    - type: turn_on
+      device_id: fc3c718cfb9df856ba26b49245cc78d2
+      entity_id: eb97dedd436267e16266b0f44d22ee04
+      domain: light
+      brightness_pct: 100
+      flash: long
 - id: Dining_button_one_push
   mode: single
   trigger:
