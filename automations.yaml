@@ -31,7 +31,7 @@
   action:
     - type: turn_on
       device_id: fc3c718cfb9df856ba26b49245cc78d2
-      entity_id: eb97dedd436267e16266b0f44d22ee04
+      entity_id: b7959698f19f33fb80b13d707eda1af6
       domain: light
       brightness_pct: 100
       flash: long
@@ -48,7 +48,7 @@
   action:
     - type: turn_on
       device_id: fc3c718cfb9df856ba26b49245cc78d2
-      entity_id: b7959698f19f33fb80b13d707eda1af6
+      entity_id: eb97dedd436267e16266b0f44d22ee04
       domain: light
       brightness_pct: 10
   alias: Столовая - включить ночник кнопкой
