@@ -7,6 +7,7 @@
       device_id: 8198e75aa16cddb78afbbeabe54ab704
       entity_id: e8645c8c3a73076a81a90aea2bf660c4
       domain: sensor
+      above: 0
   condition:
     - condition: state
       entity_id: event.aqara_wireless_mini_switch_t1_knopka
@@ -31,6 +32,7 @@
       device_id: 8198e75aa16cddb78afbbeabe54ab704
       entity_id: e8645c8c3a73076a81a90aea2bf660c4
       domain: sensor
+      above: 0
   condition:
     - condition: state
       entity_id: event.aqara_wireless_mini_switch_t1_knopka
@@ -53,6 +55,7 @@
       device_id: 8198e75aa16cddb78afbbeabe54ab704
       entity_id: e8645c8c3a73076a81a90aea2bf660c4
       domain: sensor
+      above: 0
   condition:
     - condition: state
       entity_id: event.aqara_wireless_mini_switch_t1_knopka
