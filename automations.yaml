@@ -2,12 +2,16 @@
   description: ""
   mode: single
   trigger:
-    - platform: state
-      entity_id:
-        - event.aqara_wireless_mini_switch_t1_knopka
+    - type: value
+      platform: device
+      device_id: 8198e75aa16cddb78afbbeabe54ab704
+      entity_id: e8645c8c3a73076a81a90aea2bf660c4
+      domain: sensor
+  condition:
+    - condition: state
+      entity_id: event.aqara_wireless_mini_switch_t1_knopka
       attribute: event_type
-      to: long_press
-  condition: []
+      state: long_press
   action:
     - type: turn_off
       device_id: fc3c718cfb9df856ba26b49245cc78d2
@@ -22,12 +26,16 @@
   description: ""
   mode: single
   trigger:
-    - platform: state
-      entity_id:
-        - event.aqara_wireless_mini_switch_t1_knopka
+    - type: value
+      platform: device
+      device_id: 8198e75aa16cddb78afbbeabe54ab704
+      entity_id: e8645c8c3a73076a81a90aea2bf660c4
+      domain: sensor
+  condition:
+    - condition: state
+      entity_id: event.aqara_wireless_mini_switch_t1_knopka
       attribute: event_type
-      to: multi_press_2
-  condition: []
+      state: multi_press_2
   action:
     - type: turn_on
       device_id: fc3c718cfb9df856ba26b49245cc78d2
@@ -37,14 +45,19 @@
       flash: long
   alias: Столовая - включить свет кнопкой
 - id: Dining_button_one_push
+  description: ""
   mode: single
   trigger:
-    - platform: state
-      entity_id:
-        - event.aqara_wireless_mini_switch_t1_knopka
+    - type: value
+      platform: device
+      device_id: 8198e75aa16cddb78afbbeabe54ab704
+      entity_id: e8645c8c3a73076a81a90aea2bf660c4
+      domain: sensor
+  condition:
+    - condition: state
+      entity_id: event.aqara_wireless_mini_switch_t1_knopka
       attribute: event_type
-      to: multi_press_1
-  condition: []
+      state: multi_press_1
   action:
     - type: turn_on
       device_id: fc3c718cfb9df856ba26b49245cc78d2
