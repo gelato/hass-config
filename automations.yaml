@@ -2,12 +2,11 @@
   description: ""
   mode: single
   trigger:
-    - type: value
-      platform: device
-      device_id: 8198e75aa16cddb78afbbeabe54ab704
-      entity_id: e8645c8c3a73076a81a90aea2bf660c4
-      domain: sensor
-      above: 0
+  - platform: numeric_state
+    entity_id:
+      - event.aqara_wireless_mini_switch_t1_knopka
+    attribute: totalNumberOfPressesCounted
+    above: 0
   condition:
     - condition: state
       entity_id: event.aqara_wireless_mini_switch_t1_knopka
@@ -27,12 +26,11 @@
   description: ""
   mode: single
   trigger:
-    - type: value
-      platform: device
-      device_id: 8198e75aa16cddb78afbbeabe54ab704
-      entity_id: e8645c8c3a73076a81a90aea2bf660c4
-      domain: sensor
-      above: 0
+  - platform: numeric_state
+    entity_id:
+      - event.aqara_wireless_mini_switch_t1_knopka
+    attribute: totalNumberOfPressesCounted
+    above: 0
   condition:
     - condition: state
       entity_id: event.aqara_wireless_mini_switch_t1_knopka
@@ -50,12 +48,11 @@
   description: ""
   mode: single
   trigger:
-    - type: value
-      platform: device
-      device_id: 8198e75aa16cddb78afbbeabe54ab704
-      entity_id: e8645c8c3a73076a81a90aea2bf660c4
-      domain: sensor
-      above: 0
+  - platform: numeric_state
+    entity_id:
+      - event.aqara_wireless_mini_switch_t1_knopka
+    attribute: totalNumberOfPressesCounted
+    above: 0
   condition:
     - condition: state
       entity_id: event.aqara_wireless_mini_switch_t1_knopka
