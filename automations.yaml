@@ -6,7 +6,7 @@
       entity_id:
         - event.aqara_wireless_mini_switch_t1_knopka
       attribute: event_type
-      from: long_press
+      to: long_press
   condition: []
   action:
     - type: turn_off
@@ -26,14 +26,14 @@
       entity_id:
         - event.aqara_wireless_mini_switch_t1_knopka
       attribute: event_type
-      from: multi_press_2
+      to: multi_press_2
   condition: []
   action:
     - type: turn_on
       device_id: fc3c718cfb9df856ba26b49245cc78d2
-      entity_id: b7959698f19f33fb80b13d707eda1af6
+      entity_id: eb97dedd436267e16266b0f44d22ee04
       domain: light
-      brightness_pct: 10
+      brightness_pct: 100
       flash: long
   alias: Столовая - включить свет кнопкой
 - id: Dining_button_one_push
@@ -43,14 +43,14 @@
       entity_id:
         - event.aqara_wireless_mini_switch_t1_knopka
       attribute: event_type
-      from: multi_press_1
+      to: multi_press_1
   condition: []
   action:
     - type: turn_on
       device_id: fc3c718cfb9df856ba26b49245cc78d2
-      entity_id: eb97dedd436267e16266b0f44d22ee04
+      entity_id: b7959698f19f33fb80b13d707eda1af6
       domain: light
-      brightness_pct: 100
+      brightness_pct: 10
   alias: Столовая - включить ночник кнопкой
 - id: update_config_github_push_event
   alias: Update Configuration on Github Push Event
