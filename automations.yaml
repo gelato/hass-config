@@ -1,56 +1,56 @@
 - id: Dining_button_long_push
-  description: ""
+  description: ''
   mode: single
   trigger:
-    - platform: state
-      entity_id:
-        - event.aqara_wireless_mini_switch_t1_knopka
-      attribute: event_type
-      to: long_press
+  - platform: state
+    entity_id:
+    - event.aqara_wireless_mini_switch_t1_knopka
+    attribute: event_type
+    to: long_press
   condition: []
   action:
-    - type: turn_off
-      device_id: fc3c718cfb9df856ba26b49245cc78d2
-      entity_id: eb97dedd436267e16266b0f44d22ee04
-      domain: light
-    - type: turn_off
-      device_id: fc3c718cfb9df856ba26b49245cc78d2
-      entity_id: b7959698f19f33fb80b13d707eda1af6
-      domain: light
+  - type: turn_off
+    device_id: fc3c718cfb9df856ba26b49245cc78d2
+    entity_id: eb97dedd436267e16266b0f44d22ee04
+    domain: light
+  - type: turn_off
+    device_id: fc3c718cfb9df856ba26b49245cc78d2
+    entity_id: b7959698f19f33fb80b13d707eda1af6
+    domain: light
   alias: Столовая - выключить свет
 - id: Dining_button_two_pushes
-  description: ""
+  description: ''
   mode: single
   trigger:
-    - platform: state
-      entity_id:
-        - event.aqara_wireless_mini_switch_t1_knopka
-      attribute: event_type
-      to: multi_press_2
+  - platform: state
+    entity_id:
+    - event.aqara_wireless_mini_switch_t1_knopka
+    attribute: event_type
+    to: multi_press_2
   condition: []
   action:
-    - type: turn_on
-      device_id: fc3c718cfb9df856ba26b49245cc78d2
-      entity_id: eb97dedd436267e16266b0f44d22ee04
-      domain: light
-      brightness_pct: 100
-      flash: long
+  - type: turn_on
+    device_id: fc3c718cfb9df856ba26b49245cc78d2
+    entity_id: eb97dedd436267e16266b0f44d22ee04
+    domain: light
+    brightness_pct: 100
+    flash: long
   alias: Столовая - включить свет кнопкой
 - id: Dining_button_one_push
   mode: single
   trigger:
-    - platform: state
-      entity_id:
-        - event.aqara_wireless_mini_switch_t1_knopka
-      attribute: event_type
-      to: multi_press_1
+  - platform: state
+    entity_id:
+    - event.aqara_wireless_mini_switch_t1_knopka
+    attribute: event_type
+    to: multi_press_1
   condition: []
   action:
-    - type: turn_on
-      device_id: fc3c718cfb9df856ba26b49245cc78d2
-      entity_id: b7959698f19f33fb80b13d707eda1af6
-      domain: light
-      brightness_pct: 10
+  - type: turn_on
+    device_id: fc3c718cfb9df856ba26b49245cc78d2
+    entity_id: b7959698f19f33fb80b13d707eda1af6
+    domain: light
+    brightness_pct: 10
   alias: Столовая - включить ночник кнопкой
 - id: update_config_github_push_event
   alias: Update Configuration on Github Push Event
@@ -61,6 +61,16 @@
   action:
   - service: shell_command.update_config
   - service: homeassistant.restart
+- id: github_push_updated
+  alias: Push updated configuration to Github
+  trigger:
+  - platform: time_pattern
+    hours: "23"
+    minutes: "59"
+    seconds: "59"
+  action:
+  - service: shell_command.push_config
+  - service: homeassistant.restart
 - id: '1708154504615'
   alias: Frigate - Telegram Notification | Guests
   description: ''
@@ -68,7 +78,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: gates
-      target_chat: "{{ states('input_text.secret_pin') }}"
+      target_chat: '{{ states(''input_text.secret_pin'') }}'
       user_message: '>>>==> У нас гости. Кто-то стоит перед воротами.'
       notification: 'false'
       base_url: https://hass.skynerv.com
@@ -84,7 +94,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: gates
-      target_chat: "{{ states('input_text.secret_pin') }}"
+      target_chat: '{{ states(''input_text.secret_pin'') }}'
       user_message: Какой-то баран припарковался у выезда
       notification: 'false'
       base_url: https://hass.skynerv.com
@@ -101,7 +111,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: gates
-      target_chat: "{{ states('input_text.secret_pin') }}"
+      target_chat: '{{ states(''input_text.secret_pin'') }}'
       user_message: '>>>!Внимание!<<< Кто-то вошел в ворота'
       notification: 'false'
       base_url: https://hass.skynerv.com
@@ -117,7 +127,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: door
-      target_chat: "{{ states('input_text.secret_pin') }}"
+      target_chat: '{{ states(''input_text.secret_pin'') }}'
       user_message: Кто-то трется у входной двери
       base_url: https://hass.skynerv.com
       zones:
@@ -131,7 +141,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: door
-      target_chat: "{{ states('input_text.secret_pin') }}"
+      target_chat: '{{ states(''input_text.secret_pin'') }}'
       user_message: Кто-то шоркается по двору рядом с дверью
       base_url: https://hass.skynerv.com
       zones:
@@ -145,7 +155,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: door
-      target_chat: "{{ states('input_text.secret_pin') }}"
+      target_chat: '{{ states(''input_text.secret_pin'') }}'
       user_message: Кто-то бродит рядом с машиной во дворе
       base_url: https://hass.skynerv.com
       zones:
@@ -159,7 +169,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: door
-      target_chat: "{{ states('input_text.secret_pin') }}"
+      target_chat: '{{ states(''input_text.secret_pin'') }}'
       base_url: https://hass.skynerv.com
       user_message: Кто-то ходит по тропинке в глубине двора
       zones:
@@ -172,7 +182,7 @@
   use_blueprint:
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
-      target_chat: "{{ states('input_text.secret_pin') }}"
+      target_chat: '{{ states(''input_text.secret_pin'') }}'
       camera: door
       user_message: Котэ во дворе, Шатик с Ночкой на месте?
       zones:
@@ -191,7 +201,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: dvor_gates
-      target_chat: "{{ states('input_text.secret_pin') }}"
+      target_chat: '{{ states(''input_text.secret_pin'') }}'
       user_message: Человек рядом с воротами - вошел или вышел
       base_url: https://hass.skynerv.com
       zones:
@@ -206,7 +216,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: dvor_gates
-      target_chat: "{{ states('input_text.secret_pin') }}"
+      target_chat: '{{ states(''input_text.secret_pin'') }}'
       user_message: Человек стоит у нашей двери
       base_url: https://hass.skynerv.com
       zones:
@@ -221,7 +231,7 @@
     path: gelato/Frigate - Telegram Notification(ru).yaml
     input:
       camera: dvor_gates
-      target_chat: "{{ states('input_text.secret_pin') }}"
+      target_chat: '{{ states(''input_text.secret_pin'') }}'
       user_message: '>>> Человек ходит по нашему саду <<<'
       base_url: https://hass.skynerv.com
       zones:
@@ -361,22 +371,28 @@
       entity_id: fan.dmaker_p45_cfbf_fan
     data:
       preset_mode: Sleep
-  - action: light.turn_on
-    metadata: {}
-    data:
-      brightness_pct: 20
-    target:
-      entity_id: light.bedroom_light_nightlight
   - type: turn_on
     device_id: 0a5bd757648d4752cbe403817b630586
-    entity_id: 67168fd29140d8071534dfc2f43bfe30
+    entity_id: fee8218f970f4a507d14c4ce28cf0fe9
     domain: light
+  - type: turn_on
+    device_id: fc3c718cfb9df856ba26b49245cc78d2
+    entity_id: b7959698f19f33fb80b13d707eda1af6
+    domain: light
+    brightness_pct: 10
   - action: light.turn_on
     metadata: {}
     data:
-      brightness_pct: 20
+      kelvin: 2000
+      brightness_pct: 1
+      transition: 2
     target:
-      entity_id: light.dining_room_light_nightlight
+      device_id: 774e3c5cb748176992f7bc5a59199d95
+  - type: turn_on
+    device_id: 96e1548acb880416f78bfe965e06461c
+    entity_id: 79a9702d5a306b159ae844e2a5a623c0
+    domain: light
+    brightness_pct: 10
   mode: single
 - id: '1724802355139'
   alias: Дневное время
@@ -402,22 +418,6 @@
       percentage: 100
   - type: turn_on
     device_id: 0a5bd757648d4752cbe403817b630586
-    entity_id: 67168fd29140d8071534dfc2f43bfe30
-    domain: light
-  - type: turn_on
-    device_id: fc3c718cfb9df856ba26b49245cc78d2
-    entity_id: eb97dedd436267e16266b0f44d22ee04
-    domain: light
-  - type: turn_off
-    device_id: fc3c718cfb9df856ba26b49245cc78d2
-    entity_id: eb97dedd436267e16266b0f44d22ee04
-    domain: light
-  - type: turn_on
-    device_id: c248c6b040d50f4b6c9ef91dfc1bb913
-    entity_id: e46b789d6e80c45a0de8b1b301eb554d
-    domain: light
-  - type: turn_off
-    device_id: c248c6b040d50f4b6c9ef91dfc1bb913
-    entity_id: e46b789d6e80c45a0de8b1b301eb554d
+    entity_id: fee8218f970f4a507d14c4ce28cf0fe9
     domain: light
   mode: single
