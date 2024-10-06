@@ -65,9 +65,9 @@
   alias: Push updated configuration to Github
   trigger:
   - platform: time_pattern
-    hours: "23"
-    minutes: "59"
-    seconds: "59"
+    hours: '23'
+    minutes: '59'
+    seconds: '59'
   action:
   - service: shell_command.push_config
   - service: homeassistant.restart
@@ -388,11 +388,6 @@
       transition: 2
     target:
       device_id: 774e3c5cb748176992f7bc5a59199d95
-  - type: turn_on
-    device_id: 96e1548acb880416f78bfe965e06461c
-    entity_id: 79a9702d5a306b159ae844e2a5a623c0
-    domain: light
-    brightness_pct: 10
   mode: single
 - id: '1724802355139'
   alias: Дневное время
