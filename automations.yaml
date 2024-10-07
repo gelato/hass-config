@@ -69,8 +69,8 @@
     minutes: '59'
     seconds: '59'
   action:
-  - service: shell_command.push_config
-  - service: homeassistant.restart
+  - action: shell_command.push_config
+    data: {}
 - id: '1708154504615'
   alias: Frigate - Telegram Notification | Guests
   description: ''
