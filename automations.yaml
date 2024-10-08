@@ -156,12 +156,12 @@
     input:
       camera: door
       target_chat: '{{ states(''input_text.secret_pin'') }}'
-      user_message: Кто-то бродит рядом с машиной во дворе
+      user_message: Псы рядом с машиной, им там нефиг делать
       base_url: https://hass.skynerv.com
       zones:
       - parkovka
       labels:
-      - person
+      - dog
 - id: '1713611894184'
   alias: Frigate - Telegram Notification
   description: ''
