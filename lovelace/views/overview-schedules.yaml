@@ -1,0 +1,49 @@
+title: Schedules
+path: schedules
+id: schedules
+type: custom:grid-layout
+layout: !include snippets/layout-2-column.yaml
+
+cards:
+  # Header
+  - type: heading
+    heading_style: title
+    heading: Schedules
+    view_layout:
+      grid-column: 1/-1
+
+  # Climate
+  - type: vertical-stack
+    cards:
+      - type: heading
+        heading_style: subtitle
+        heading: Climate
+
+      - type: custom:scheduler-card
+        title: ""
+        include:
+          - climate
+        discover_existing: false
+        card_mod:
+          style: |
+            ha-card {
+              --ha-card-background: transparent;
+            }
+
+  # Other
+  - type: vertical-stack
+    cards:
+      - type: heading
+        heading_style: subtitle
+        heading: Other
+
+      - type: custom:scheduler-card
+        title: ""
+        include:
+          - button
+        discover_existing: false
+        card_mod:
+          style: |
+            ha-card {
+              --ha-card-background: transparent;
+            }

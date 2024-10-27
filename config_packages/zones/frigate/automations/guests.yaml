@@ -1,0 +1,16 @@
+id: '1708154504615'
+alias: Frigate - Telegram Notification | Guests
+description: ''
+use_blueprint:
+  path: gelato/Frigate - Telegram Notification(ru).yaml
+  input:
+    camera: gates
+    target_chat: '{{ states(''input_text.secret_pin'') }}'
+    user_message: '>>>==> У нас гости. Кто-то стоит перед воротами.'
+    notification: 'false'
+    base_url: https://hass.skynerv.com
+    zone_filter: false
+    zones:
+    - guests
+    labels:
+    - person

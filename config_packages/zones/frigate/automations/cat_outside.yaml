@@ -1,0 +1,18 @@
+id: '1713615465007'
+alias: Frigate - Telegram Notification | Cat
+description: ''
+use_blueprint:
+  path: gelato/Frigate - Telegram Notification(ru).yaml
+  input:
+    target_chat: '{{ states(''input_text.secret_pin'') }}'
+    camera: door
+    user_message: Котэ во дворе, Шатик с Ночкой на месте?
+    zones:
+    - dvor
+    - near_the_door
+    - sad
+    - parkovka
+    - tropinka
+    labels:
+    - cat
+    base_url: https://hass.skynerv.com

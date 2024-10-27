@@ -1,0 +1,15 @@
+id: '1713997376757'
+alias: Frigate - Telegram Notification | In the garden
+description: ''
+use_blueprint:
+  path: gelato/Frigate - Telegram Notification(ru).yaml
+  input:
+    camera: dvor_gates
+    target_chat: '{{ states(''input_text.secret_pin'') }}'
+    user_message: '>>> Человек ходит по нашему саду <<<'
+    base_url: https://hass.skynerv.com
+    zones:
+    - in_the_garden
+    labels:
+    - person
+    zone_filter: false

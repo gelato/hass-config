@@ -1,0 +1,14 @@
+id: '1713611757748'
+alias: Frigate - Telegram Notification | Dvor
+description: ''
+use_blueprint:
+  path: gelato/Frigate - Telegram Notification(ru).yaml
+  input:
+    camera: door
+    target_chat: '{{ states(''input_text.secret_pin'') }}'
+    user_message: Кто-то шоркается по двору рядом с дверью
+    base_url: https://hass.skynerv.com
+    zones:
+    - dvor
+    labels:
+    - person

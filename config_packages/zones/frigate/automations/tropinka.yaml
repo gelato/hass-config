@@ -1,0 +1,14 @@
+id: '1713611894184'
+alias: Frigate - Telegram Notification | Tropinka
+description: ''
+use_blueprint:
+  path: gelato/Frigate - Telegram Notification(ru).yaml
+  input:
+    camera: door
+    target_chat: '{{ states(''input_text.secret_pin'') }}'
+    base_url: https://hass.skynerv.com
+    user_message: Кто-то ходит по тропинке в глубине двора
+    zones:
+    - tropinka
+    labels:
+    - person

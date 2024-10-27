@@ -1,0 +1,24 @@
+id: '1723752969202'
+alias: Тусклый свет на кухне
+description: ' '
+trigger:
+- platform: state
+  entity_id:
+  - input_boolean.tusklyi_svet_na_kukhne
+  from: 'off'
+  to: 'on'
+condition: []
+action:
+- action: light.turn_on
+  metadata: {}
+  data:
+    kelvin: 2000
+    brightness_pct: 20
+  target:
+    area_id: kukhnia
+- action: input_boolean.turn_off
+  target:
+    entity_id:
+    - input_boolean.iarkii_svet_na_kukhne
+  data: {}
+mode: single

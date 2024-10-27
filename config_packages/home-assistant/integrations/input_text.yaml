@@ -1,0 +1,4 @@
+input_text:
+  secret_pin:
+    name: tgid
+    initial: !env_var TELEGRAM_CHAT_ID

@@ -1,0 +1,4 @@
+notify:
+  - platform: telegram
+    name: "mizery"
+    chat_id: !env_var TELEGRAM_CHAT_ID

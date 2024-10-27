@@ -1,0 +1,25 @@
+id: '1723753097753'
+alias: Яркий свет на кухне
+description: ' '
+trigger:
+- platform: state
+  entity_id:
+  - input_boolean.iarkii_svet_na_kukhne
+  from: 'off'
+  to: 'on'
+condition: []
+action:
+- action: light.turn_on
+  metadata: {}
+  data:
+    kelvin: 6500
+    brightness_pct: 100
+  target:
+    area_id: kukhnia
+- action: input_boolean.turn_off
+  metadata: {}
+  data: {}
+  target:
+    entity_id: input_boolean.tusklyi_svet_na_kukhne
+  enabled: true
+mode: single

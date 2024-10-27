@@ -1,0 +1,16 @@
+---
+id: downstairs_living_room_harmony_activity_stops_sonos
+alias: Downstairs living room - Harmony activity stops Sonos
+max_exceeded: silent
+trigger:
+  - platform: state
+    entity_id: sensor.living_room_current_harmony_activity
+    not_to:
+      - Listen to Sonos
+      - PowerOff
+action:
+  - service: media_player.media_stop
+    data:
+      entity_id:
+        - media_player.kitchen_sonos
+        - media_player.living_room_sonos

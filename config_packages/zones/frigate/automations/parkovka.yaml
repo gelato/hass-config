@@ -1,0 +1,14 @@
+id: '1713611827511'
+alias: Frigate - Telegram Notification | Parkovka
+description: ''
+use_blueprint:
+  path: gelato/Frigate - Telegram Notification(ru).yaml
+  input:
+    camera: door
+    target_chat: '{{ states(''input_text.secret_pin'') }}'
+    user_message: Псы рядом с машиной, им там нефиг делать
+    base_url: https://hass.skynerv.com
+    zones:
+    - parkovka
+    labels:
+    - dog

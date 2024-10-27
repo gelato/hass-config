@@ -1,0 +1,5 @@
+telegram_bot:
+  - platform: polling
+    api_key: !env_var TELEGRAM_API_KEY
+    allowed_chat_ids:
+      - !env_var TELEGRAM_CHAT_ID

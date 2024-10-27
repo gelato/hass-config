@@ -1,0 +1,33 @@
+id: '1724800580698'
+alias: Яркий свет в гостиной
+description: ''
+trigger:
+- platform: state
+  entity_id:
+  - input_boolean.iarkii_svet_v_gostinoi
+  from: 'off'
+  to: 'on'
+condition: []
+action:
+- action: light.turn_on
+  metadata: {}
+  data:
+    kelvin: 6500
+    brightness_pct: 100
+  target:
+    device_id: e4cfc9c939b1bad610e38df9d321b228
+- action: light.turn_on
+  metadata: {}
+  data:
+    rgb_color:
+    - 0
+    - 249
+    - 0
+    brightness_pct: 100
+  target:
+    entity_id: light.colorful_ceiling_light_36w_osveshchenie_2
+- action: input_boolean.turn_off
+  data: {}
+  target:
+    entity_id: input_boolean.tusklyi_svet_v_gostinoi
+mode: single

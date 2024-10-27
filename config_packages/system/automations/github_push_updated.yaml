@@ -1,0 +1,10 @@
+id: github_push_updated
+alias: Push updated configuration to Github
+trigger:
+- platform: time_pattern
+  hours: '23'
+  minutes: '59'
+  seconds: '59'
+action:
+- action: shell_command.push_config
+  data: {}

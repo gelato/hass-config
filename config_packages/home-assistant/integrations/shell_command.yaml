@@ -1,0 +1,4 @@
+# Updating config the GitOps way
+shell_command:
+  update_config: cd /config && git pull
+  push_config: cd /config && git add -A && git commit -m "Fix" && git push

@@ -1,0 +1,17 @@
+id: '1708154632525'
+alias: Frigate - Telegram Notification | Entryway
+description: ''
+use_blueprint:
+  path: gelato/Frigate - Telegram Notification(ru).yaml
+  input:
+    camera: gates
+    target_chat: '{{ states(''input_text.secret_pin'') }}'
+    user_message: Какой-то баран припарковался у выезда
+    notification: 'false'
+    base_url: https://hass.skynerv.com
+    zone_filter: false
+    zones:
+    - entryway
+    labels:
+    - car
+    - bus

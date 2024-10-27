@@ -1,0 +1,15 @@
+id: '1713997144194'
+alias: Frigate - Telegram Notification | Inside gates
+description: ''
+use_blueprint:
+  path: gelato/Frigate - Telegram Notification(ru).yaml
+  input:
+    camera: dvor_gates
+    target_chat: '{{ states(''input_text.secret_pin'') }}'
+    user_message: Человек рядом с воротами - вошел или вышел
+    base_url: https://hass.skynerv.com
+    zones:
+    - before_gates
+    labels:
+    - person
+    zone_filter: false

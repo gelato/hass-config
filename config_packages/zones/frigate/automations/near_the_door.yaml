@@ -1,0 +1,14 @@
+id: '1713611649462'
+alias: Frigate - Telegram Notification | Near_the_door
+description: ''
+use_blueprint:
+  path: gelato/Frigate - Telegram Notification(ru).yaml
+  input:
+    camera: door
+    target_chat: '{{ states(''input_text.secret_pin'') }}'
+    user_message: Кто-то трется у входной двери
+    base_url: https://hass.skynerv.com
+    zones:
+    - near_the_door
+    labels:
+    - person
