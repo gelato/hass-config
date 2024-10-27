@@ -29,7 +29,7 @@
   type: module
 
 - url: /hacsfiles/lovelace-expander-card/expander-card.js
-  type: module
+  type: js
 
 - url: /local/css/font.css
   type: css
@@ -52,5 +52,5 @@
 - url: /hacsfiles/anchor-card/anchor-card.js
   type: module
 
-- url: /hacsfiles/webrtc/webrtc-camera.js
+- url: /webrtc/webrtc-camera.js
   type: module
