@@ -17,11 +17,46 @@ cards:
     cards:
       - type: heading
         heading_style: subtitle
-        heading: Driveway
+        heading: Камеры на улице
 
       - type: custom:webrtc-camera
-        url: doorbell
-        entity: camera.gates
+        url: gates_hq
+        mode: webrtc
+        name: Ворота
+        media: video,audio
+        muted: true
+        style: '.mode {display: none}'
+
+      - type: custom:webrtc-camera
+        url: door_hq
+        mode: webrtc
+        name: Двор
+        media: video,audio
+        muted: true
+        style: '.mode {display: none}'
+
+      - type: custom:webrtc-camera
+        url: dvor_gates_hq
+        mode: webrtc
+        name: Двор, вид на ворота
+        media: video,audio
+        muted: true
+        style: '.mode {display: none}'
+
+      - type: custom:webrtc-camera
+        url: dom2_hq
+        mode: webrtc
+        name: Двор, вид второй дом
+        media: video,audio
+        muted: true
+        style: '.mode {display: none}'
+
+      - type: custom:webrtc-camera
+        url: street_hq
+        mode: webrtc
+        name: Улица за окнами
+        media: video,audio
+        muted: true
         style: '.mode {display: none}'
 
       # - type: horizontal-stack
