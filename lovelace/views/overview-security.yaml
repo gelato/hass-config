@@ -21,7 +21,7 @@ cards:
 
       - type: custom:webrtc-camera
         url: doorbell
-        entity: camera.gates_hq
+        entity: camera.gates
         style: '.mode {display: none}'
 
       # - type: horizontal-stack
