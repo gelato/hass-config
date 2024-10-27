@@ -23,7 +23,7 @@ cards:
       # Good {{ states.sensor.system_time_of_day.state }}, {{ user }}.
 
       {% if lowBatteryDevicesCount > 0 -%}
-      🚨 There {{ iif((lowBatteryDevicesCount == 1), 'is', 'are') }} {{ lowBatteryDevicesCount }} devices reporting low battery. Check the [Devices](/lovelace/devices?anchor=devices_low_battery) tab for more details! 🚨
+      🚨 На данный момент {{ iif((lowBatteryDevicesCount == 1), 'одно', 'множество') }} {{ iif((lowBatteryDevicesCount == 1), 'устройство', 'устройств') }} - {{ lowBatteryDevicesCount }} {{ iif((lowBatteryDevicesCount == 1), 'сообщает', 'сообщают') }} о низком заряде. Надо проверить вкладку [Устройства](/lovelace/devices?anchor=devices_low_battery) для большей информации! 🚨
       {%- endif %}
 
   # Security / Modes
