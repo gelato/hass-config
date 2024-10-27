@@ -31,7 +31,7 @@ cards:
     cards:
       - type: heading
         heading_style: subtitle
-        heading: Security
+        heading: Безопасность
 
       - type: grid
         columns: 3
@@ -59,21 +59,21 @@ cards:
             #   action: more-info
 
           - type: "custom:mushroom-person-card"
-            name: Bernd
-            entity: sensor.bernd_location
+            name: Филипп
+            entity: sensor.holder_geocoded_location
             layout: vertical
             fill_container: true
             use_entity_picture: true
 
           - type: "custom:mushroom-person-card"
-            entity: person.man_yie
+            entity: person.van_holder_2
             layout: vertical
             fill_container: true
             use_entity_picture: true
 
       - type: heading
         heading_style: subtitle
-        heading: Modes
+        heading: Режимы
 
       - type: grid
         columns: 3
@@ -81,7 +81,7 @@ cards:
         cards:
           - type: custom:mushroom-entity-card
             entity: input_boolean.home_modes_away_mode
-            name: Away
+            name: Не дома
             icon: mdi:home
             layout: vertical
             secondary_info: state
@@ -89,11 +89,11 @@ cards:
             tap_action:
               action: toggle
               confirmation:
-                text: Are you sure you want to toggle Away Mode?
+                text: Точно включить режим "Не дома"?
 
           - type: custom:mushroom-entity-card
             entity: input_boolean.home_modes_guest_mode
-            name: Guest
+            name: Гостевой режим
             icon: mdi:human-handsup
             layout: vertical
             secondary_info: state
@@ -101,11 +101,11 @@ cards:
             tap_action:
               action: toggle
               confirmation:
-                text: Are you sure you want to toggle Guest Mode?
+                text: Точно включить гостевой режим?
 
           - type: custom:mushroom-entity-card
             entity: input_boolean.home_modes_bedtime_mode
-            name: Bedtime
+            name: Пора спать
             icon: mdi:sleep
             layout: vertical
             secondary_info: state
@@ -113,11 +113,11 @@ cards:
             tap_action:
               action: toggle
               confirmation:
-                text: Are you sure you want to toggle Bedtime Mode?
+                text: Точно включить режим отхода ко сну?
 
           - type: custom:mushroom-entity-card
             entity: input_boolean.home_modes_vacation_mode
-            name: Vacation
+            name: Отпуск
             icon: mdi:airplane
             layout: vertical
             secondary_info: state
@@ -125,24 +125,24 @@ cards:
             tap_action:
               action: toggle
               confirmation:
-                text: Are you sure you want to toggle Vacation Mode?
+                text: Точно включить режим отпуска?
 
   # Climate / Energy
   - type: vertical-stack
     cards:
       - type: heading
         heading_style: subtitle
-        heading: Climate
+        heading: Климат
 
       - type: custom:mushroom-climate-card
-        name: Thermostat living room
+        name: Термостат в гостиной
         entity: climate.living_room
         hvac_modes: []
         # show_temperature_control: true
         fill_container: true
 
       - type: custom:mushroom-fan-card
-        name: Central ventilation
+        name: Центральная вентиляция
         entity: fan.attic_ventilation_esp_fan
         # show_percentage_control: true
         icon_animation: true
@@ -152,7 +152,7 @@ cards:
 
       - type: heading
         heading_style: subtitle
-        heading: Energy
+        heading: Энергия
 
       - type: custom:power-flow-card-plus
         entities:
@@ -203,7 +203,7 @@ cards:
     cards:
       - type: heading
         heading_style: subtitle
-        heading: Trash
+        heading: Мусор
 
       - type: grid
         columns: 2
@@ -283,7 +283,7 @@ cards:
 
       - type: heading
         heading_style: subtitle
-        heading: Devices
+        heading: Устройства
 
       - type: grid
         columns: 3
