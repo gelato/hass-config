@@ -21,7 +21,7 @@ cards:
 
       - type: custom:webrtc-camera
         url: doorbell
-        entity: camera.driveway_doorbell_scrypted
+        entity: camera.gates_hq
         style: '.mode {display: none}'
 
       # - type: horizontal-stack
@@ -47,18 +47,18 @@ cards:
         heading: Rooms
 
       - type: "custom:multiple-entity-row"
-        entity: binary_sensor.downstairs_hallway_front_door_contact
-        name: Hallway
+        entity: binary_sensor.aqara_door_and_window_sensor_t1_dver
+        name: Спальня
         icon: mdi:coat-rack
         show_state: false
         entities:
-          - entity: binary_sensor.downstairs_hallway_front_door_contact
-            name: Front Door
+          - entity: binary_sensor.aqara_door_and_window_sensor_t1_dver
+            name: Дверь спальни
             icon: true
             state_color: true
 
-          - entity: binary_sensor.downstairs_hallway_motion
-            name: Motion
+          - entity: binary_sensor.aqara_motion_sensor_bedroom_p1_zaniatost
+            name: Датчик движения
             icon: true
             state_color: true
 
