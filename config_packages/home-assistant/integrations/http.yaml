@@ -7,7 +7,7 @@
 http:
   server_host: 0.0.0.0
   use_x_forwarded_for: true
-  ip_ban_enabled: true
+  ip_ban_enabled: false
   login_attempts_threshold: 5
   trusted_proxies:
     - !env_var SECRET_TRUSTED_PROXIES_1
