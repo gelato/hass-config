@@ -1,4 +1,4 @@
 background: var(--background-image)
 
 views:
-  - !include ../views/eva-main.yaml
+  - !include ../views/vlad-main.yaml

@@ -8,12 +8,12 @@ trigger:
   - platform: event
     event_type: automation_reload
   - platform: state
-    entity_id: binary_sensor.driveway_is_dark
+    entity_id: binary_sensor.motion_sensor_f68e_light
 action:
   - service: frontend.set_theme
     data:
       name: |
-        {%- if is_state("binary_sensor.driveway_is_dark", "on") -%}
+        {%- if is_state("binary_sensor.motion_sensor_f68e_light", "off") -%}
           minimalist-dark
         {%- else -%}
           minimalist-light
