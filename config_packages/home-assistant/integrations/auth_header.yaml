@@ -1,0 +1,2 @@
+auth_header:
+    username_header: X-authentik-username
