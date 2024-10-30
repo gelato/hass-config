@@ -1,5 +1,5 @@
 id: update_config_github_push_event
-alias: Update Configuration on Github Push Event
+alias: Система - впитываем пуш из гита
 trigger:
 - platform: webhook
   webhook_id: update_config

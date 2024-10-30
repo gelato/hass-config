@@ -1,5 +1,5 @@
 id: github_push_updated
-alias: Push updated configuration to Github
+alias: Система -  Раз в сутки отправляем изменения в гит
 trigger:
 - platform: time_pattern
   hours: '23'

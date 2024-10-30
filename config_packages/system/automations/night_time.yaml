@@ -1,5 +1,5 @@
 id: '1724801709852'
-alias: Ночное время
+alias: Система - Ночное время
 description: ''
 trigger:
 - platform: state

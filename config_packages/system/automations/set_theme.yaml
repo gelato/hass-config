@@ -1,6 +1,6 @@
 ---
 id: system_set_theme
-alias: System - Set theme
+alias: Система - Установка темы
 max_exceeded: silent
 trigger:
   - platform: homeassistant

@@ -1,5 +1,5 @@
 id: '1724802355139'
-alias: Дневное время
+alias: Система - Дневное время
 description: ''
 trigger:
 - platform: state

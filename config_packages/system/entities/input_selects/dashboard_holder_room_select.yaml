@@ -1,6 +1,6 @@
 ---
 dashboard_bernd_room_select:
-  name: Dashboard Bernd - Room select
+  name: Дашборд Holder - Выбор комнаты
   options:
     - Auto
     - Living Room

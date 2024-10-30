@@ -1,6 +1,6 @@
 ---
 sensor:
-  - name: System - Time of day
+  - name: Система - время суток
     unique_id: system_time_of_day
     state: >
       {%- if now().hour >= 0 and now().hour < 6 -%}
@@ -13,7 +13,7 @@ sensor:
         evening
       {%- endif -%}
 
-  - name: "System - Time of day (detailed)"
+  - name: "Система - время суток (подробно)"
     unique_id: system_time_of_day_detailed
     state: >
       {%- if now().hour >= 0 and now().hour < 6 -%}

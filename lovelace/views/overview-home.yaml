@@ -66,7 +66,7 @@ cards:
             use_entity_picture: true
 
           - type: "custom:mushroom-person-card"
-            entity: person.van_holder_2
+            entity: sensor.nesyk_geocoded_location
             layout: vertical
             fill_container: true
             use_entity_picture: true
@@ -199,106 +199,106 @@ cards:
         dashboard_link: /energy
 
   # Trash
-  - type: vertical-stack
-    cards:
-      - type: heading
-        heading_style: subtitle
-        heading: Мусор
+  # - type: vertical-stack
+  #   cards:
+  #     - type: heading
+  #       heading_style: subtitle
+  #       heading: Мусор
 
-      - type: grid
-        columns: 2
-        square: false
-        cards:
-          - type: custom:mushroom-template-card
-            entity: sensor.afvalinfo_home_restafval
-            layout: vertical
-            primary: Restafval
-            secondary: >
-              {{ states(entity) }}
-            tap_action: none
-            icon: >
-              {{ state_attr(entity, 'icon') }}
-            icon_color: >
-              {% if state_attr(entity, 'days_until_collection_date') == 0 %}
-                ); --icon-color: var(--error-color);
-              {% elif state_attr(entity, 'days_until_collection_date') == 1 %}
-                ); --icon-color: var(--warning-color);
-              {% else %}
-                var(--disabled-color)
-              {% endif %} --shape-color: rgb(from var(--icon-color) r g b / 0.2);
+  #     - type: grid
+  #       columns: 2
+  #       square: false
+  #       cards:
+  #         - type: custom:mushroom-template-card
+  #           entity: sensor.afvalinfo_home_restafval
+  #           layout: vertical
+  #           primary: Restafval
+  #           secondary: >
+  #             {{ states(entity) }}
+  #           tap_action: none
+  #           icon: >
+  #             {{ state_attr(entity, 'icon') }}
+  #           icon_color: >
+  #             {% if state_attr(entity, 'days_until_collection_date') == 0 %}
+  #               ); --icon-color: var(--error-color);
+  #             {% elif state_attr(entity, 'days_until_collection_date') == 1 %}
+  #               ); --icon-color: var(--warning-color);
+  #             {% else %}
+  #               var(--disabled-color)
+  #             {% endif %} --shape-color: rgb(from var(--icon-color) r g b / 0.2);
 
-          - type: custom:mushroom-template-card
-            entity: sensor.afvalinfo_home_gft
-            layout: vertical
-            primary: GFT
-            secondary: >
-              {{ states(entity) }}
-            tap_action: none
-            icon: >
-              {{ state_attr(entity, 'icon') }}
-            icon_color: >
-              {% if state_attr(entity, 'days_until_collection_date') == 0 %}
-                ); --icon-color: var(--error-color);
-              {% elif state_attr(entity, 'days_until_collection_date') == 1 %}
-                ); --icon-color: var(--warning-color);
-              {% else %}
-                var(--disabled-color)
-              {% endif %} --shape-color: rgb(from var(--icon-color) r g b / 0.2);
+  #         - type: custom:mushroom-template-card
+  #           entity: sensor.afvalinfo_home_gft
+  #           layout: vertical
+  #           primary: GFT
+  #           secondary: >
+  #             {{ states(entity) }}
+  #           tap_action: none
+  #           icon: >
+  #             {{ state_attr(entity, 'icon') }}
+  #           icon_color: >
+  #             {% if state_attr(entity, 'days_until_collection_date') == 0 %}
+  #               ); --icon-color: var(--error-color);
+  #             {% elif state_attr(entity, 'days_until_collection_date') == 1 %}
+  #               ); --icon-color: var(--warning-color);
+  #             {% else %}
+  #               var(--disabled-color)
+  #             {% endif %} --shape-color: rgb(from var(--icon-color) r g b / 0.2);
 
-          - type: custom:mushroom-template-card
-            entity: sensor.afvalinfo_home_pbd
-            layout: vertical
-            primary: PMD
-            secondary: >
-              {{ states(entity) }}
-            tap_action: none
-            icon: >
-              {{ state_attr(entity, 'icon') }}
-            icon_color: >
-              {% if state_attr(entity, 'days_until_collection_date') == 0 %}
-                ); --icon-color: var(--error-color);
-              {% elif state_attr(entity, 'days_until_collection_date') == 1 %}
-                ); --icon-color: var(--warning-color);
-              {% else %}
-                var(--disabled-color)
-              {% endif %} --shape-color: rgb(from var(--icon-color) r g b / 0.2);
+  #         - type: custom:mushroom-template-card
+  #           entity: sensor.afvalinfo_home_pbd
+  #           layout: vertical
+  #           primary: PMD
+  #           secondary: >
+  #             {{ states(entity) }}
+  #           tap_action: none
+  #           icon: >
+  #             {{ state_attr(entity, 'icon') }}
+  #           icon_color: >
+  #             {% if state_attr(entity, 'days_until_collection_date') == 0 %}
+  #               ); --icon-color: var(--error-color);
+  #             {% elif state_attr(entity, 'days_until_collection_date') == 1 %}
+  #               ); --icon-color: var(--warning-color);
+  #             {% else %}
+  #               var(--disabled-color)
+  #             {% endif %} --shape-color: rgb(from var(--icon-color) r g b / 0.2);
 
-          - type: custom:mushroom-template-card
-            entity: sensor.afvalinfo_home_papier
-            layout: vertical
-            primary: Papier
-            secondary: >
-              {{ states(entity) }}
-            tap_action: none
-            icon: >
-              {{ state_attr(entity, 'icon') }}
-            icon_color: >
-              {% if state_attr(entity, 'days_until_collection_date') == 0 %}
-                ); --icon-color: var(--error-color);
-              {% elif state_attr(entity, 'days_until_collection_date') == 1 %}
-                ); --icon-color: var(--warning-color);
-              {% else %}
-                var(--disabled-color)
-              {% endif %} --shape-color: rgb(from var(--icon-color) r g b / 0.2);
+  #         - type: custom:mushroom-template-card
+  #           entity: sensor.afvalinfo_home_papier
+  #           layout: vertical
+  #           primary: Papier
+  #           secondary: >
+  #             {{ states(entity) }}
+  #           tap_action: none
+  #           icon: >
+  #             {{ state_attr(entity, 'icon') }}
+  #           icon_color: >
+  #             {% if state_attr(entity, 'days_until_collection_date') == 0 %}
+  #               ); --icon-color: var(--error-color);
+  #             {% elif state_attr(entity, 'days_until_collection_date') == 1 %}
+  #               ); --icon-color: var(--warning-color);
+  #             {% else %}
+  #               var(--disabled-color)
+  #             {% endif %} --shape-color: rgb(from var(--icon-color) r g b / 0.2);
 
-      - type: heading
-        heading_style: subtitle
-        heading: Устройства
+  #     - type: heading
+  #       heading_style: subtitle
+  #       heading: Устройства
 
-      - type: grid
-        columns: 3
-        square: true
-        cards:
-          - type: custom:mushroom-template-card
-            entity: vacuum.valetudo_livingroom
-            layout: vertical
-            fill_container: true
-            primary: >
-              {{ state_attr(entity, 'friendly_name') }}
-            secondary: >
-              {{ states(entity) | capitalize }}
-            icon: mdi:robot-vacuum
-            icon_color: >
-              {% if is_state(entity, 'cleaning') %}
-                var(--rgb-warning-color)
-              {% endif %}
+  #     - type: grid
+  #       columns: 3
+  #       square: true
+  #       cards:
+  #         - type: custom:mushroom-template-card
+  #           entity: vacuum.valetudo_livingroom
+  #           layout: vertical
+  #           fill_container: true
+  #           primary: >
+  #             {{ state_attr(entity, 'friendly_name') }}
+  #           secondary: >
+  #             {{ states(entity) | capitalize }}
+  #           icon: mdi:robot-vacuum
+  #           icon_color: >
+  #             {% if is_state(entity, 'cleaning') %}
+  #               var(--rgb-warning-color)
+  #             {% endif %}
