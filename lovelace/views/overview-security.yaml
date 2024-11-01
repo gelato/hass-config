@@ -21,7 +21,9 @@ cards:
 
       - type: custom:webrtc,mse-camera
         url: gates_hq
-        mode: webrtc,mse
+        mode:
+          - webrtc
+          - mse
         name: Ворота
         media: video,audio
         muted: true
@@ -29,7 +31,9 @@ cards:
 
       - type: custom:webrtc,mse-camera
         url: door_hq
-        mode: webrtc,mse
+        mode:
+          - webrtc
+          - mse
         name: Двор
         media: video,audio
         muted: true
@@ -37,7 +41,9 @@ cards:
 
       - type: custom:webrtc,mse-camera
         url: dvor_gates_hq
-        mode: webrtc,mse
+        mode:
+          - webrtc
+          - mse
         name: Двор, вид на ворота
         media: video,audio
         muted: true
@@ -45,7 +51,9 @@ cards:
 
       - type: custom:webrtc,mse-camera
         url: dom2_hq
-        mode: webrtc,mse
+        mode:
+          - webrtc
+          - mse
         name: Двор, вид второй дом
         media: video,audio
         muted: true
@@ -53,7 +61,9 @@ cards:
 
       - type: custom:webrtc,mse-camera
         url: street_hq
-        mode: webrtc,mse
+        mode:
+          - webrtc
+          - mse
         name: Улица за окнами
         media: video,audio
         muted: true
@@ -79,7 +89,7 @@ cards:
     cards:
       - type: heading
         heading_style: subtitle
-        heading: Rooms
+        heading: Комнаты
 
       - type: "custom:multiple-entity-row"
         entity: binary_sensor.aqara_door_and_window_sensor_t1_dver
@@ -88,7 +98,7 @@ cards:
         show_state: false
         entities:
           - entity: binary_sensor.aqara_door_and_window_sensor_t1_dver
-            name: Дверь спальни
+            name: Дверь
             icon: true
             state_color: true
 
@@ -97,14 +107,19 @@ cards:
             icon: true
             state_color: true
 
+          - entity: binary_sensor.window_open
+            name: Окно
+            icon: true
+            state_color: true
+
       - type: "custom:multiple-entity-row"
-        entity: binary_sensor.living_room_door_contact
-        name: Living Room
+        entity: binary_sensor.open_door
+        name: Гостиная
         icon: mdi:sofa
         show_state: false
         entities:
-          - entity: binary_sensor.living_room_door_contact
-            name: Door
+          - entity: binary_sensor.open_door
+            name: Дверь
             icon: true
             state_color: true
           - entity: binary_sensor.living_room_window_contact
@@ -117,23 +132,23 @@ cards:
             state_color: true
 
       - type: "custom:multiple-entity-row"
-        entity: binary_sensor.dining_area_garden_doors_contact
-        name: Dining Area
+        entity: binary_sensor.aqara_motion_sensor_zaniatost
+        name: Столовая
         icon: mdi:table-furniture
         show_state: false
         entities:
-          - entity: binary_sensor.dining_area_garden_doors_contact
-            name: Garden Doors
+          - entity: binary_sensor.dining_window_open
+            name: Окно
             icon: true
             state_color: true
-          - entity: binary_sensor.dining_area_motion_sensor_occupancy
-            name: Motion
+          - entity: binary_sensor.aqara_motion_sensor_zaniatost
+            name: Движение проход
             icon: true
             state_color: true
 
       - type: "custom:multiple-entity-row"
         entity: binary_sensor.kitchen_motion_sensor_occupancy
-        name: Kitchen
+        name: Кухня
         icon: mdi:countertop
         show_state: false
         entities:
@@ -144,7 +159,7 @@ cards:
 
       - type: "custom:multiple-entity-row"
         entity: binary_sensor.utility_room_door_contact
-        name: Utility Room
+        name: Кладовка
         icon: mdi:washing-machine
         show_state: false
         entities:
@@ -158,35 +173,16 @@ cards:
             state_color: true
 
       - type: "custom:multiple-entity-row"
-        entity: binary_sensor.utility_room_garage_entry_door_contact
-        name: Garage
+        entity: binary_sensor.bathroom_zaniatost
+        name: Ванная
         icon: mdi:car
         show_state: false
         entities:
-          - entity: binary_sensor.utility_room_garage_entry_door_contact
-            name: Entry door
+          - entity: binary_sensor.bathroom_zaniatost
+            name: Занятость
             icon: true
             state_color: true
           - entity: binary_sensor.garage_door_contact
             name: Garage door
-            icon: true
-            state_color: true
-
-      - type: "custom:multiple-entity-row"
-        entity: binary_sensor.utility_room_garage_entry_door_contact
-        name: Attic office
-        icon: mdi:desk
-        show_state: false
-        entities:
-          - entity: binary_sensor.attic_office_window_contact
-            name: Window
-            icon: true
-            state_color: true
-          - entity: binary_sensor.attic_office_balcony_door_contact
-            name: Balcony door
-            icon: true
-            state_color: true
-          - entity: binary_sensor.attic_office_motion_sensor_occupancy
-            name: Motion
             icon: true
             state_color: true
