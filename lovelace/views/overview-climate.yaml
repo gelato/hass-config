@@ -26,56 +26,13 @@ cards:
       - type: "custom:decluttering-card"
         template: multi_graph_card
         variables:
-          - title: Температура на улице
+          - title: Температура на улице по прогнозу
           - entities:
               - entity: weather.pirateweather
                 attribute: temperature
                 unit: °C
                 name: Снаружи
           - line_width: 1
-
-  # Living room
-  - type: vertical-stack
-    cards:
-      - type: heading
-        heading_style: subtitle
-        heading: Гостиная
-
-      - type: "custom:layout-card"
-        layout_type: "custom:grid-layout"
-        layout:
-          grid-template-columns: repeat(3, 1fr)
-          margin: 0px
-        cards:
-          - type: custom:mushroom-climate-card
-            view_layout:
-              grid-column: span 3
-            name: Кондиционер
-            entity: climate.living_room
-            hvac_modes:
-              - auto
-              - heat
-              - "off"
-            show_temperature_control: true
-
-          - type: "custom:decluttering-card"
-            view_layout:
-              grid-column: 1
-            template: mini_graph_tile
-            variables:
-              - title: Температура
-              - entities:
-                  - entity: sensor.gostinaia_datchik_temperatury_temperatura
-                    name: Температура
-
-          - type: "custom:decluttering-card"
-            template: mini_graph_tile
-            view_layout:
-              grid-column: 2
-            variables:
-              - entities:
-                  - entity: sensor.gostinaia_datchik_temperatury_vlazhnost
-              - title: Влажность
 
   # Bedroom
   - type: vertical-stack
@@ -126,6 +83,49 @@ cards:
             variables:
               - entities:
                   - entity: sensor.bedroom_humidity
+              - title: Влажность
+
+  # Living room
+  - type: vertical-stack
+    cards:
+      - type: heading
+        heading_style: subtitle
+        heading: Гостиная
+
+      - type: "custom:layout-card"
+        layout_type: "custom:grid-layout"
+        layout:
+          grid-template-columns: repeat(3, 1fr)
+          margin: 0px
+        cards:
+          - type: custom:mushroom-climate-card
+            view_layout:
+              grid-column: span 3
+            name: Кондиционер
+            entity: climate.living_room
+            hvac_modes:
+              - auto
+              - heat
+              - "off"
+            show_temperature_control: true
+
+          - type: "custom:decluttering-card"
+            view_layout:
+              grid-column: 1
+            template: mini_graph_tile
+            variables:
+              - title: Температура
+              - entities:
+                  - entity: sensor.gostinaia_datchik_temperatury_temperatura
+                    name: Температура
+
+          - type: "custom:decluttering-card"
+            template: mini_graph_tile
+            view_layout:
+              grid-column: 2
+            variables:
+              - entities:
+                  - entity: sensor.gostinaia_datchik_temperatury_vlazhnost
               - title: Влажность
 
   # Bathroom

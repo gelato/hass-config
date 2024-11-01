@@ -25,5 +25,5 @@ webrtc:
         - "stun:stun.l.google.com:19302"
 
 streams:
-  attic_3d_printer: rtsp://frigate.home.svc.cluster.local:8554/gates_hq
-  doorbell: rtsp://frigate.home.svc.cluster.local:8554/dvor_gates_hq
+  gates: rtsp://frigate.home.svc.cluster.local:8554/gates_hq
+  dvor_gates: rtsp://frigate.home.svc.cluster.local:8554/dvor_gates_hq

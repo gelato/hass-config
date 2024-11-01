@@ -19,41 +19,41 @@ cards:
         heading_style: subtitle
         heading: Камеры на улице
 
-      - type: custom:webrtc-camera
+      - type: custom:webrtc,mse-camera
         url: gates_hq
-        mode: webrtc
+        mode: webrtc,mse
         name: Ворота
         media: video,audio
         muted: true
         style: '.mode {display: none}'
 
-      - type: custom:webrtc-camera
+      - type: custom:webrtc,mse-camera
         url: door_hq
-        mode: webrtc
+        mode: webrtc,mse
         name: Двор
         media: video,audio
         muted: true
         style: '.mode {display: none}'
 
-      - type: custom:webrtc-camera
+      - type: custom:webrtc,mse-camera
         url: dvor_gates_hq
-        mode: webrtc
+        mode: webrtc,mse
         name: Двор, вид на ворота
         media: video,audio
         muted: true
         style: '.mode {display: none}'
 
-      - type: custom:webrtc-camera
+      - type: custom:webrtc,mse-camera
         url: dom2_hq
-        mode: webrtc
+        mode: webrtc,mse
         name: Двор, вид второй дом
         media: video,audio
         muted: true
         style: '.mode {display: none}'
 
-      - type: custom:webrtc-camera
+      - type: custom:webrtc,mse-camera
         url: street_hq
-        mode: webrtc
+        mode: webrtc,mse
         name: Улица за окнами
         media: video,audio
         muted: true
