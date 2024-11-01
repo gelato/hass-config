@@ -135,15 +135,15 @@ cards:
         heading: Климат
 
       - type: custom:mushroom-climate-card
-        name: Термостат в гостиной
-        entity: climate.living_room
+        name: Кондиционер в спальне
+        entity: climate.bedroom_ac
         hvac_modes: []
         # show_temperature_control: true
         fill_container: true
 
       - type: custom:mushroom-fan-card
-        name: Центральная вентиляция
-        entity: fan.attic_ventilation_esp_fan
+        name: Вентилятор в столовой
+        entity: fan.dmaker_p45_cfbf_fan
         # show_percentage_control: true
         icon_animation: true
         fill_container: true
@@ -156,15 +156,10 @@ cards:
 
       - type: custom:power-flow-card-plus
         entities:
-          battery:
-            entity: ''
           grid:
             entity:
-              consumption: sensor.downstairs_hallway_water_p1_meter_power_consumed_w
+              consumption: sensor.tz3000_qeuvnohg_ts011f_summation_delivered
               production: sensor.downstairs_hallway_water_p1_meter_power_produced_w
-          solar:
-            entity: sensor.garage_solaredge_inverter_dc_power
-            display_zero_state: true
           home:
             # entity: sensor.electricity_currently_used
             entity: ''
