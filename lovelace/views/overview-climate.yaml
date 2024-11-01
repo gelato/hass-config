@@ -56,10 +56,10 @@ cards:
               - auto
               - heat
               - cool
-              # - heat_cool
-              # - dry
+              - heat_cool
+              - dry
               - fan_only
-              # - "off"
+              - "off"
             show_temperature_control: true
 
           - type: "custom:decluttering-card"
