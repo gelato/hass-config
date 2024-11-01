@@ -20,7 +20,7 @@ cards:
       {%- set lowBatteryBinarySensors = batteryBinarySensors | selectattr('state', 'equalto', 'on') | list -%}
 
       {%- set lowBatteryDevicesCount = (lowBatterySensors | count) + (lowBatteryBinarySensors | count) -%}
-      # Good {{ states.sensor.system_time_of_day.state }}, {{ user }}.
+      # Восславим {{ states.sensor.system_time_of_day.state }}, {{ user }}.
 
       {% if lowBatteryDevicesCount > 0 -%}
       🚨 На данный момент {{ iif((lowBatteryDevicesCount == 1), 'одно', 'множество') }} {{ iif((lowBatteryDevicesCount == 1), 'устройство', 'устройств') }} - {{ lowBatteryDevicesCount }} {{ iif((lowBatteryDevicesCount == 1), 'сообщает', 'сообщают') }} о низком заряде. Надо проверить вкладку [Устройства](/lovelace/devices?anchor=devices_low_battery) для большей информации! 🚨
@@ -137,8 +137,13 @@ cards:
       - type: custom:mushroom-climate-card
         name: Кондиционер в спальне
         entity: climate.bedroom_ac
-        hvac_modes: []
-        # show_temperature_control: true
+        hvac_modes:
+          - cool
+          - auto
+          - heat
+          - dry
+          - "off"
+        show_temperature_control: true
         fill_container: true
 
       - type: custom:mushroom-fan-card

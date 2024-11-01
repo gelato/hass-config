@@ -4,13 +4,13 @@ sensor:
     unique_id: system_time_of_day
     state: >
       {%- if now().hour >= 0 and now().hour < 6 -%}
-        night
+        ночь
       {%- elif now().hour >= 6 and now().hour < 12 -%}
-        morning
+        утро
       {%- elif now().hour >= 12 and now().hour < 18 -%}
-        afternoon
+        день
       {%- elif now().hour >= 18 and now().hour < 24 -%}
-        evening
+        вечер
       {%- endif -%}
 
   - name: "Система - время суток (подробно)"
