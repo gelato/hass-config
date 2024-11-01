@@ -50,16 +50,16 @@ cards:
           - type: custom:mushroom-climate-card
             view_layout:
               grid-column: span 3
-            name: Термостат
+            name: Кондиционер
             entity: climate.bedroom_ac
             hvac_modes:
               - auto
               - heat
               - cool
-              - heat_cool
-              - dry
+              # - heat_cool
+              # - dry
               - fan_only
-              - "off"
+              # - "off"
             show_temperature_control: true
 
           - type: "custom:decluttering-card"
