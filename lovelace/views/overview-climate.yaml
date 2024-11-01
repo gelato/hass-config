@@ -26,7 +26,7 @@ cards:
       - type: "custom:decluttering-card"
         template: multi_graph_card
         variables:
-          - title: Температура
+          - title: Температура на улице
           - entities:
               - entity: weather.pirateweather
                 attribute: temperature
@@ -50,7 +50,7 @@ cards:
           - type: custom:mushroom-climate-card
             view_layout:
               grid-column: span 3
-            name: Термостат
+            name: Кондиционер
             entity: climate.living_room
             hvac_modes:
               - auto
