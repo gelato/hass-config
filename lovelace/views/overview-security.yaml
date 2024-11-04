@@ -19,7 +19,7 @@ cards:
         heading_style: subtitle
         heading: Камеры на улице
 
-      - type: custom:webrtc,mse-camera
+      - type: custom:webrtc-camera
         url: gates_hq
         mode:
           - webrtc
@@ -29,7 +29,7 @@ cards:
         muted: true
         style: '.mode {display: none}'
 
-      - type: custom:webrtc,mse-camera
+      - type: custom:webrtc-camera
         url: door_hq
         mode:
           - webrtc
@@ -39,7 +39,7 @@ cards:
         muted: true
         style: '.mode {display: none}'
 
-      - type: custom:webrtc,mse-camera
+      - type: custom:webrtc-camera
         url: dvor_gates_hq
         mode:
           - webrtc
@@ -49,7 +49,7 @@ cards:
         muted: true
         style: '.mode {display: none}'
 
-      - type: custom:webrtc,mse-camera
+      - type: custom:webrtc-camera
         url: dom2_hq
         mode:
           - webrtc
@@ -59,7 +59,7 @@ cards:
         muted: true
         style: '.mode {display: none}'
 
-      - type: custom:webrtc,mse-camera
+      - type: custom:webrtc-camera
         url: street_hq
         mode:
           - webrtc
