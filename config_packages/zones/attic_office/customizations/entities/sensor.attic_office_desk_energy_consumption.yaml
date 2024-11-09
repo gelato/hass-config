@@ -1,3 +1,0 @@
----
-sensor.attic_office_desk_energy_consumption:
-  device_class: energy

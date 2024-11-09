@@ -1,6 +1,0 @@
----
-name: Downstairs hallway - Lights - Off
-icon: mdi:lightbulb-off
-entities:
-  light.downstairs_hallway_ceiling:
-    state: 'off'

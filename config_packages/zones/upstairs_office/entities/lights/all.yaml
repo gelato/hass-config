@@ -1,6 +1,0 @@
----
-platform: group
-name: Upstairs office
-entities:
-  - light.upstairs_office_desk
-  - light.upstairs_office_ceiling

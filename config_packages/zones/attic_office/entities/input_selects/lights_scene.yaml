@@ -1,8 +1,0 @@
----
-attic_office_lights_scene:
-  name: Attic office - Lights scene
-  options:
-    - 'Off'
-    - Work
-    - Chill
-  icon: mdi:movie-open

@@ -1,8 +1,0 @@
----
-upstairs_office_lights_scene:
-  name: Upstairs office - Lights scene
-  options:
-    - 'Off'
-    - Work
-    - Chill
-  icon: mdi:movie-open

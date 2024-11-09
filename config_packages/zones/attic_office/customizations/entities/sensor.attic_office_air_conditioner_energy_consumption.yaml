@@ -1,3 +1,0 @@
----
-sensor.attic_office_air_conditioner_energy_consumption:
-  device_class: energy

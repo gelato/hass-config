@@ -1,7 +1,0 @@
----
-platform: integration
-source: sensor.attic_office_plug_homelab_wattage
-name: Attic Office - Homelab Energy Consumption
-unit_prefix: k
-round: 2
-method: left

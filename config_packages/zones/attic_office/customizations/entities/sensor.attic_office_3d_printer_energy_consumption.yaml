@@ -1,3 +1,0 @@
----
-sensor.attic_office_3d_printer_energy_consumption:
-  device_class: energy

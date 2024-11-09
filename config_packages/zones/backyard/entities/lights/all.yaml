@@ -1,5 +1,5 @@
----
-platform: group
-name: Backyard
-entities:
-  - light.backyard_wall
+# ---
+# platform: group
+# name: Backyard
+# entities:
+#   - light.backyard_wall
