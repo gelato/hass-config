@@ -31,7 +31,6 @@ actions:
         - 255
         - 255
         - 255
-      kelvin: 6500
       brightness_pct: 100
       transition: 3
     target:
