@@ -1,8 +1,7 @@
 title: Видеонаблюдение
-path: security
-id: security
-type: custom:grid-layout
-layout: !include snippets/layout-3-column.yaml
+path: cctv
+id: cctv
+type: panel
 
 cards:
   # Header
