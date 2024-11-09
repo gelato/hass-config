@@ -4,56 +4,46 @@ id: cctv
 type: panel
 
 cards:
-  # Header
-  - type: heading
-    heading_style: title
-    heading: Видеонаблюдение
-    view_layout:
-      grid-column: 1/-1
-
-  # Driveway
-  - type: panel
-    cards:
-      - type: custom:frigate-card
-        cameras:
-          - camera_entity: camera.gates
-            live_provider: go2rtc
-            go2rtc:
-              stream: gates_hq
-              modes:
-                - webrtc
-            capabilities:
-              disable: []
-          - camera_entity: camera.dvor_gates
-            live_provider: go2rtc
-            go2rtc:
-              modes:
-                - webrtc
-              stream: dvor_gates_hq
-          - camera_entity: camera.door
-            live_provider: go2rtc
-            go2rtc:
-              modes:
-                - webrtc
-              stream: door_hq
-          - camera_entity: camera.dom2
-            live_provider: go2rtc
-            go2rtc:
-              modes:
-                - webrtc
-              stream: dom2_hq
-          - camera_entity: camera.street
-            live_provider: go2rtc
-            go2rtc:
-              modes:
-                - webrtc
-              stream: street_hq
-        live:
-          preload: true
-          auto_play:
-            - visible
-            - selected
-          transition_effect: slide
-          display:
-            mode: grid
-            grid_columns: 3
+  - type: custom:frigate-card
+    cameras:
+      - camera_entity: camera.gates
+        live_provider: go2rtc
+        go2rtc:
+          stream: gates_hq
+          modes:
+            - webrtc
+        capabilities:
+          disable: []
+      - camera_entity: camera.dvor_gates
+        live_provider: go2rtc
+        go2rtc:
+          modes:
+            - webrtc
+          stream: dvor_gates_hq
+      - camera_entity: camera.door
+        live_provider: go2rtc
+        go2rtc:
+          modes:
+            - webrtc
+          stream: door_hq
+      - camera_entity: camera.dom2
+        live_provider: go2rtc
+        go2rtc:
+          modes:
+            - webrtc
+          stream: dom2_hq
+      - camera_entity: camera.street
+        live_provider: go2rtc
+        go2rtc:
+          modes:
+            - webrtc
+          stream: street_hq
+    live:
+      preload: true
+      auto_play:
+        - visible
+        - selected
+      transition_effect: slide
+      display:
+        mode: grid
+        grid_columns: 3
