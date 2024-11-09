@@ -1,0 +1,188 @@
+title: Безопасность
+path: security
+id: security
+type: custom:grid-layout
+layout: !include snippets/layout-3-column.yaml
+
+cards:
+  # Header
+  - type: heading
+    heading_style: title
+    heading: Безопасность
+    view_layout:
+      grid-column: 1/-1
+
+  # Driveway
+  - type: vertical-stack
+    cards:
+      - type: heading
+        heading_style: subtitle
+        heading: Камеры на улице
+
+      - type: custom:webrtc-camera
+        url: gates_hq
+        mode:
+          - webrtc
+          - mse
+        name: Ворота
+        media: video,audio
+        muted: true
+        style: '.mode {display: none}'
+
+      - type: custom:webrtc-camera
+        url: door_hq
+        mode:
+          - webrtc
+          - mse
+        name: Двор
+        media: video,audio
+        muted: true
+        style: '.mode {display: none}'
+
+      - type: custom:webrtc-camera
+        url: dvor_gates_hq
+        mode:
+          - webrtc
+          - mse
+        name: Двор, вид на ворота
+        media: video,audio
+        muted: true
+        style: '.mode {display: none}'
+
+      - type: custom:webrtc-camera
+        url: dom2_hq
+        mode:
+          - webrtc
+          - mse
+        name: Двор, вид второй дом
+        media: video,audio
+        muted: true
+        style: '.mode {display: none}'
+
+      - type: custom:webrtc-camera
+        url: street_hq
+        mode:
+          - webrtc
+          - mse
+        name: Улица за окнами
+        media: video,audio
+        muted: true
+        style: '.mode {display: none}'
+
+      # - type: horizontal-stack
+      #   cards:
+      #     - type: "custom:button-card"
+      #       template:
+      #         - live_tile_mini
+      #       show_name: true
+      #       entity: binary_sensor.doorbell_person_occupancy
+      #       name: Person detected
+
+      #     - type: "custom:button-card"
+      #       template:
+      #         - live_tile_with_camera
+      #       entity: camera.doorbell_person
+      #       name: Last person
+
+  # Rooms
+  - type: vertical-stack
+    cards:
+      - type: heading
+        heading_style: subtitle
+        heading: Комнаты
+
+      - type: "custom:multiple-entity-row"
+        entity: binary_sensor.aqara_door_and_window_sensor_t1_dver
+        name: Спальня
+        icon: mdi:coat-rack
+        show_state: false
+        entities:
+          - entity: binary_sensor.aqara_door_and_window_sensor_t1_dver
+            name: Дверь
+            icon: true
+            state_color: true
+
+          - entity: binary_sensor.aqara_motion_sensor_bedroom_p1_zaniatost
+            name: Датчик движения
+            icon: true
+            state_color: true
+
+          - entity: binary_sensor.window_open
+            name: Окно
+            icon: true
+            state_color: true
+
+      - type: "custom:multiple-entity-row"
+        entity: binary_sensor.open_door
+        name: Гостиная
+        icon: mdi:sofa
+        show_state: false
+        entities:
+          - entity: binary_sensor.open_door
+            name: Дверь
+            icon: true
+            state_color: true
+          - entity: binary_sensor.living_room_window_contact
+            name: Window
+            icon: true
+            state_color: true
+          - entity: binary_sensor.living_room_motion_sensor_occupancy
+            name: Motion
+            icon: true
+            state_color: true
+
+      - type: "custom:multiple-entity-row"
+        entity: binary_sensor.aqara_motion_sensor_zaniatost
+        name: Столовая
+        icon: mdi:table-furniture
+        show_state: false
+        entities:
+          - entity: binary_sensor.dining_window_open
+            name: Окно
+            icon: true
+            state_color: true
+          - entity: binary_sensor.aqara_motion_sensor_zaniatost
+            name: Движение проход
+            icon: true
+            state_color: true
+
+      - type: "custom:multiple-entity-row"
+        entity: binary_sensor.kitchen_motion_sensor_occupancy
+        name: Кухня
+        icon: mdi:countertop
+        show_state: false
+        entities:
+          - entity: binary_sensor.kitchen_motion_sensor_occupancy
+            name: Motion
+            icon: true
+            state_color: true
+
+      - type: "custom:multiple-entity-row"
+        entity: binary_sensor.utility_room_door_contact
+        name: Кладовка
+        icon: mdi:washing-machine
+        show_state: false
+        entities:
+          - entity: binary_sensor.utility_room_door_contact
+            name: Door
+            icon: true
+            state_color: true
+          - entity: binary_sensor.utility_room_garden_door_contact
+            name: Garden door
+            icon: true
+            state_color: true
+
+      - type: "custom:multiple-entity-row"
+        entity: binary_sensor.bathroom_zaniatost
+        name: Ванная
+        icon: mdi:car
+        show_state: false
+        entities:
+          - entity: binary_sensor.bathroom_zaniatost
+            name: Занятость
+            icon: true
+            state_color: true
+          - entity: binary_sensor.garage_door_contact
+            name: Garage door
+            icon: true
+            state_color: true

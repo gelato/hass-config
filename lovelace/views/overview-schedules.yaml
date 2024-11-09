@@ -1,4 +1,4 @@
-title: Schedules
+title: Расписание
 path: schedules
 id: schedules
 type: custom:grid-layout
@@ -8,7 +8,7 @@ cards:
   # Header
   - type: heading
     heading_style: title
-    heading: Schedules
+    heading: Расписание
     view_layout:
       grid-column: 1/-1
 

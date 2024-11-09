@@ -9,3 +9,4 @@ views:
   - !include ../views/overview-devices.yaml
   - !include ../views/overview-climate.yaml
   - !include ../views/overview-schedules.yaml
+  - !include ../views/overview-cctv.yaml

@@ -1,4 +1,4 @@
-title: devices
+title: Устройства
 id: devices
 path: devices
 
@@ -9,7 +9,7 @@ cards:
   # Header
   - type: heading
     heading_style: title
-    heading: Devices
+    heading: Устройства
     view_layout:
       grid-column: 1/-1
 

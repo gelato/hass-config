@@ -1,4 +1,4 @@
-title: Lights
+title: Освещение
 path: lights
 id: lights
 type: custom:grid-layout
@@ -8,7 +8,7 @@ cards:
   # Header
   - type: heading
     heading_style: title
-    heading: Lights
+    heading: Освещение
     view_layout:
       grid-column: 1/-1
     badges:
