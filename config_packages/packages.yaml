@@ -8,7 +8,7 @@ notifications: !include notifications/package.yaml
 
 house: !include zones/house/package.yaml
 
-area_garage: !include zones/garage/package.yaml
+area_parking: !include zones/parking/package.yaml
 area_kitchen: !include zones/kitchen/package.yaml
 area_living_room: !include zones/living_room/package.yaml
 
