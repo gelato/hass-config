@@ -155,6 +155,32 @@ cards:
         tap_action:
           action: more-info
 
+      - type: custom:mushroom-humidifier-card
+        name: Увлажнитель в спальне
+        entity: humidifier.xiaomi_p1200_e977_humidifier
+        # show_percentage_control: true
+        icon_animation: true
+        fill_container: true
+        primary_info: name
+        secondary_info: state
+        show_target_humidity_control: true
+        collapsible_controls: true
+        tap_action:
+          action: more-info
+
+      - type: custom:mushroom-humidifier-card
+        name: Увлажнитель в гостиной
+        entity: humidifier.living_room_humidifier
+        primary_info: name
+        secondary_info: state
+        icon_animation: true
+        fill_container: true
+        icon_type: icon
+        show_target_humidity_control: true
+        collapsible_controls: true
+        tap_action:
+          action: more-info
+
       - type: heading
         heading_style: subtitle
         heading: Энергия
