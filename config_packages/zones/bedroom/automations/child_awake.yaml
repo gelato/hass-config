@@ -29,3 +29,9 @@ actions:
       transition: 3
     target:
       area_id: spalnia
+  - type: turn_on
+    device_id: 96e1548acb880416f78bfe965e06461c
+    entity_id: 0549956679315d6bad7aeaeddec2c435
+    domain: light
+    brightness_pct: 100
+    flash: long
