@@ -2,4 +2,4 @@
 shell_command:
   update_config: cd /config && git pull
   push_config: cd /config && git add -A && git commit -m "Fix" && git push
-  connect_to_speaker: echo -e "connect D8:37:3B:47:87:FB" | bluetoothctl
+  # connect_to_speaker: echo -e "connect D8:37:3B:47:87:FB" | bluetoothctl
