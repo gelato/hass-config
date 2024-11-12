@@ -1,0 +1,7 @@
+device_tracker:
+  - platform: bluetooth_tracker
+
+media_player:
+  - platform: tts_bluetooth_speaker
+    address: D8:37:3B:47:87:FB
+    volume: 0.50
