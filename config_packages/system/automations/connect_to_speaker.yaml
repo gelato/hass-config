@@ -1,0 +1,8 @@
+id: github_push_updated
+alias: Система - При запуске подключаемся к аудиоколонке
+trigger:
+- trigger: homeassistant
+  event: start
+action:
+- action: shell_command.connect_to_speaker
+  data: {}
