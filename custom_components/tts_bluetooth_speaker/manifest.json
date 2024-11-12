@@ -4,5 +4,6 @@
     "documentation": "https://github.com/pkozul/ha-tts-bluetooth-speaker",
     "dependencies": [],
     "codeowners": ["@pkozul"],
-    "requirements": []
+    "requirements": [],
+    "version": "v0.1"
 }
