@@ -14,6 +14,7 @@ triggers:
 conditions:
   - condition: time
     after: "22:00:00"
+    before: "06:00:00"
 actions:
   - device_id: 663a3c3484f3d8da1a0062e02d20dc98
     domain: humidifier
