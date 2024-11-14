@@ -40,7 +40,7 @@ actions:
       - type: is_not_occupied
         condition: device
         device_id: 1527a85b199ec815c7238d0b124b6469
-        entity_id: 350a08bc93b84c29c36e7f86d5a31c2e
+        entity_id: d8f06cf75a1594704710dc21a4f101d9
         domain: binary_sensor
     then:
       - device_id: 663a3c3484f3d8da1a0062e02d20dc98
