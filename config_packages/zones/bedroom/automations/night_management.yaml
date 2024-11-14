@@ -5,8 +5,8 @@ description: ""
 mode: single
 triggers:
   - type: occupied
-    device_id: 387298df03f6972b29a71381f04d41c9
-    entity_id: 57711d24fa0b1a5f8aa6cc7ae2c691d3
+    device_id: 1527a85b199ec815c7238d0b124b6469
+    entity_id: d8f06cf75a1594704710dc21a4f101d9
     domain: binary_sensor
     metadata:
       secondary: false
