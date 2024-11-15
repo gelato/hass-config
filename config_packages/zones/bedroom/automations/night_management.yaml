@@ -1,6 +1,3 @@
----
-id: bedroom_night_management
-alias: Спальня - управление ночью
 description: ""
 mode: single
 triggers:
@@ -16,11 +13,19 @@ conditions:
     after: "22:00:00"
     before: "06:00:00"
 actions:
-  - device_id: 663a3c3484f3d8da1a0062e02d20dc98
-    domain: humidifier
-    entity_id: 07af525659e4d4dd5ea684e196afe896
-    type: set_mode
-    mode: Strong
+  - if:
+      - type: is_humidity
+        condition: device
+        device_id: 1f6e59f8cbc4e3d39a4ec94471c40911
+        entity_id: f43c26563367e35e1cc8bb9660dee34a
+        domain: sensor
+        below: 75
+    then:
+      - device_id: 663a3c3484f3d8da1a0062e02d20dc98
+        domain: humidifier
+        entity_id: 07af525659e4d4dd5ea684e196afe896
+        type: set_mode
+        mode: Strong
   - action: light.turn_on
     metadata: {}
     data:
@@ -55,3 +60,4 @@ actions:
           transition: 3
         target:
           device_id: e30a6cb4926e177593271f2c834bb909
+alias: Спальня - управление ночью
