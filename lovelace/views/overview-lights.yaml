@@ -25,7 +25,7 @@ cards:
           card_mod:
             style: !include snippets/style-markdown-titles.yaml
           content: >
-            ### Daylight
+            ### Дневной свет
         padding: 0
         cards:
           - type: "custom:auto-entities"
@@ -47,24 +47,24 @@ cards:
               type: vertical-stack
             card_param: cards
 
-      - type: "custom:decluttering-card"
-        template: multi_graph_card
-        variables:
-          - entities:
-              - entity: sensor.driveway_motion_sensor_illuminance_lux
-                name: Driveway
-              - entity: input_number.driveway_is_dark_lux
-                name: Darkness threshold
-                color: "#039be5"
-                show_fill: false
-              - entity: input_number.driveway_is_dusk_lux
-                name: Dusk threshold
-                color: "#FF4400"
-                show_fill: false
-          - title: Light Level
-          - line_width: 1
+      # - type: "custom:decluttering-card"
+      #   template: multi_graph_card
+      #   variables:
+      #     - entities:
+      #         - entity: sensor.driveway_motion_sensor_illuminance_lux
+      #           name: Driveway
+      #         - entity: input_number.driveway_is_dark_lux
+      #           name: Darkness threshold
+      #           color: "#039be5"
+      #           show_fill: false
+      #         - entity: input_number.driveway_is_dusk_lux
+      #           name: Dusk threshold
+      #           color: "#FF4400"
+      #           show_fill: false
+      #     - title: Light Level
+      #     - line_width: 1
 
-  # Living room
+  # Гостиная
   - type: vertical-stack
     cards:
       - type: custom:expander-card
@@ -74,7 +74,7 @@ cards:
           card_mod:
             style: !include snippets/style-markdown-titles.yaml
           content: >
-            ### Living room
+            ### Гостиная
         padding: 0
         cards:
           - type: "custom:auto-entities"

@@ -62,7 +62,6 @@ cards:
       - type: custom:webrtc-camera
         url: street_hq
         mode:
-          - webrtc
           - mse
         name: Улица за окнами
         media: video,audio

@@ -1,0 +1,25 @@
+description: ""
+mode: single
+triggers:
+  - trigger: state
+    entity_id:
+      - sensor.system_time_of_day_detailed
+    to: late_evening
+conditions: []
+actions:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      transition: 3
+      brightness_pct: 50
+      kelvin: 2000
+    target:
+      device_id:
+        - 96e1548acb880416f78bfe965e06461c
+        - fc3c718cfb9df856ba26b49245cc78d2
+        - e3e465b623b047f4edffe20d60a26fef
+        - 205a7788a678a556147af84e2591a6e3
+        - 3ec7b3189761996a43d87541d9f6639a
+        - 023b84f96fc1547fb4e2b6b5308a0db6
+        - 774e3c5cb748176992f7bc5a59199d95
+        - e30a6cb4926e177593271f2c834bb909

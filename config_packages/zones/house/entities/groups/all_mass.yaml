@@ -1,0 +1,6 @@
+---
+all_sound:
+  entities:
+    - media_player.tau_mass
+    - media_player.window_mass
+    - media_player.televizor_mass
