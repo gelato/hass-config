@@ -37,6 +37,7 @@ cards:
         go2rtc:
           modes:
             - webrtc
+            - mse
           stream: street_hq
     live:
       preload: true
