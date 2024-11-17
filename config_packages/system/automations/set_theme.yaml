@@ -14,7 +14,7 @@ action:
     data:
       name: |
         {%- if is_state("binary_sensor.motion_sensor_f68e_light", "off") -%}
-          minimalist-dark
+          Metro Purple
         {%- else -%}
-          minimalist-light
+          Metro Red
         {%- endif -%}
