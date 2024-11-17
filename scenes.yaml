@@ -1,1 +1,384 @@
-[]
+- id: '1731795230174'
+  name: Новая сцена
+  entities:
+    light.yeelink_bslamp2_9967_light:
+      min_color_temp_kelvin: 1700
+      max_color_temp_kelvin: 6493
+      min_mireds: 154
+      max_mireds: 588
+      effect_list:
+      - Color
+      - Day
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect: Day
+      color_mode: color_temp
+      brightness: 127
+      color_temp_kelvin: 1700
+      color_temp: 588
+      hs_color:
+      - 28.401
+      - 100
+      rgb_color:
+      - 255
+      - 120
+      - 0
+      xy_color:
+      - 0.621
+      - 0.367
+      model: yeelink.light.bslamp2
+      lan_ip: 192.168.108.102
+      mac_address: 8C:D0:B2:00:99:67
+      entity_class: MiotLightEntity
+      home_room: Алушта Спальня
+      miot_type: urn:miot-spec-v2:device:light:0000A001:yeelink-bslamp2:2
+      light.on: true
+      light.brightness: 50
+      light.color_temperature: 1701
+      light.color: 8206591
+      light.mode: 2
+      light.saturability: 78
+      state_updater: lan
+      icon: mdi:floor-lamp-outline
+      friendly_name: Свет ночника Фила
+      supported_features: 36
+      state: 'on'
+    light.bedroom_mi_bedside_lamp_2:
+      min_color_temp_kelvin: 1700
+      max_color_temp_kelvin: 6493
+      min_mireds: 154
+      max_mireds: 588
+      effect_list:
+      - Color
+      - Day
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect: Day
+      color_mode: color_temp
+      brightness: 127
+      color_temp_kelvin: 1700
+      color_temp: 588
+      hs_color:
+      - 28.401
+      - 100
+      rgb_color:
+      - 255
+      - 120
+      - 0
+      xy_color:
+      - 0.621
+      - 0.367
+      model: yeelink.light.bslamp2
+      lan_ip: 192.168.108.202
+      mac_address: 7C:49:EB:60:20:23
+      entity_class: MiotLightEntity
+      home_room: Алушта Спальня
+      miot_type: urn:miot-spec-v2:device:light:0000A001:yeelink-bslamp2:2
+      light.on: true
+      light.brightness: 50
+      light.color_temperature: 1701
+      light.color: 16752370
+      light.mode: 2
+      light.saturability: 38
+      state_updater: lan
+      icon: mdi:floor-lamp-outline
+      friendly_name: Свет ночника Нес
+      supported_features: 36
+      state: 'on'
+  metadata: {}
+- id: '1731852964845'
+  name: Evening scene
+  entities:
+    light.yeelight_ceila_0x17a21ba5:
+      min_color_temp_kelvin: 2702
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      supported_color_modes:
+      - color_temp
+      effect:
+      color_mode: color_temp
+      brightness: 128
+      color_temp_kelvin: 2702
+      color_temp: 370
+      hs_color:
+      - 28.391
+      - 65.659
+      rgb_color:
+      - 255
+      - 166
+      - 87
+      xy_color:
+      - 0.526
+      - 0.387
+      flowing: false
+      music_mode: false
+      night_light: false
+      friendly_name: Свет в спальне
+      supported_features: 44
+      state: 'on'
+    light.unknown_nightlight:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      flowing: false
+      music_mode: false
+      night_light: false
+      friendly_name: Свет в спальне - ночник
+      supported_features: 0
+      state: 'off'
+    light.dining_room_light:
+      min_color_temp_kelvin: 2702
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Slow Temp
+      - Stop
+      supported_color_modes:
+      - color_temp
+      effect:
+      color_mode: color_temp
+      brightness: 128
+      color_temp_kelvin: 2702
+      color_temp: 370
+      hs_color:
+      - 28.391
+      - 65.659
+      rgb_color:
+      - 255
+      - 166
+      - 87
+      xy_color:
+      - 0.526
+      - 0.387
+      flowing: 0
+      music_mode: false
+      night_light: false
+      friendly_name: Свет в столовой
+      supported_features: 44
+      state: 'on'
+    light.dining_room_light_nightlight:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      flowing: 0
+      music_mode: false
+      night_light: false
+      friendly_name: Свет в столовой - ночник
+      supported_features: 0
+      state: 'off'
+    light.colorful_ceiling_light_36w_osveshchenie:
+      min_color_temp_kelvin: 2702
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 370
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 127
+      color_temp_kelvin: 2702
+      color_temp: 370
+      hs_color:
+      - 28.391
+      - 65.659
+      rgb_color:
+      - 255
+      - 166
+      - 87
+      xy_color:
+      - 0.526
+      - 0.387
+      friendly_name: Главный свет в гостиной
+      supported_features: 32
+      state: 'on'
+    light.colorful_ceiling_light_36w_osveshchenie_2:
+      supported_color_modes:
+      - hs
+      color_mode: hs
+      brightness: 0
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Боковой свет в гостиной
+      supported_features: 32
+      state: 'on'
+    light.bedroom_mi_bedside_lamp_2:
+      min_color_temp_kelvin: 1700
+      max_color_temp_kelvin: 6493
+      min_mireds: 154
+      max_mireds: 588
+      effect_list:
+      - Color
+      - Day
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect: Day
+      color_mode: color_temp
+      brightness: 127
+      color_temp_kelvin: 1700
+      color_temp: 588
+      hs_color:
+      - 28.401
+      - 100
+      rgb_color:
+      - 255
+      - 120
+      - 0
+      xy_color:
+      - 0.621
+      - 0.367
+      model: yeelink.light.bslamp2
+      lan_ip: 192.168.108.202
+      mac_address: 7C:49:EB:60:20:23
+      entity_class: MiotLightEntity
+      home_room: Алушта Спальня
+      miot_type: urn:miot-spec-v2:device:light:0000A001:yeelink-bslamp2:2
+      light.on: true
+      light.brightness: 50
+      light.color_temperature: 1701
+      light.color: 16777215
+      light.mode: 2
+      light.saturability: 0
+      state_updater: lan
+      icon: mdi:floor-lamp-outline
+      friendly_name: Свет ночника Нес
+      supported_features: 36
+      state: 'on'
+    light.yeelink_bslamp2_9967_light:
+      min_color_temp_kelvin: 1700
+      max_color_temp_kelvin: 6493
+      min_mireds: 154
+      max_mireds: 588
+      effect_list:
+      - Color
+      - Day
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect: Day
+      color_mode: color_temp
+      brightness: 127
+      color_temp_kelvin: 1700
+      color_temp: 588
+      hs_color:
+      - 28.401
+      - 100
+      rgb_color:
+      - 255
+      - 120
+      - 0
+      xy_color:
+      - 0.621
+      - 0.367
+      model: yeelink.light.bslamp2
+      lan_ip: 192.168.108.102
+      mac_address: 8C:D0:B2:00:99:67
+      entity_class: MiotLightEntity
+      home_room: Алушта Спальня
+      miot_type: urn:miot-spec-v2:device:light:0000A001:yeelink-bslamp2:2
+      light.on: true
+      light.brightness: 50
+      light.color_temperature: 1701
+      light.color: 16777215
+      light.mode: 2
+      light.saturability: 0
+      state_updater: lan
+      icon: mdi:floor-lamp-outline
+      friendly_name: Свет ночника Фила
+      supported_features: 36
+      state: 'on'
+    light.2_1_osveshchenie_3:
+      min_color_temp_kelvin: 2702
+      max_color_temp_kelvin: 6024
+      min_mireds: 166
+      max_mireds: 370
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 128
+      color_temp_kelvin: 2702
+      color_temp: 370
+      hs_color:
+      - 28.391
+      - 65.659
+      rgb_color:
+      - 255
+      - 166
+      - 87
+      xy_color:
+      - 0.526
+      - 0.387
+      friendly_name: Кухня - Потолочный светильник Т2 - 1
+      supported_features: 32
+      state: 'on'
+    light.2_2_osveshchenie:
+      min_color_temp_kelvin: 2702
+      max_color_temp_kelvin: 6024
+      min_mireds: 166
+      max_mireds: 370
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 128
+      color_temp_kelvin: 2702
+      color_temp: 370
+      hs_color:
+      - 28.391
+      - 65.659
+      rgb_color:
+      - 255
+      - 166
+      - 87
+      xy_color:
+      - 0.526
+      - 0.387
+      friendly_name: Кухня - Потолочный светильник Т2 - 2
+      supported_features: 32
+      state: 'on'
+    light.2_3_osveshchenie_2:
+      min_color_temp_kelvin: 2702
+      max_color_temp_kelvin: 6024
+      min_mireds: 166
+      max_mireds: 370
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 128
+      color_temp_kelvin: 2702
+      color_temp: 370
+      hs_color:
+      - 28.391
+      - 65.659
+      rgb_color:
+      - 255
+      - 166
+      - 87
+      xy_color:
+      - 0.526
+      - 0.387
+      friendly_name: Кухня - Потолочный светильник Т2 - 3
+      supported_features: 32
+      state: 'on'
+  metadata:
+    light.2_1_osveshchenie_3:
+      entity_only: true
+    light.2_2_osveshchenie:
+      entity_only: true
+    light.2_3_osveshchenie_2:
+      entity_only: true
