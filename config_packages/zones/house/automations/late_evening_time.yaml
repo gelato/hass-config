@@ -1,10 +1,12 @@
+id: 'late_evening'
+alias: Дом - Поздний вечер
 description: ""
 mode: single
-triggers:
-  - trigger: state
-    entity_id:
-      - sensor.system_time_of_day_detailed
-    to: late_evening
+trigger:
+- platform: state
+  entity_id:
+  - sensor.system_time_of_day_detailed
+  to: "late_evening"
 conditions: []
 actions:
   - action: light.turn_on

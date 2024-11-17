@@ -16,7 +16,7 @@ sensor:
   - name: "Система - время суток (подробно)"
     unique_id: system_time_of_day_detailed
     state: >
-      {%- if now().hour >= 0 and now().hour < 6 -%}
+      {%- if now().hour >= 23 and now().hour < 6 -%}
         night
       {%- elif now().hour >= 6 and now().hour < 10 -%}
         early_morning
@@ -28,6 +28,6 @@ sensor:
         late_afternoon
       {%- elif now().hour >= 18 and now().hour < 20 -%}
         early_evening
-      {%- elif now().hour >= 20 and now().hour <= 24 -%}
+      {%- elif now().hour >= 20 and now().hour <= 23 -%}
         late_evening
       {%- endif -%}

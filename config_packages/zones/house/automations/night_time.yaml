@@ -1,12 +1,11 @@
-id: '1724801709852'
-alias: Система - Ночное время
+id: 'night_time'
+alias: Дом - Ночное время
 description: ''
 trigger:
 - platform: state
   entity_id:
-  - binary_sensor.noch
-  from: 'off'
-  to: 'on'
+  - sensor.system_time_of_day_detailed
+  to: "night"
 condition: []
 action:
 - action: fan.set_preset_mode
