@@ -62,15 +62,15 @@ minimalist-light:
   app-header-text-color: "var(--primary-text-color)"
   app-header-background-color: "var(--primary-background-color)"
   # paper-tabs-selection-bar-color: "var(--primary-text-color)"
-  # slider
+  # Sidebar
+  sidebar-selected-text-color: "var(--google-red)"
+  sidebar-selected-icon-color: "var(--google-red)"
+  # Slider
   slider-color: "rgb(var(--color-blue))"
   slider-bar-color: "rgba(var(--color-blue),0.38)"
   # cards
   box-shadow: "0px 2px 4px 0px rgba(0,0,0,0.16)"
   ha-card-box-shadow: "var(--box-shadow)"
-  # sidebar
-  sidebar-selected-text-color: "var(--google-red)"
-  sidebar-selected-icon-color: "var(--google-red)"
   sidebar-text-color: "#80868b"
   # switch
   switch-checked-color: "var(--google-blue)"
