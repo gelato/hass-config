@@ -514,7 +514,7 @@ ________________________________________Common Base 3 (Do Not Use): &common-card
         .mdc-dialog__surface {
           backdrop-filter: blur(16px);
           -webkit-backdrop-filter: blur(16px);
-          background-color: rgba(var(--rgb-mdc-theme-surface), 1) !important;
+          background-color: rgba(var(--rgb-mdc-theme-surface), 0.8) !important;
         }
       }
       .mdc-dialog .mdc-dialog__container .mdc-dialog__surface,
