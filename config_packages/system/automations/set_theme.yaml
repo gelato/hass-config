@@ -18,3 +18,9 @@ action:
         {%- else -%}
           Metro Red
         {%- endif -%}
+      mode: |
+        {%- if is_state("binary_sensor.motion_sensor_f68e_light", "off") -%}
+          dark
+        {%- else -%}
+          light
+        {%- endif -%}
