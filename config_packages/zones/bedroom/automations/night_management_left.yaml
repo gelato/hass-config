@@ -1,0 +1,43 @@
+alias: Спальня - управление ночью слева
+description: ""
+mode: single
+triggers:
+  - type: occupied
+    device_id: 620530f17357dbdd4f0542c70a5b02b1
+    entity_id: d8095bbc750323390fbaee18de59984c
+    domain: binary_sensor
+    trigger: device
+conditions:
+  - condition: time
+    after: "01:00:00"
+    before: "05:00:00"
+actions:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      rgb_color:
+        - 77
+        - 34
+        - 179
+      brightness_pct: 5
+      transition: 3
+    target:
+      device_id: 774e3c5cb748176992f7bc5a59199d95
+  - delay:
+      hours: 0
+      minutes: 15
+      seconds: 0
+      milliseconds: 0
+  - if:
+      - type: is_occupied
+        condition: device
+        device_id: 620530f17357dbdd4f0542c70a5b02b1
+        entity_id: d8095bbc750323390fbaee18de59984c
+        domain: binary_sensor
+    then:
+      - action: light.turn_off
+        metadata: {}
+        data:
+          transition: 3
+        target:
+          device_id: 774e3c5cb748176992f7bc5a59199d95
