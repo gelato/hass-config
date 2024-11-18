@@ -12,10 +12,9 @@ trigger:
 action:
   - service: frontend.set_theme
     data:
-      name: "Metro Purple"
-      mode: |
+      name: |
         {%- if is_state("binary_sensor.motion_sensor_f68e_light", "off") -%}
-          light
+          minimalist-dark
         {%- else -%}
-          dark
+          minimalist-light
         {%- endif -%}
