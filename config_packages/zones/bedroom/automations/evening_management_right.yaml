@@ -20,7 +20,7 @@ actions:
         - 124
         - 42
         - 0
-      brightness_pct: 100
+      brightness_pct: 50
       transition: 3
     target:
       device_id: e30a6cb4926e177593271f2c834bb909
