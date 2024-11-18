@@ -1,5 +1,5 @@
 alias: Спальня - управление ночником справа вечером
-id: bedroom_evening_nightstand_management_left
+id: bedroom_evening_nightstand_management_right
 description: ""
 mode: single
 triggers:
