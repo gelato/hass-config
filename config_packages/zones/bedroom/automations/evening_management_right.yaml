@@ -1,6 +1,5 @@
----
-alias: Спальня - управление ночником справа ночью
-id: bedroom_night_nightstand_management_right
+alias: Спальня - управление ночником справа вечером
+id: bedroom_evening_nightstand_management_left
 description: ""
 mode: single
 triggers:
@@ -8,27 +7,20 @@ triggers:
     device_id: 1527a85b199ec815c7238d0b124b6469
     entity_id: d8f06cf75a1594704710dc21a4f101d9
     domain: binary_sensor
-    metadata:
-      secondary: false
     trigger: device
 conditions:
   - condition: time
-    after: "01:00:00"
-    before: "05:00:00"
+    after: "20:00:00"
+    before: "01:00:00"
 actions:
-  - device_id: 663a3c3484f3d8da1a0062e02d20dc98
-    domain: humidifier
-    entity_id: 07af525659e4d4dd5ea684e196afe896
-    type: set_mode
-    mode: Strong
   - action: light.turn_on
     metadata: {}
     data:
       rgb_color:
-        - 77
-        - 34
-        - 179
-      brightness_pct: 5
+        - 124
+        - 42
+        - 0
+      brightness_pct: 100
       transition: 3
     target:
       device_id: e30a6cb4926e177593271f2c834bb909
@@ -38,17 +30,12 @@ actions:
       seconds: 0
       milliseconds: 0
   - if:
-      - type: is_not_occupied
+      - type: is_occupied
         condition: device
         device_id: 1527a85b199ec815c7238d0b124b6469
         entity_id: d8f06cf75a1594704710dc21a4f101d9
         domain: binary_sensor
     then:
-      - device_id: 663a3c3484f3d8da1a0062e02d20dc98
-        domain: humidifier
-        entity_id: 07af525659e4d4dd5ea684e196afe896
-        type: set_mode
-        mode: Constant Humidity
       - action: light.turn_off
         metadata: {}
         data:
