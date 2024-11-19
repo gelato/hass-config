@@ -30,7 +30,7 @@ actions:
       seconds: 0
       milliseconds: 0
   - if:
-      - type: is_occupied
+      - type: is_not_occupied
         condition: device
         device_id: 1527a85b199ec815c7238d0b124b6469
         entity_id: d8f06cf75a1594704710dc21a4f101d9
