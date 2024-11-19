@@ -9,12 +9,16 @@ trigger:
     to: "late_evening"
 conditions: []
 actions:
+  - type: turn_on
+    device_id: 0a5bd757648d4752cbe403817b630586
+    entity_id: fee8218f970f4a507d14c4ce28cf0fe9
+    domain: light
   - action: light.turn_on
     metadata: {}
     data:
       transition: 3
       brightness_pct: 30
-      kelvin: 4520
+      kelvin: 4500
     target:
       device_id:
         - 96e1548acb880416f78bfe965e06461c

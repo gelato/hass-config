@@ -1,0 +1,20 @@
+id: 'early_afternoon'
+alias: Дом - Ранний обед
+description: ""
+mode: single
+triggers:
+  - entity_id:
+      - sensor.system_time_of_day_detailed
+    to: early_afternoon
+    trigger: state
+conditions: []
+actions:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      transition: 3
+      brightness_pct: 100
+      kelvin: 4500
+    target:
+      device_id:
+        - 96e1548acb880416f78bfe965e06461c
