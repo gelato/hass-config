@@ -22,4 +22,23 @@ action:
   entity_id: b7959698f19f33fb80b13d707eda1af6
   domain: light
   brightness_pct: 10
+- type: turn_off
+    device_id: 96e1548acb880416f78bfe965e06461c
+    entity_id: 0549956679315d6bad7aeaeddec2c435
+    domain: light
+- device_id: 663a3c3484f3d8da1a0062e02d20dc98
+    domain: humidifier
+    entity_id: 07af525659e4d4dd5ea684e196afe896
+    type: set_mode
+    mode: Strong
+- delay:
+    hours: 0
+    minutes: 15
+    seconds: 0
+    milliseconds: 0
+- device_id: 663a3c3484f3d8da1a0062e02d20dc98
+  domain: humidifier
+  entity_id: 07af525659e4d4dd5ea684e196afe896
+  type: set_mode
+  mode: Sleep
 mode: single
