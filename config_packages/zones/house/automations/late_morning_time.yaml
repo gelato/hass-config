@@ -31,3 +31,9 @@ actions:
     target:
       device_id:
         - 96e1548acb880416f78bfe965e06461c
+  - action: light.turn_on
+    metadata: {}
+    data:
+      effect: "Sahara Night"
+    target:
+      device_id: f2653fddc378327eff1438e10e5b985d

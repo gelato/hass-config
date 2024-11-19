@@ -1,0 +1,17 @@
+id: 'late_afternoon'
+alias: Дом - Поздний обед
+description: ""
+mode: single
+triggers:
+  - entity_id:
+      - sensor.system_time_of_day_detailed
+    to: late_afternoon
+    trigger: state
+conditions: []
+actions:
+  - action: light.turn_on
+    metadata: {}
+    data:
+      effect: "Sunbeam"
+    target:
+      device_id: f2653fddc378327eff1438e10e5b985d

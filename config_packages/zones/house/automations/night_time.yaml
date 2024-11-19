@@ -41,4 +41,10 @@ action:
   entity_id: 07af525659e4d4dd5ea684e196afe896
   type: set_mode
   mode: Sleep
+- action: light.turn_on
+  metadata: {}
+  data:
+    effect: "Fireflies"
+  target:
+    device_id: f2653fddc378327eff1438e10e5b985d
 mode: single
