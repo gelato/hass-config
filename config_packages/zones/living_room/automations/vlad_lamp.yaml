@@ -1,0 +1,64 @@
+id: vlad_lamp_control
+alias: Гостиная - управления лампой за столом Влада
+description: ""
+mode: single
+triggers:
+  - type: occupied
+    device_id: 5ff7b77f479ad4877f8fcf77bbd42f22
+    entity_id: 987dae678428d2fa59c2687bbd1b5af8
+    domain: binary_sensor
+    trigger: device
+conditions: []
+actions:
+  - if:
+      - condition: state
+        entity_id: sensor.system_time_of_day
+        state: утро
+    then:
+      - action: light.turn_on
+        metadata: {}
+        data:
+          kelvin: 6500
+          brightness_pct: 100
+          transition: 3
+        target:
+          device_id: 9bed8b04772fe662c02ad124efdf8218
+  - if:
+      - condition: state
+        entity_id: sensor.system_time_of_day
+        state: день
+    then:
+      - action: light.turn_on
+        metadata: {}
+        data:
+          kelvin: 4509
+          brightness_pct: 100
+          transition: 3
+        target:
+          device_id: 9bed8b04772fe662c02ad124efdf8218
+  - if:
+      - condition: state
+        entity_id: sensor.system_time_of_day
+        state: вечер
+    then:
+      - action: light.turn_on
+        metadata: {}
+        data:
+          kelvin: 3199
+          brightness_pct: 100
+          transition: 3
+        target:
+          device_id: 9bed8b04772fe662c02ad124efdf8218
+  - if:
+      - condition: state
+        entity_id: sensor.system_time_of_day
+        state: ночь
+    then:
+      - action: light.turn_on
+        metadata: {}
+        data:
+          kelvin: 2000
+          brightness_pct: 100
+          transition: 3
+        target:
+          device_id: 9bed8b04772fe662c02ad124efdf8218
