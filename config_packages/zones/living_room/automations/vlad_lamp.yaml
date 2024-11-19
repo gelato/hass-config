@@ -62,3 +62,21 @@ actions:
           transition: 3
         target:
           device_id: 9bed8b04772fe662c02ad124efdf8218
+  - delay:
+      hours: 0
+      minutes: 15
+      seconds: 0
+      milliseconds: 0
+  - if:
+      - type: is_not_occupied
+        condition: device
+        device_id: 5ff7b77f479ad4877f8fcf77bbd42f22
+        entity_id: 987dae678428d2fa59c2687bbd1b5af8
+        domain: binary_sensor
+    then:
+      - action: light.turn_off
+        metadata: {}
+        data:
+          transition: 3
+        target:
+          device_id: 9bed8b04772fe662c02ad124efdf8218
