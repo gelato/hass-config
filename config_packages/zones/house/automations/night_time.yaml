@@ -22,12 +22,4 @@ action:
   entity_id: b7959698f19f33fb80b13d707eda1af6
   domain: light
   brightness_pct: 10
-- action: light.turn_on
-  metadata: {}
-  data:
-    kelvin: 2000
-    brightness_pct: 1
-    transition: 2
-  target:
-    device_id: 774e3c5cb748176992f7bc5a59199d95
 mode: single
