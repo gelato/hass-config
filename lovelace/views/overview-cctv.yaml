@@ -8,7 +8,6 @@ cards:
     cameras:
       - camera_entity: camera.gates
         live_provider: go2rtc
-        webrtc_card: {}
         go2rtc:
           stream: gates_hq
           modes:
@@ -39,7 +38,6 @@ cards:
           stream: steet_hq
     live:
       preload: true
-      lazy_unload: []
       auto_play:
         - visible
         - selected
@@ -47,3 +45,12 @@ cards:
       display:
         mode: single
         grid_columns: 3
+    view:
+      triggers:
+        show_trigger_status: true
+        filter_selected_camera: false
+        untrigger_seconds: 3
+        actions:
+          trigger: live
+          untrigger: default
+          interaction_mode: active
