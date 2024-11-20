@@ -1,4 +1,4 @@
-metro-dark:
+metro-light:
   # Card Mod
   card-mod-row-yaml: |
     .: |
@@ -272,12 +272,12 @@ metro-dark:
   accent-color: "#A94DFF"
   rgb-accent-color: "169, 77, 255"
 
-  primary-background-color: "rgb(0,0,0)"
-  rgb-primary-background-color: "0,0,0"
-  secondary-background-color: "rgb(24,24,24)"
-  rgb-secondary-background-color: "24,24,24"
-  card-background-color: "rgb(19,19,19)"
-  rgb-card-background-color: "19,19,19"
+  primary-background-color: "rgb(255,255,255)"
+  rgb-primary-background-color: "255,255,255"
+  secondary-background-color: "rgb(232,232,232)"
+  rgb-secondary-background-color: "232,232,232"
+  card-background-color: "rgba(247,247,247)"
+  rgb-card-background-color: "247,247,247"
 
   ha-card-border-radius: 0
   ha-config-card-border-radius: 0
@@ -289,9 +289,9 @@ metro-dark:
   mdc-button-raised-box-shadow: none
   mdc-button-raised-box-shadow-hover: none
 
-  mdc-theme-surface: "rgb(24,24,24)"
-  rgb-mdc-theme-surface: "24,24,24"
-  
+  mdc-theme-surface: var(--primary-background-color)
+  rgb-mdc-theme-surface: var(--rgb-primary-background-color)
+
   # Text Colors
   text-primary-color: var(--primary-text-color)
   accent-text-color: "rgb(255,255,255)"
@@ -613,26 +613,27 @@ metro-dark:
   rgb-state-update-color: var(--rgb-success-color)
   rgb-state-update-installing-color: var(--rgb-warning-color)
   rgb-state-vacuum-color: var(--rgb-primary-color)
+  
   # Background Colors
-  mdc-ripple-color: "#AAAAAA"
-  rgb-mdc-ripple-color: "170,170,170"
+  mdc-ripple-color: "#222222"
+  rgb-mdc-ripple-color: "32,32,32"
 
   # Text Colors
-  primary-text-color: "rgb(255,255,255)"
-  rgb-primary-text-color: "255,255,255"
-  secondary-text-color: "rgba(255,255,255,.75)"
-  rgb-secondary-text-color: "192,192,192"
-  disabled-text-color: "rgba(255,255,255,.55)"
-  rgb-disabled-text-color: "140,140,140"
+  primary-text-color: "rgba(0,0,0,.95)"
+  rgb-primary-text-color: "0,0,0"
+  secondary-text-color: "rgba(0,0,0,.66)"
+  rgb-secondary-text-color: "84,84,84"
+  disabled-text-color: "rgba(0,0,0,.6)"
+  rgb-disabled-text-color: "152,152,152"
 
   # Other Mode Specific Variables
-  mdc-dialog-scrim-color: "rgba(0, 0, 0, 0.5)"
+  mdc-dialog-scrim-color: rgba(var(--rgb-primary-background-color),.667)
   dialog-backdrop-filter: none
-  dialog-box-shadow: var(--rgb-accent-color)
-  slider-thumb-color: "#121212"
+  dialog-box-shadow: var(--rgb-primary-text-color)
+  slider-thumb-color: "#E8E8E8"
 
-  sidebar-icon-color: var(--secondary-text-color)
-  sidebar-background-color: var(--secondary-background-color)
+  sidebar-icon-color: rgba(0,0,0,.5)
+  sidebar-background-color: var(--primary-background-color)
 
   # Custom
-  dark-mode-filter: "invert(1) hue-rotate(.5turn)"
+  dark-mode-filter: "invert(0)"
