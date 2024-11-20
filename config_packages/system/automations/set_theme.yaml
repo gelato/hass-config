@@ -1,6 +1,6 @@
 ---
 id: system_set_theme
-alias: Система - Установка темы
+alias: System - Set theme
 max_exceeded: silent
 trigger:
   - platform: homeassistant
@@ -8,13 +8,12 @@ trigger:
   - platform: event
     event_type: automation_reload
   - platform: state
-    entity_id: binary_sensor.motion_sensor_f68e_light
+    entity_id: binary_sensor.driveway_is_dark
 action:
   - service: frontend.set_theme
     data:
-      name: "Metro Purple"
-      mode: |
-        {%- if is_state("binary_sensor.motion_sensor_f68e_light", "off") -%}
+      name: |
+        {%- if is_state("binary_sensor.driveway_is_dark", "on") -%}
           minimalist-dark
         {%- else -%}
           minimalist-light
