@@ -8,12 +8,11 @@ cards:
     cameras:
       - camera_entity: camera.gates
         live_provider: go2rtc
+        webrtc_card: {}
         go2rtc:
           stream: gates_hq
           modes:
             - webrtc
-        capabilities:
-          disable: []
       - camera_entity: camera.dvor_gates
         live_provider: go2rtc
         go2rtc:
@@ -36,15 +35,15 @@ cards:
         live_provider: go2rtc
         go2rtc:
           modes:
-            - webrtc
             - mse
-          stream: street_hq
+          stream: steet_hq
     live:
       preload: true
+      lazy_unload: []
       auto_play:
         - visible
         - selected
       transition_effect: slide
       display:
-        mode: grid
-        grid_columns: 2
+        mode: single
+        grid_columns: 3
