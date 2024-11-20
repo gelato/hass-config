@@ -47,4 +47,4 @@ cards:
       transition_effect: slide
       display:
         mode: grid
-        grid_columns: 3
+        # grid_columns: 3
