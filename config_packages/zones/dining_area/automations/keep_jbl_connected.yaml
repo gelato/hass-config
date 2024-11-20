@@ -1,0 +1,16 @@
+alias: Столовая - держим колонки подключенными
+id: keep_jbl_connected
+description: ""
+mode: single
+triggers:
+  - trigger: time_pattern
+    minutes: "14"
+conditions: []
+actions:
+  - action: media_player.play_media
+    metadata: {}
+    data:
+      media_content_id: http://192.168.178.76:8123/local/audio/beep-ok.mp3
+      media_content_type: music
+    target:
+      device_id: 6792d32339a7bd925900d5f61820bd77
