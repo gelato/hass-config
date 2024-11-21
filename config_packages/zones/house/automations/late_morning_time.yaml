@@ -17,8 +17,8 @@ actions:
     metadata: {}
     data:
       transition: 3
-      brightness_pct: 100
-      kelvin: 6500
+      brightness_pct: 50
+      kelvin: 4500
     target:
       device_id:
         - fc3c718cfb9df856ba26b49245cc78d2

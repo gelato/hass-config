@@ -14,10 +14,11 @@ actions:
     data:
       transition: 3
       brightness_pct: 100
-      kelvin: 4500
+      kelvin: 6500
     target:
       device_id:
         - 96e1548acb880416f78bfe965e06461c
+        - fc3c718cfb9df856ba26b49245cc78d2
   - action: light.turn_on
     metadata: {}
     data:
