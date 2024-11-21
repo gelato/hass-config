@@ -34,6 +34,7 @@ cards:
         live_provider: go2rtc
         go2rtc:
           modes:
+            - webrtc
             - mse
           stream: steet_hq
     live:
