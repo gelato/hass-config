@@ -13,4 +13,4 @@ actions:
       media_content_id: http://localhost:8123/local/audio/beep-ok.mp3
       media_content_type: music
     target:
-      device_id: 6792d32339a7bd925900d5f61820bd77
+      device_id: media_player.squeezeplay_window_mass
