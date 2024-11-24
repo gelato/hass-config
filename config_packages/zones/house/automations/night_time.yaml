@@ -5,7 +5,7 @@ trigger:
 - platform: state
   entity_id:
   - sensor.system_time_of_day_detailed
-  to: "night"
+  to: night
 condition: []
 action:
 - action: fan.set_preset_mode
