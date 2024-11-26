@@ -1,4 +1,4 @@
-alias: Столовая - управление светом
+alias: Столовая - управление светом 2 нажатия
 id: dining_button_light_control
 description: ""
 trigger:
@@ -6,22 +6,10 @@ trigger:
     entity_id:
       - event.aqara_wireless_mini_switch_t1_knopka
     attribute: event_type
-    to: multi_press_complete
+    to: multi_press_2
 condition: []
 action:
   - choose:
-      - conditions:
-          - condition: numeric_state
-            entity_id: event.aqara_wireless_mini_switch_t1_knopka
-            attribute: totalNumberOfPressesCounted
-            above: 0
-            below: 2
-        sequence:
-          - type: turn_on
-            device_id: fc3c718cfb9df856ba26b49245cc78d2
-            entity_id: b7959698f19f33fb80b13d707eda1af6
-            domain: light
-            brightness_pct: 10
       - conditions:
           - condition: numeric_state
             entity_id: event.aqara_wireless_mini_switch_t1_knopka
