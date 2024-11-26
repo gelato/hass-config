@@ -1,52 +1,52 @@
-id: 'night_time'
+id: "night_time"
 alias: Дом - Ночное время
-description: ''
-trigger:
-- platform: state
-  entity_id:
-  - sensor.system_time_of_day_detailed
-  to: night
+description: ""
+triggers:
+  - entity_id:
+      - sensor.system_time_of_day_detailed
+    to: night
+    trigger: state
 condition: []
 action:
-- action: fan.set_preset_mode
-  target:
-    entity_id: fan.dmaker_p45_cfbf_fan
-  data:
-    preset_mode: Sleep
-- type: turn_on
-  device_id: 0a5bd757648d4752cbe403817b630586
-  entity_id: fee8218f970f4a507d14c4ce28cf0fe9
-  domain: light
-- type: turn_on
-  device_id: fc3c718cfb9df856ba26b49245cc78d2
-  entity_id: b7959698f19f33fb80b13d707eda1af6
-  domain: light
-  brightness_pct: 10
-- action: light.turn_off
-  metadata: {}
-  data:
-    transition: 3
-  target:
-    device_id: 96e1548acb880416f78bfe965e06461c
-- device_id: 663a3c3484f3d8da1a0062e02d20dc98
-  domain: humidifier
-  entity_id: 07af525659e4d4dd5ea684e196afe896
-  type: set_mode
-  mode: Strong
-- delay:
-    hours: 0
-    minutes: 15
-    seconds: 0
-    milliseconds: 0
-- device_id: 663a3c3484f3d8da1a0062e02d20dc98
-  domain: humidifier
-  entity_id: 07af525659e4d4dd5ea684e196afe896
-  type: set_mode
-  mode: Sleep
-- action: light.turn_on
-  metadata: {}
-  data:
-    effect: "Fireflies"
-  target:
-    device_id: f2653fddc378327eff1438e10e5b985d
+  - action: fan.set_preset_mode
+    target:
+      entity_id: fan.dmaker_p45_cfbf_fan
+    data:
+      preset_mode: Sleep
+  - type: turn_on
+    device_id: 0a5bd757648d4752cbe403817b630586
+    entity_id: fee8218f970f4a507d14c4ce28cf0fe9
+    domain: light
+  - type: turn_on
+    device_id: fc3c718cfb9df856ba26b49245cc78d2
+    entity_id: b7959698f19f33fb80b13d707eda1af6
+    domain: light
+    brightness_pct: 10
+  - action: light.turn_off
+    metadata: {}
+    data:
+      transition: 3
+    target:
+      device_id: 96e1548acb880416f78bfe965e06461c
+  - device_id: 663a3c3484f3d8da1a0062e02d20dc98
+    domain: humidifier
+    entity_id: 07af525659e4d4dd5ea684e196afe896
+    type: set_mode
+    mode: Strong
+  - delay:
+      hours: 0
+      minutes: 15
+      seconds: 0
+      milliseconds: 0
+  - device_id: 663a3c3484f3d8da1a0062e02d20dc98
+    domain: humidifier
+    entity_id: 07af525659e4d4dd5ea684e196afe896
+    type: set_mode
+    mode: Sleep
+  - action: light.turn_on
+    metadata: {}
+    data:
+      effect: "Fireflies"
+    target:
+      device_id: f2653fddc378327eff1438e10e5b985d
 mode: single
