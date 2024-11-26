@@ -1,5 +1,5 @@
 alias: Столовая - управление светом 1 нажатие
-id: dining_button_light_control
+id: dining_button_light_control_1
 description: ""
 trigger:
   - platform: state
