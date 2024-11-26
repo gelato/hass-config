@@ -1,15 +1,15 @@
 ---
-id: bedroom_child_awake
-alias: Спальня - ребенок проснулся
-description: "Управление при пробуждении ребенка"
+id: bedroom_child_asleep
+alias: Спальня - ребенок засыпает
+description: "Управление при засыпании ребенка"
 mode: single
 
 triggers:
   - trigger: state
     entity_id:
       - input_boolean.rebenok_spit
-    from: "on"
-    to: "off"
+    from: "off"
+    to: "on"
 
 conditions: []
 
