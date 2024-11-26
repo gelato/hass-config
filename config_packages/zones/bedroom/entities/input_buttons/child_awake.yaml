@@ -1,0 +1,4 @@
+---
+child_awake:
+    name: Child awake
+    icon: mdi:bell
