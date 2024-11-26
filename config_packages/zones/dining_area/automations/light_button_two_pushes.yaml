@@ -1,12 +1,12 @@
 id: Dining_button_two_pushes
 description: ''
 mode: single
-trigger:
-- platform: state
-  entity_id:
-  - event.aqara_wireless_mini_switch_t1_knopka
-  attribute: event_type
-  to: multi_press_2
+triggers:
+  - entity_id:
+      - event.aqara_wireless_mini_switch_t1_knopka
+    attribute: totalNumberOfPressesCounted
+    to: "2"
+    trigger: state
 condition: []
 action:
 - type: turn_on
