@@ -12,6 +12,18 @@ triggers:
 conditions: []
 
 actions:
+  - action: media_player.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id: 316993d587599c46f411c73d2ffbf745
+  - action: light.turn_on
+    metadata: {}
+    data:
+      brightness_pct: 100
+      effect: Glimmer
+    target:
+      device_id: f2653fddc378327eff1438e10e5b985d
   - if:
       - condition: device
         type: is_off
@@ -71,16 +83,6 @@ actions:
       device_id:
         - 774e3c5cb748176992f7bc5a59199d95
         - e30a6cb4926e177593271f2c834bb909
-  - type: turn_on
-    device_id: f2653fddc378327eff1438e10e5b985d
-    entity_id: 48d0339708e6462db98b4dea94c88524
-    domain: light
-    brightness_pct: 100
-  - action: media_player.turn_on
-    metadata: {}
-    data: {}
-    target:
-      device_id: 316993d587599c46f411c73d2ffbf745
   - delay:
       hours: 0
       minutes: 15

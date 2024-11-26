@@ -12,6 +12,15 @@ triggers:
 conditions: []
 
 actions:
+  - action: media_player.turn_off
+    metadata: {}
+    data: {}
+    target:
+      device_id: 316993d587599c46f411c73d2ffbf745
+  - type: turn_off
+    device_id: f2653fddc378327eff1438e10e5b985d
+    entity_id: 48d0339708e6462db98b4dea94c88524
+    domain: light
   - action: light.turn_off
     metadata: {}
     data: {}
@@ -49,12 +58,3 @@ actions:
       kelvin: 2500
     target:
       device_id: fc3c718cfb9df856ba26b49245cc78d2
-  - type: turn_off
-    device_id: f2653fddc378327eff1438e10e5b985d
-    entity_id: 48d0339708e6462db98b4dea94c88524
-    domain: light
-  - action: media_player.turn_off
-    metadata: {}
-    data: {}
-    target:
-      device_id: 316993d587599c46f411c73d2ffbf745
