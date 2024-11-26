@@ -14,61 +14,28 @@ triggers:
 conditions: []
 
 actions:
-  - action: yeelight.set_color_temp_scene
+  - action: light.turn_off
     metadata: {}
-    data:
-      kelvin: 4100
-      brightness: 50
+    data: {}
     target:
-      device_id: 96e1548acb880416f78bfe965e06461c
-  - action: yeelight.set_color_temp_scene
+      area_id: spalnia
+  - action: yeelight.set_mode
     metadata: {}
     data:
-      kelvin: 6500
-      brightness: 100
+      mode: moonlight
     target:
       device_id: fc3c718cfb9df856ba26b49245cc78d2
-  - action: light.turn_on
+  - action: yeelight.set_color_temp_scene
     metadata: {}
     data:
-      transition: 3
-      rgb_color:
-        - 255
-        - 251
-        - 0
-      brightness_pct: 100
+      brightness: 10
     target:
-      device_id:
-        - 774e3c5cb748176992f7bc5a59199d95
-        - e30a6cb4926e177593271f2c834bb909
-  - type: turn_on
+      device_id: fc3c718cfb9df856ba26b49245cc78d2
+  - type: turn_off
     device_id: f2653fddc378327eff1438e10e5b985d
     entity_id: 48d0339708e6462db98b4dea94c88524
     domain: light
-    brightness_pct: 100
-  - delay:
-      hours: 0
-      minutes: 15
-      seconds: 0
-      milliseconds: 0
-  - action: light.turn_on
-    metadata: {}
-    data:
-      rgb_color:
-        - 255
-        - 255
-        - 255
-      brightness_pct: 100
-      transition: 3
-    target:
-      area_id: spalnia
-  - type: turn_on
-    device_id: 96e1548acb880416f78bfe965e06461c
-    entity_id: 0549956679315d6bad7aeaeddec2c435
-    domain: light
-    brightness_pct: 100
-    flash: long
-  - action: media_player.turn_on
+  - action: media_player.turn_off
     metadata: {}
     data: {}
     target:
