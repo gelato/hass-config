@@ -45,7 +45,8 @@ actions:
   - action: yeelight.set_color_temp_scene
     metadata: {}
     data:
-      brightness: 10
+      brightness: 15
+      kelvin: 2500
     target:
       device_id: fc3c718cfb9df856ba26b49245cc78d2
   - type: turn_off

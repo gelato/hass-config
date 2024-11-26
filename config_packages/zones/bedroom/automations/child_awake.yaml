@@ -26,7 +26,7 @@ actions:
       - delay:
           hours: 0
           minutes: 0
-          seconds: 10
+          seconds: 15
           milliseconds: 0
   - action: yeelight.set_color_temp_scene
     metadata: {}
@@ -49,7 +49,7 @@ actions:
       - delay:
           hours: 0
           minutes: 0
-          seconds: 10
+          seconds: 15
           milliseconds: 0
   - action: yeelight.set_color_temp_scene
     metadata: {}
@@ -76,6 +76,11 @@ actions:
     entity_id: 48d0339708e6462db98b4dea94c88524
     domain: light
     brightness_pct: 100
+  - action: media_player.turn_on
+    metadata: {}
+    data: {}
+    target:
+      device_id: 316993d587599c46f411c73d2ffbf745
   - delay:
       hours: 0
       minutes: 15
@@ -98,8 +103,3 @@ actions:
     domain: light
     brightness_pct: 100
     flash: long
-  - action: media_player.turn_on
-    metadata: {}
-    data: {}
-    target:
-      device_id: 316993d587599c46f411c73d2ffbf745
