@@ -36,17 +36,17 @@ sensor:
     unique_id: system_time_of_day_strict
     state: >
       {%- if now().hour == 23 -%}
-        "23"
+        23
       {%- elif now().hour == 6 -%}
-        "6"
+        6
       {%- elif now().hour == 10 -%}
-        "10"
+        10
       {%- elif now().hour == 12 -%}
-        "12"
+        12
       {%- elif now().hour == 15 -%}
-        "15"
+        15
       {%- elif now().hour == 18 -%}
-        "18"
+        18
       {%- elif now().hour == 20 -%}
-        "20"
+        20
       {%- endif -%}
