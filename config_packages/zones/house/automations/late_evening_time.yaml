@@ -5,8 +5,8 @@ mode: single
 trigger:
   - platform: state
     entity_id:
-      - sensor.system_time_of_day_detailed
-    to: "late_evening"
+      - sensor.system_time_of_day_strict
+    to: "20"
 conditions: []
 actions:
   - type: turn_on

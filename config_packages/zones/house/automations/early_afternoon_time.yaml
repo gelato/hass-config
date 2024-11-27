@@ -4,8 +4,8 @@ description: ""
 mode: single
 triggers:
   - entity_id:
-      - sensor.system_time_of_day_detailed
-    to: early_afternoon
+      - sensor.system_time_of_day_strict
+    to: "12"
     trigger: state
 conditions: []
 actions:

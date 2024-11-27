@@ -3,25 +3,21 @@ alias: Дом - Ночное время
 description: ""
 triggers:
   - entity_id:
-      - sensor.system_time_of_day_detailed
-    to: night
+      - sensor.system_time_of_day_strict
+    to: "23"
     trigger: state
 condition: []
 action:
-  - action: fan.set_preset_mode
-    target:
-      entity_id: fan.dmaker_p45_cfbf_fan
-    data:
-      preset_mode: Sleep
   - type: turn_on
     device_id: 0a5bd757648d4752cbe403817b630586
     entity_id: fee8218f970f4a507d14c4ce28cf0fe9
     domain: light
-  - type: turn_on
-    device_id: fc3c718cfb9df856ba26b49245cc78d2
-    entity_id: b7959698f19f33fb80b13d707eda1af6
-    domain: light
-    brightness_pct: 10
+  - action: yeelight.set_mode
+    metadata: {}
+    data:
+      mode: moonlight
+    target:
+      device_id: fc3c718cfb9df856ba26b49245cc78d2
   - action: light.turn_off
     metadata: {}
     data:
