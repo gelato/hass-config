@@ -13,21 +13,15 @@ actions:
     device_id: 0a5bd757648d4752cbe403817b630586
     entity_id: fee8218f970f4a507d14c4ce28cf0fe9
     domain: light
-  - action: light.turn_on
+  - type: turn_on
+    device_id: 75739e28167cd8c27f94738c4e62d1b1
+    entity_id: 62e676dd0b82493a035a731d979e71c5
+    domain: light
+  - action: yeelight.set_color_temp_scene
     metadata: {}
     data:
-      transition: 3
-      brightness_pct: 40
-      kelvin: 4500
-    target:
-      device_id:
-        - 96e1548acb880416f78bfe965e06461c
-  - action: light.turn_on
-    metadata: {}
-    data:
-      transition: 3
-      brightness_pct: 40
-      kelvin: 4500
+      kelvin: 4000
+      brightness: 40
     target:
       device_id:
         - 96e1548acb880416f78bfe965e06461c
@@ -35,6 +29,6 @@ actions:
   - action: light.turn_on
     metadata: {}
     data:
-      effect: "Glimmer"
+      effect: Glimmer
     target:
       device_id: f2653fddc378327eff1438e10e5b985d

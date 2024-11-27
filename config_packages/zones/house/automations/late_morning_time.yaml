@@ -25,6 +25,18 @@ actions:
   - action: light.turn_on
     metadata: {}
     data:
-      effect: "Sahara Night"
+      effect: Sahara Night
     target:
       device_id: f2653fddc378327eff1438e10e5b985d
+  - delay:
+      hours: 0
+      minutes: 30
+      seconds: 0
+      milliseconds: 0
+  - action: yeelight.set_color_temp_scene
+    metadata: {}
+    data:
+      kelvin: 5500
+      brightness: 80
+    target:
+      device_id: fc3c718cfb9df856ba26b49245cc78d2

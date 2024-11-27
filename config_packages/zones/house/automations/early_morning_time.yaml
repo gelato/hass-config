@@ -13,12 +13,10 @@ actions:
     device_id: 0a5bd757648d4752cbe403817b630586
     entity_id: fee8218f970f4a507d14c4ce28cf0fe9
     domain: light
-  - action: light.turn_on
+  - action: yeelight.set_color_temp_scene
     metadata: {}
     data:
-      transition: 3
-      brightness_pct: 70
-      kelvin: 4500
+      kelvin: 3500
+      brightness: 70
     target:
-      device_id:
-        - fc3c718cfb9df856ba26b49245cc78d2
+      device_id: fc3c718cfb9df856ba26b49245cc78d2
