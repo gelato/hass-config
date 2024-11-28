@@ -1,5 +1,5 @@
-alias: Спальня - управление ночником справа вечером
-id: bedroom_evening_nightstand_management_right
+alias: Спальня - управление ночником справа днем 2
+id: bedroom_day2_nightstand_management_right
 description: ""
 mode: single
 triggers:
@@ -10,8 +10,8 @@ triggers:
     trigger: device
 conditions:
   - condition: time
-    after: "20:00:00"
-    before: "01:00:00"
+    after: "16:01:00"
+    before: "19:59:00"
 actions:
   - if:
       - condition: state
@@ -22,8 +22,8 @@ actions:
         metadata: {}
         data:
           rgb_color:
-            - 124
-            - 42
+            - 227
+            - 36
             - 0
           brightness_pct: 1
           transition: 3
@@ -34,8 +34,8 @@ actions:
         metadata: {}
         data:
           rgb_color:
-            - 124
-            - 42
+            - 227
+            - 36
             - 0
           brightness_pct: 100
           transition: 3

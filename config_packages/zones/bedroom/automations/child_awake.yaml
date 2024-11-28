@@ -85,25 +85,25 @@ actions:
       device_id:
         - 774e3c5cb748176992f7bc5a59199d95
         - e30a6cb4926e177593271f2c834bb909
-  - delay:
-      hours: 0
-      minutes: 15
-      seconds: 0
-      milliseconds: 0
-  - action: light.turn_on
-    metadata: {}
-    data:
-      rgb_color:
-        - 255
-        - 255
-        - 255
-      brightness_pct: 100
-      transition: 3
-    target:
-      area_id: spalnia
-  - type: turn_on
-    device_id: 96e1548acb880416f78bfe965e06461c
-    entity_id: 0549956679315d6bad7aeaeddec2c435
-    domain: light
-    brightness_pct: 100
-    flash: long
+  # - delay:
+  #     hours: 0
+  #     minutes: 15
+  #     seconds: 0
+  #     milliseconds: 0
+  # - action: light.turn_on
+  #   metadata: {}
+  #   data:
+  #     rgb_color:
+  #       - 255
+  #       - 255
+  #       - 255
+  #     brightness_pct: 100
+  #     transition: 3
+  #   target:
+  #     area_id: spalnia
+  # - type: turn_on
+  #   device_id: 96e1548acb880416f78bfe965e06461c
+  #   entity_id: 0549956679315d6bad7aeaeddec2c435
+  #   domain: light
+  #   brightness_pct: 100
+  #   flash: long

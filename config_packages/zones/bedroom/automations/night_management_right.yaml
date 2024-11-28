@@ -25,9 +25,9 @@ actions:
     metadata: {}
     data:
       rgb_color:
-        - 77
-        - 34
-        - 179
+        - 92
+        - 7
+        - 0
       brightness_pct: 5
       transition: 3
     target:

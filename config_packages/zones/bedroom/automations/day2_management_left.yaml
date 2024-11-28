@@ -1,17 +1,17 @@
-alias: Спальня - управление ночником справа вечером
-id: bedroom_evening_nightstand_management_right
+alias: Спальня - управление ночником слева днем 2
+id: bedroom_day2_nightstand_management_left
 description: ""
 mode: single
 triggers:
   - type: occupied
-    device_id: 1527a85b199ec815c7238d0b124b6469
-    entity_id: d8f06cf75a1594704710dc21a4f101d9
+    device_id: 620530f17357dbdd4f0542c70a5b02b1
+    entity_id: d8095bbc750323390fbaee18de59984c
     domain: binary_sensor
     trigger: device
 conditions:
   - condition: time
-    after: "20:00:00"
-    before: "01:00:00"
+    after: "16:01:00"
+    before: "19:59:00"
 actions:
   - if:
       - condition: state
@@ -22,25 +22,25 @@ actions:
         metadata: {}
         data:
           rgb_color:
-            - 124
-            - 42
+            - 227
+            - 36
             - 0
           brightness_pct: 1
           transition: 3
         target:
-          device_id: e30a6cb4926e177593271f2c834bb909
+          device_id: 774e3c5cb748176992f7bc5a59199d95
     else:
       - action: light.turn_on
         metadata: {}
         data:
           rgb_color:
-            - 124
-            - 42
+            - 227
+            - 36
             - 0
           brightness_pct: 100
           transition: 3
         target:
-          device_id: e30a6cb4926e177593271f2c834bb909
+          device_id: 774e3c5cb748176992f7bc5a59199d95
   - delay:
       hours: 0
       minutes: 15
@@ -49,8 +49,8 @@ actions:
   - if:
       - type: is_not_occupied
         condition: device
-        device_id: 1527a85b199ec815c7238d0b124b6469
-        entity_id: d8f06cf75a1594704710dc21a4f101d9
+        device_id: 620530f17357dbdd4f0542c70a5b02b1
+        entity_id: d8095bbc750323390fbaee18de59984c
         domain: binary_sensor
     then:
       - action: light.turn_off
@@ -58,4 +58,4 @@ actions:
         data:
           transition: 3
         target:
-          device_id: e30a6cb4926e177593271f2c834bb909
+          device_id: 774e3c5cb748176992f7bc5a59199d95

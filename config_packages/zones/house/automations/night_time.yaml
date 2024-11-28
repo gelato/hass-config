@@ -8,6 +8,11 @@ triggers:
     trigger: state
 condition: []
 action:
+  - action: input_boolean.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: input_boolean.rebenok_spit
   - type: turn_on
     device_id: 0a5bd757648d4752cbe403817b630586
     entity_id: fee8218f970f4a507d14c4ce28cf0fe9

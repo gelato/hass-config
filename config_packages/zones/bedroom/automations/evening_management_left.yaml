@@ -13,17 +13,34 @@ conditions:
     after: "20:00:00"
     before: "01:00:00"
 actions:
-  - action: light.turn_on
-    metadata: {}
-    data:
-      rgb_color:
-        - 124
-        - 42
-        - 0
-      brightness_pct: 50
-      transition: 3
-    target:
-      device_id: 774e3c5cb748176992f7bc5a59199d95
+  - if:
+      - condition: state
+        entity_id: input_boolean.rebenok_spit
+        state: "on"
+    then:
+      - action: light.turn_on
+        metadata: {}
+        data:
+          rgb_color:
+            - 124
+            - 42
+            - 0
+          brightness_pct: 1
+          transition: 3
+        target:
+          device_id: 774e3c5cb748176992f7bc5a59199d95
+    else:
+      - action: light.turn_on
+        metadata: {}
+        data:
+          rgb_color:
+            - 124
+            - 42
+            - 0
+          brightness_pct: 100
+          transition: 3
+        target:
+          device_id: 774e3c5cb748176992f7bc5a59199d95
   - delay:
       hours: 0
       minutes: 15
