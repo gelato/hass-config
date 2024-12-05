@@ -34,8 +34,8 @@ actions:
         metadata: {}
         data:
           rgb_color:
-            - 92
-            - 7
+            - 90
+            - 28
             - 0
           brightness_pct: 100
           transition: 3
