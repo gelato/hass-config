@@ -17,11 +17,16 @@ actions:
     device_id: 75739e28167cd8c27f94738c4e62d1b1
     entity_id: 62e676dd0b82493a035a731d979e71c5
     domain: light
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
   - action: yeelight.set_color_temp_scene
     metadata: {}
     data:
       kelvin: 4000
-      brightness: 40
+      brightness: 20
     target:
       device_id:
         - 96e1548acb880416f78bfe965e06461c

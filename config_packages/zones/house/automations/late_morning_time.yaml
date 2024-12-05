@@ -13,6 +13,11 @@ actions:
     device_id: 0a5bd757648d4752cbe403817b630586
     entity_id: fee8218f970f4a507d14c4ce28cf0fe9
     domain: light
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
   - action: light.turn_on
     metadata: {}
     data:
