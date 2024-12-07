@@ -23,7 +23,7 @@ actions:
     data:
       transition: 3
       brightness_pct: 40
-      kelvin: 4500
+      kelvin: 5500
     target:
       device_id:
         - fc3c718cfb9df856ba26b49245cc78d2

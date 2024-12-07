@@ -21,7 +21,7 @@ actions:
   - action: yeelight.set_color_temp_scene
     metadata: {}
     data:
-      kelvin: 3500
+      kelvin: 5500
       brightness: 70
     target:
       device_id: fc3c718cfb9df856ba26b49245cc78d2
