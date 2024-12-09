@@ -22,12 +22,19 @@ action:
       minutes: 0
       seconds: 20
       milliseconds: 0
-  - action: yeelight.set_mode
-    metadata: {}
-    data:
-      mode: moonlight
-    target:
-      device_id: fc3c718cfb9df856ba26b49245cc78d2
+  - if:
+      - condition: device
+        type: is_off
+        device_id: fc3c718cfb9df856ba26b49245cc78d2
+        entity_id: b7959698f19f33fb80b13d707eda1af6
+        domain: light
+    then:
+      - action: yeelight.set_mode
+        metadata: {}
+        data:
+          mode: moonlight
+        target:
+          device_id: fc3c718cfb9df856ba26b49245cc78d2
   - action: light.turn_off
     metadata: {}
     data:
