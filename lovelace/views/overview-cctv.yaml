@@ -49,9 +49,11 @@ cards:
     view:
       triggers:
         show_trigger_status: true
-        filter_selected_camera: false
-        untrigger_seconds: 3
+        filter_selected_camera: true
         actions:
           trigger: live
           untrigger: default
-          interaction_mode: active
+          interaction_mode: all
+      default_cycle_camera: false
+      default_reset:
+        interaction_mode: all

@@ -16,9 +16,9 @@ conditions:
     after: "01:00:00"
     before: "05:00:00"
 actions:
-  - device_id: 663a3c3484f3d8da1a0062e02d20dc98
+  - device_id: fb7478e46ebb1c6857c3f498301f4381
     domain: humidifier
-    entity_id: 07af525659e4d4dd5ea684e196afe896
+    entity_id: 363affaee91aeb03abff603b1303a63a
     type: set_mode
     mode: Strong
   - action: light.turn_on
@@ -44,9 +44,9 @@ actions:
         entity_id: d8f06cf75a1594704710dc21a4f101d9
         domain: binary_sensor
     then:
-      - device_id: 663a3c3484f3d8da1a0062e02d20dc98
+      - device_id: fb7478e46ebb1c6857c3f498301f4381
         domain: humidifier
-        entity_id: 07af525659e4d4dd5ea684e196afe896
+        entity_id: 363affaee91aeb03abff603b1303a63a
         type: set_mode
         mode: Constant Humidity
       - action: light.turn_off
