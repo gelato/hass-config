@@ -57,3 +57,6 @@
 
 - url: /hacsfiles/frigate-hass-card/frigate-hass-card.js
   type: module
+
+- url: /local/auto-reload-card.js
+  type: module
