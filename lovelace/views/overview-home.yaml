@@ -193,10 +193,10 @@ cards:
               production: sensor.downstairs_hallway_water_p1_meter_power_produced_w
           home:
             # entity: sensor.electricity_currently_used
-            entity: ''
+            entity: ""
           individual:
             - color_icon: true
-              color_value: 'true'
+              color_value: "true"
               inverted_animation: true
               display_zero: true
               display_zero_state: true
