@@ -60,3 +60,9 @@
 
 - url: /hacsfiles/lovelace-auto-reload-card/auto-reload-card.js
   type: module
+
+- url: /hacsfiles/my-cards/my-cards.js
+  type: module
+
+- url: /hacsfiles/swipe-card/swipe-card.js
+  type: module
