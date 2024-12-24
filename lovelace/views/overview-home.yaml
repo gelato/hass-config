@@ -9,6 +9,8 @@ cards:
   # Header
   - type: custom:button-card
     name: Обзор
+    view_layout:
+      grid-column: 1/-1
     custom_fields:
       badge:
         card:
