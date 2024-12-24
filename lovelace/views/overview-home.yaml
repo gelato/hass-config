@@ -194,7 +194,7 @@ cards:
             hours_to_show: 24
             detail: 1
             graph: line
-            name: Woonkamer
+            name: Спальня
             icon: none
             card_mod:
               class: graph
@@ -203,7 +203,7 @@ cards:
             hours_to_show: 24
             detail: 1
             graph: line
-            name: Woonkamer
+            name: Столовая
             icon: none
             card_mod:
               class: graph
@@ -212,7 +212,7 @@ cards:
             hours_to_show: 24
             detail: 1
             graph: line
-            name: Woonkamer
+            name: Гостиная
             icon: none
             card_mod:
               class: graph
