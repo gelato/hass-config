@@ -181,6 +181,42 @@ cards:
         tap_action:
           action: more-info
 
+      - type: custom:swipe-card
+        card_width: calc(100% - 48px)
+        parameters:
+          centeredSlides: true
+          slidesPerView: auto
+          spaceBetween: 16
+          initialSlide: 0
+        cards:
+          - type: sensor
+            entity: sensor.bedroom_temperature
+            hours_to_show: 24
+            detail: 1
+            graph: line
+            name: Woonkamer
+            icon: none
+            card_mod:
+              class: graph
+          - type: sensor
+            entity: sensor.dining_temperature
+            hours_to_show: 24
+            detail: 1
+            graph: line
+            name: Woonkamer
+            icon: none
+            card_mod:
+              class: graph
+          - type: sensor
+            entity: sensor.guestroom_temperature
+            hours_to_show: 24
+            detail: 1
+            graph: line
+            name: Woonkamer
+            icon: none
+            card_mod:
+              class: graph
+
       - type: heading
         heading_style: subtitle
         heading: Энергия
