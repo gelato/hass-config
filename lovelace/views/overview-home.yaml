@@ -7,24 +7,29 @@ layout: !include snippets/layout-4-column.yaml
 
 cards:
   # Header
-  - type: markdown
-    view_layout:
-      grid-column: 1/-1
-    card_mod:
-      style: !include snippets/style-markdown-titles.yaml
-    content: >
-      {%- set batterySensors = states.sensor | selectattr('attributes.device_class', 'defined') | selectattr('attributes.device_class', 'equalto', 'battery') | rejectattr('state', 'in', ['unavailable', 'unknown', 'None']) | list -%}
-      {%- set lowBatterySensors = batterySensors | map(attribute='state') | map('float') | select('>=', 0) | select('<=', 30) | map('string') | list -%}
-
-      {%- set batteryBinarySensors = states.binary_sensor | selectattr('attributes.device_class', 'defined') | selectattr('attributes.device_class', 'equalto', 'battery') | rejectattr('state', 'in', ['unavailable', 'unknown', 'None']) | list -%}
-      {%- set lowBatteryBinarySensors = batteryBinarySensors | selectattr('state', 'equalto', 'on') | list -%}
-
-      {%- set lowBatteryDevicesCount = (lowBatterySensors | count) + (lowBatteryBinarySensors | count) -%}
-      # Восславим {{ states.sensor.system_time_of_day.state }}, {{ user }}.
-
-      {% if lowBatteryDevicesCount > 0 -%}
-      🚨 На данный момент {{ iif((lowBatteryDevicesCount == 1), 'одно', 'множество') }} {{ iif((lowBatteryDevicesCount == 1), 'устройство', 'устройств') }} - {{ lowBatteryDevicesCount }} {{ iif((lowBatteryDevicesCount == 1), 'сообщает', 'сообщают') }} о низком заряде. Надо проверить вкладку [Устройства](/lovelace/devices?anchor=devices_low_battery) для большей информации! 🚨
-      {%- endif %}
+  - type: custom:button-card
+    name: Обзор
+    custom_fields:
+      badge:
+        card:
+          type: custom:button-card
+          name: '[[[return states["weather.pirateweather"].attributes.temperature + "C"]]]'
+          label: >-
+            [[[return states["weather.pirateweather"].attributes.humidity +
+            "%"]]]
+          show_label: true
+          show_icon: false
+          entity: weather.pirateweather
+          tap_action:
+            action: more-info
+            haptic: medium
+          styles:
+            grid:
+              - grid-template-areas: '"n gutter l"'
+              - grid-template-columns: min-content 5px min-content
+              - grid-template-rows: min-content
+            card:
+              - padding: 6px 10px
 
   # Security / Modes
   - type: vertical-stack
