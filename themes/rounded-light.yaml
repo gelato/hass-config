@@ -17,55 +17,55 @@ rounded-light:
             }
           }
 
-    card-mod-card-yaml: |
+  card-mod-card-yaml: |
 
-      .: |
+    .: |
 
-        /* General changes */
+      /* General changes */
 
-        ha-card {
-          transition: none !important;
-          font-family: 'Roboto', sans-serif !important;
-        }
+      ha-card {
+        transition: none !important;
+        font-family: 'Roboto', sans-serif !important;
+      }
 
-        /* Graph card style */
+      /* Graph card style */
 
-        .graph {
-          background: var(--blue-tint);
-          display: flex;
-          overflow: hidden; /* Temporary fix for graph overflow bug */
-        }
+      .graph {
+        background: var(--blue-tint);
+        display: flex;
+        overflow: hidden; /* Temporary fix for graph overflow bug */
+      }
 
-        .graph .name {
-          font-size: 12px;
-          line-height: 18px;
-          background: var(--black);
-          color: var(--white);
-          padding: 6px 10px;
-          border-radius: 100px;
-          z-index: 1;
-        }
+      .graph .name {
+        font-size: 12px;
+        line-height: 18px;
+        background: var(--black);
+        color: var(--white);
+        padding: 6px 10px;
+        border-radius: 100px;
+        z-index: 1;
+      }
 
-        .graph .icon {
-          display: none;
-        }
+      .graph .icon {
+        display: none;
+      }
 
-        .graph .info {
-          margin-top: 0;
-          padding: 24px 24px 0 24px;
-          order: 1;
-        }
+      .graph .info {
+        margin-top: 0;
+        padding: 24px 24px 0 24px;
+        order: 1;
+      }
 
-        .graph hui-graph-header-footer {
-          order: 3;
-        }
+      .graph hui-graph-header-footer {
+        order: 3;
+      }
 
-        .graph .header {
-          padding: 0 24px;
-          order: 2;
-          margin: 4px 0 -16px 0;
-          z-index: 1;
-        }
+      .graph .header {
+        padding: 0 24px;
+        order: 2;
+        margin: 4px 0 -16px 0;
+        z-index: 1;
+      }
 
   # Spacings and radius
   horizontal-stack-card-margin: 0px 8px
