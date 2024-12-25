@@ -1,0 +1,5 @@
+---
+name: Спальня - свет - выключить
+entities:
+  light.bedroom:
+    state: 'off'

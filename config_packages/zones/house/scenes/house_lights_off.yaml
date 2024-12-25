@@ -1,0 +1,29 @@
+id: "house_lights_off"
+name: Полная тьма
+entities:
+  light.dining_room_light:
+    state: "off"
+  light.dining_room_light_nightlight:
+    state: "off"
+  light.yeelight_ceila_0x17a21ba5:
+    state: "off"
+  light.unknown_nightlight:
+    state: "off"
+  light.colorful_ceiling_light_36w_osveshchenie:
+    state: "off"
+  light.colorful_ceiling_light_36w_osveshchenie_2:
+    state: "off"
+  light.elements_3270:
+    state: "off"
+  light.lines_965a:
+    state: "off"
+  light.bedroom_mi_bedside_lamp_nes:
+    state: "off"
+  light.yeelink_bslamp2_9967_light:
+    state: "off"
+  light.guestroom_desk_lamp:
+    state: "off"
+  light.svet_na_kukhne:
+    state: "off"
+icon: mdi:weather-night
+metadata: {}

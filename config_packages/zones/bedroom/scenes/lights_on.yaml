@@ -1,0 +1,5 @@
+---
+name: Спальня - свет - включить
+entities:
+  light.bedroom:
+    state: 'on'
