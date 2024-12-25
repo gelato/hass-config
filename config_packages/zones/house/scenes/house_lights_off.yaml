@@ -1,4 +1,4 @@
-id: "house_lights_off"
+---
 name: Полная тьма
 entities:
   light.dining_room_light:
