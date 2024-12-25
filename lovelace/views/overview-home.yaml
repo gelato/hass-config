@@ -182,12 +182,21 @@ cards:
           action: more-info
 
       - type: custom:swipe-card
-        card_width: calc(100% - 48px)
+        card_width: '185px'
+        start_card: 2
         parameters:
+          effect: 'coverflow'
+          grabCursor: true
           centeredSlides: true
-          slidesPerView: auto
-          spaceBetween: 16
-          initialSlide: 0
+          slidesPerView: 'auto'
+          coverflowEffect:
+            rotate: 50
+            stretch: 0
+            depth: 100
+            modifier: 1
+            slideShadows : true
+          pagination:
+            type: 'bullets'
         cards:
           - type: sensor
             entity: sensor.bedroom_temperature
