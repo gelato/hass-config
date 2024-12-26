@@ -286,6 +286,10 @@ rounded-light:
         order: 3;
       }
 
+      .graph .footer {
+        order: 3;
+      }
+
       .graph .header {
         padding: 0 24px;
         order: 2;

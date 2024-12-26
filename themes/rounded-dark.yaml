@@ -5,7 +5,7 @@ rounded-dark:
 
   # Spacings and radius
   horizontal-stack-card-margin: 0px 8px
-  vertical-stack-card-margin: 80px 0px
+  vertical-stack-card-margin: 8px 0px
   grid-card-gap: 16px
   ha-card-border-width: "0px" # Removes default 1px line
   ha-card-border-radius: 24px
@@ -191,44 +191,12 @@ rounded-dark:
 
   card-mod-theme: rounded-dark
 
-  card-mod-root-yaml: |
-
-    .: |
-
-      /* ___________ Bottom tabbar ___________  */
-
-      #view {
-        margin-top: 0 !important;
-      }
-      .header {
-        top: auto !important;
-        bottom: 0;
-        background-color: rgba(var(--contrast1-RGB),0.6) !important;
-      }
-      :host([scrolled]) .header {
-        box-shadow: none !important;
-      }
-      .toolbar {
-        height: 80px !important;
-        padding: 4px 4px 16px 4px !important;
-      }
-      paper-tab {
-        color: var(--contrast10);
-        border-radius: 16px;
-      }
-      paper-tab.iron-selected {
-        color: var(--contrast20);
-      }
-      ha-menu-button, ha-button-menu {
-        color: var(--contrast10);
-      }
-
   card-mod-view-yaml: |
 
     hui-masonry-view:
       $: |
 
-        /* Swipecard full width on mobile */
+        /* Swipe-card full width on mobile */
 
         @media screen and (max-width: 599px) {
           #columns .column swipe-card {
@@ -245,13 +213,7 @@ rounded-dark:
 
       ha-card {
         transition: none !important;
-        font-family: 'hk nova semibold', 'Roboto', 'Noto', sans-serif !important;
-      }
-
-      /* Vacuum card load transition disabled */
-
-      .type-custom-xiaomi-vacuum-map-card {
-        transition: none !important;
+        font-family: 'custom font, otherwise remove this line', 'Roboto', sans-serif !important;
       }
 
       /* Graph card style */
@@ -286,34 +248,13 @@ rounded-dark:
         order: 3;
       }
 
+      .graph .footer {
+        order: 3;
+      }
+
       .graph .header {
         padding: 0 24px;
         order: 2;
         margin: 4px 0 -16px 0;
         z-index: 1;
       }
-
-      /* Entities card style */
-
-      .type-entities {
-        background: none;
-      }
-
-      .type-entities .card-header {
-        padding: 0 0 12px 0;
-      }
-
-      .type-entities .card-content {
-        padding: 0;
-      }
-
-  card-mod-row: |
-
-    /* Entities card row style */
-
-    :host {
-        display: block;
-        background: var(--contrast2);
-        border-radius: 24px;
-        padding: 6px 12px 6px 6px;
-    }
