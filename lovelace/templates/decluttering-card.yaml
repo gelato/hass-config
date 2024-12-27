@@ -148,7 +148,7 @@ multi_graph_card:
         ha-card { padding-top: 0 !important; }
         .header {
           padding-bottom: 0;
-          margin-top: -8px;
+          margin-top: 8px;
         }
         .name > span {
           font-size: var(--body-font-size) !important;

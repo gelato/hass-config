@@ -21,7 +21,7 @@ cards:
         - font-size: 32px
         - color: var(--contrast20)
 
-  # Security / Modes
+  # Scenes/Lights
   - type: vertical-stack
     cards:
       - type: heading
@@ -30,7 +30,7 @@ cards:
 
       - type: grid
         columns: 4
-        square: true
+        square: false
         cards:
           - type: custom:button-card
             icon: mdi:weather-night
@@ -63,59 +63,695 @@ cards:
 
       - type: heading
         heading_style: subtitle
-        heading: Режимы
+        heading: Освещение
 
       - type: grid
-        columns: 3
-        square: true
+        columns: 2
+        square: false
         cards:
-          - type: custom:mushroom-entity-card
-            entity: input_boolean.home_modes_away_mode
-            name: Не дома
-            icon: mdi:home
-            layout: vertical
-            secondary_info: state
-            fill_container: true
+          - type: custom:button-card
+            name: Свет в гостиной
+            icon: mdi:track-light
+            entity: light.guestroom_ceiling_light
             tap_action:
               action: toggle
-              confirmation:
-                text: Точно включить режим "Не дома"?
+              haptic: medium
+            hold_action:
+              action: more-info
+              haptic: medium
+            custom_fields:
+              slider:
+                card:
+                  type: custom:my-slider-v2
+                  entity: light.guestroom_ceiling_light
+                  colorMode: brightness
+                  styles:
+                    container:
+                      - background: none
+                      - border-radius: 100px
+                      - overflow: visible
+                    card:
+                      - height: 16px
+                      - padding: 0 8px
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                            else return "var(--contrast4)";
+                          ]]]
+                    track:
+                      - overflow: visible
+                      - background: none
+                    progress:
+                      - background: none
+                    thumb:
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "var(--black)";
+                            if (entity.state == "off") return "var(--contrast20)";
+                            else return "var(--contrast8)";
+                          ]]]
+                      - top: 2px
+                      - right: '-6px'
+                      - height: 12px
+                      - width: 12px
+                      - border-radius: 100px
+            styles:
+              grid:
+                - grid-template-areas: '"i" "n" "slider"'
+                - grid-template-columns: 1fr
+                - grid-template-rows: 1fr min-content min-content
+              card:
+                - font-family: Roboto
+                - background: var(--contrast2)
+                - padding: 16px
+                - '--mdc-ripple-press-opacity': 0
+              img_cell:
+                - justify-self: start
+                - width: 24px
+              icon:
+                - width: 24px
+                - height: 24px
+                - color: var(--contrast8)
+              name:
+                - justify-self: start
+                - font-size: 14px
+                - margin: 4px 0 12px 0
+                - color: var(--contrast8)
+            state:
+              - value: 'on'
+                styles:
+                  card:
+                    - background: var(--yellow)
+                  icon:
+                    - color: var(--black)
+                  name:
+                    - color: var(--black)
+              - value: 'off'
+                styles:
+                  icon:
+                    - color: var(--contrast20)
+                  name:
+                    - color: var(--contrast20)
 
-          - type: custom:mushroom-entity-card
-            entity: input_boolean.home_modes_guest_mode
-            name: Гостевой режим
-            icon: mdi:human-handsup
-            layout: vertical
-            secondary_info: state
-            fill_container: true
+          - type: custom:button-card
+            name: Боковой свет в гостиной
+            icon: '[[[ return entity.attributes.icon ]]]'
+            entity: light.guestroom_ceiling_sidelight
             tap_action:
               action: toggle
-              confirmation:
-                text: Точно включить гостевой режим?
+              haptic: medium
+            hold_action:
+              action: more-info
+              haptic: medium
+            custom_fields:
+              slider:
+                card:
+                  type: custom:my-slider-v2
+                  entity: "[[[ return entity.entity_id ]]]"
+                  colorMode: brightness
+                  styles:
+                    container:
+                      - background: none
+                      - border-radius: 100px
+                      - overflow: visible
+                    card:
+                      - height: 16px
+                      - padding: 0 8px
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                            else return "var(--contrast4)";
+                          ]]]
+                    track:
+                      - overflow: visible
+                      - background: none
+                    progress:
+                      - background: none
+                    thumb:
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "var(--black)";
+                            if (entity.state == "off") return "var(--contrast20)";
+                            else return "var(--contrast8)";
+                          ]]]
+                      - top: 2px
+                      - right: '-8px'
+                      - height: 12px
+                      - width: 12px
+                      - border-radius: 10px
+            styles:
+              grid:
+                - grid-template-areas: '"i" "n" "slider"'
+                - grid-template-columns: 1fr
+                - grid-template-rows: 1fr min-content min-content
+              card:
+                - font-family: Roboto
+                - background: var(--contrast2)
+                - padding: 16px
+                - '--mdc-ripple-press-opacity': 0
+              img_cell:
+                - justify-self: start
+                - width: 24px
+              icon:
+                - width: 24px
+                - height: 24px
+                - color: var(--contrast8)
+              name:
+                - justify-self: start
+                - font-size: 14px
+                - margin: 4px 0 12px 0
+                - color: var(--contrast8)
+            state:
+              - value: 'on'
+                styles:
+                  card:
+                    - background: |
+                          [[[
+                              var color = entity.attributes?.rgb_color;
+                              if (entity.state != "on"){
+                                return 'var(--contrast20)';
+                              }
+                              else if (color){
+                                return 'rgba(' + color + ')'
+                              }
+                              else{
+                                return 'var(--yellow)'
+                              }
+                          ]]]
+                  icon:
+                    - color: var(--black)
+                  name:
+                    - color: var(--black)
+              - value: 'off'
+                styles:
+                  icon:
+                    - color: var(--contrast20)
+                  name:
+                    - color: var(--contrast20)
+      
+          - type: custom:button-card
+            name: Свет в столовой
+            icon: mdi:track-light
+            entity: light.dining_room_light
+            tap_action:
+              action: toggle
+              haptic: medium
+            hold_action:
+              action: more-info
+              haptic: medium
+            custom_fields:
+              slider:
+                card:
+                  type: custom:my-slider-v2
+                  entity: light.dining_room_light
+                  colorMode: brightness
+                  styles:
+                    container:
+                      - background: none
+                      - border-radius: 100px
+                      - overflow: visible
+                    card:
+                      - height: 16px
+                      - padding: 0 8px
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                            else return "var(--contrast4)";
+                          ]]]
+                    track:
+                      - overflow: visible
+                      - background: none
+                    progress:
+                      - background: none
+                    thumb:
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "var(--black)";
+                            if (entity.state == "off") return "var(--contrast20)";
+                            else return "var(--contrast8)";
+                          ]]]
+                      - top: 2px
+                      - right: '-6px'
+                      - height: 12px
+                      - width: 12px
+                      - border-radius: 100px
+            styles:
+              grid:
+                - grid-template-areas: '"i" "n" "slider"'
+                - grid-template-columns: 1fr
+                - grid-template-rows: 1fr min-content min-content
+              card:
+                - font-family: Roboto
+                - background: var(--contrast2)
+                - padding: 16px
+                - '--mdc-ripple-press-opacity': 0
+              img_cell:
+                - justify-self: start
+                - width: 24px
+              icon:
+                - width: 24px
+                - height: 24px
+                - color: var(--contrast8)
+              name:
+                - justify-self: start
+                - font-size: 14px
+                - margin: 4px 0 12px 0
+                - color: var(--contrast8)
+            state:
+              - value: 'on'
+                styles:
+                  card:
+                    - background: var(--yellow)
+                  icon:
+                    - color: var(--black)
+                  name:
+                    - color: var(--black)
+              - value: 'off'
+                styles:
+                  icon:
+                    - color: var(--contrast20)
+                  name:
+                    - color: var(--contrast20)
 
-          - type: custom:mushroom-entity-card
-            entity: input_boolean.home_modes_bedtime_mode
-            name: Пора спать
-            icon: mdi:sleep
-            layout: vertical
-            secondary_info: state
-            fill_container: true
+          - type: custom:button-card
+            name: Ночник в столовой
+            icon: mdi:track-light
+            entity: light.dining_room_light_nightlight
             tap_action:
               action: toggle
-              confirmation:
-                text: Точно включить режим отхода ко сну?
+              haptic: medium
+            hold_action:
+              action: more-info
+              haptic: medium
+            custom_fields:
+              slider:
+                card:
+                  type: custom:my-slider-v2
+                  entity: light.dining_room_light_nightlight
+                  colorMode: brightness
+                  styles:
+                    container:
+                      - background: none
+                      - border-radius: 100px
+                      - overflow: visible
+                    card:
+                      - height: 16px
+                      - padding: 0 8px
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                            else return "var(--contrast4)";
+                          ]]]
+                    track:
+                      - overflow: visible
+                      - background: none
+                    progress:
+                      - background: none
+                    thumb:
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "var(--black)";
+                            if (entity.state == "off") return "var(--contrast20)";
+                            else return "var(--contrast8)";
+                          ]]]
+                      - top: 2px
+                      - right: '-6px'
+                      - height: 12px
+                      - width: 12px
+                      - border-radius: 100px
+            styles:
+              grid:
+                - grid-template-areas: '"i" "n" "slider"'
+                - grid-template-columns: 1fr
+                - grid-template-rows: 1fr min-content min-content
+              card:
+                - font-family: Roboto
+                - background: var(--contrast2)
+                - padding: 16px
+                - '--mdc-ripple-press-opacity': 0
+              img_cell:
+                - justify-self: start
+                - width: 24px
+              icon:
+                - width: 24px
+                - height: 24px
+                - color: var(--contrast8)
+              name:
+                - justify-self: start
+                - font-size: 14px
+                - margin: 4px 0 12px 0
+                - color: var(--contrast8)
+            state:
+              - value: 'on'
+                styles:
+                  card:
+                    - background: var(--yellow)
+                  icon:
+                    - color: var(--black)
+                  name:
+                    - color: var(--black)
+              - value: 'off'
+                styles:
+                  icon:
+                    - color: var(--contrast20)
+                  name:
+                    - color: var(--contrast20)
 
-          - type: custom:mushroom-entity-card
-            entity: input_boolean.home_modes_vacation_mode
-            name: Отпуск
-            icon: mdi:airplane
-            layout: vertical
-            secondary_info: state
-            fill_container: true
+          - type: custom:button-card
+            name: Свет в спальне
+            icon: mdi:track-light
+            entity: light.bedroom_ceiling_light
             tap_action:
               action: toggle
-              confirmation:
-                text: Точно включить режим отпуска?
+              haptic: medium
+            hold_action:
+              action: more-info
+              haptic: medium
+            custom_fields:
+              slider:
+                card:
+                  type: custom:my-slider-v2
+                  entity: light.bedroom_ceiling_light
+                  colorMode: brightness
+                  styles:
+                    container:
+                      - background: none
+                      - border-radius: 100px
+                      - overflow: visible
+                    card:
+                      - height: 16px
+                      - padding: 0 8px
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                            else return "var(--contrast4)";
+                          ]]]
+                    track:
+                      - overflow: visible
+                      - background: none
+                    progress:
+                      - background: none
+                    thumb:
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "var(--black)";
+                            if (entity.state == "off") return "var(--contrast20)";
+                            else return "var(--contrast8)";
+                          ]]]
+                      - top: 2px
+                      - right: '-6px'
+                      - height: 12px
+                      - width: 12px
+                      - border-radius: 100px
+            styles:
+              grid:
+                - grid-template-areas: '"i" "n" "slider"'
+                - grid-template-columns: 1fr
+                - grid-template-rows: 1fr min-content min-content
+              card:
+                - font-family: Roboto
+                - background: var(--contrast2)
+                - padding: 16px
+                - '--mdc-ripple-press-opacity': 0
+              img_cell:
+                - justify-self: start
+                - width: 24px
+              icon:
+                - width: 24px
+                - height: 24px
+                - color: var(--contrast8)
+              name:
+                - justify-self: start
+                - font-size: 14px
+                - margin: 4px 0 12px 0
+                - color: var(--contrast8)
+            state:
+              - value: 'on'
+                styles:
+                  card:
+                    - background: var(--yellow)
+                  icon:
+                    - color: var(--black)
+                  name:
+                    - color: var(--black)
+              - value: 'off'
+                styles:
+                  icon:
+                    - color: var(--contrast20)
+                  name:
+                    - color: var(--contrast20)
+
+          - type: custom:button-card
+            name: Ночник в спальне
+            icon: mdi:track-light
+            entity: light.bedroom_ceiling_nightlight
+            tap_action:
+              action: toggle
+              haptic: medium
+            hold_action:
+              action: more-info
+              haptic: medium
+            custom_fields:
+              slider:
+                card:
+                  type: custom:my-slider-v2
+                  entity: light.bedroom_ceiling_nightlight
+                  colorMode: brightness
+                  styles:
+                    container:
+                      - background: none
+                      - border-radius: 100px
+                      - overflow: visible
+                    card:
+                      - height: 16px
+                      - padding: 0 8px
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                            else return "var(--contrast4)";
+                          ]]]
+                    track:
+                      - overflow: visible
+                      - background: none
+                    progress:
+                      - background: none
+                    thumb:
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "var(--black)";
+                            if (entity.state == "off") return "var(--contrast20)";
+                            else return "var(--contrast8)";
+                          ]]]
+                      - top: 2px
+                      - right: '-6px'
+                      - height: 12px
+                      - width: 12px
+                      - border-radius: 100px
+            styles:
+              grid:
+                - grid-template-areas: '"i" "n" "slider"'
+                - grid-template-columns: 1fr
+                - grid-template-rows: 1fr min-content min-content
+              card:
+                - font-family: Roboto
+                - background: var(--contrast2)
+                - padding: 16px
+                - '--mdc-ripple-press-opacity': 0
+              img_cell:
+                - justify-self: start
+                - width: 24px
+              icon:
+                - width: 24px
+                - height: 24px
+                - color: var(--contrast8)
+              name:
+                - justify-self: start
+                - font-size: 14px
+                - margin: 4px 0 12px 0
+                - color: var(--contrast8)
+            state:
+              - value: 'on'
+                styles:
+                  card:
+                    - background: var(--yellow)
+                  icon:
+                    - color: var(--black)
+                  name:
+                    - color: var(--black)
+              - value: 'off'
+                styles:
+                  icon:
+                    - color: var(--contrast20)
+                  name:
+                    - color: var(--contrast20)
+
+          - type: custom:button-card
+            name: Свет на кухне
+            icon: mdi:track-light
+            entity: light.kukhnia_potolochnyi_svet
+            tap_action:
+              action: toggle
+              haptic: medium
+            hold_action:
+              action: more-info
+              haptic: medium
+            custom_fields:
+              slider:
+                card:
+                  type: custom:my-slider-v2
+                  entity: light.kukhnia_potolochnyi_svet
+                  colorMode: brightness
+                  styles:
+                    container:
+                      - background: none
+                      - border-radius: 100px
+                      - overflow: visible
+                    card:
+                      - height: 16px
+                      - padding: 0 8px
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                            else return "var(--contrast4)";
+                          ]]]
+                    track:
+                      - overflow: visible
+                      - background: none
+                    progress:
+                      - background: none
+                    thumb:
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "var(--black)";
+                            if (entity.state == "off") return "var(--contrast20)";
+                            else return "var(--contrast8)";
+                          ]]]
+                      - top: 2px
+                      - right: '-6px'
+                      - height: 12px
+                      - width: 12px
+                      - border-radius: 100px
+            styles:
+              grid:
+                - grid-template-areas: '"i" "n" "slider"'
+                - grid-template-columns: 1fr
+                - grid-template-rows: 1fr min-content min-content
+              card:
+                - font-family: Roboto
+                - background: var(--contrast2)
+                - padding: 16px
+                - '--mdc-ripple-press-opacity': 0
+              img_cell:
+                - justify-self: start
+                - width: 24px
+              icon:
+                - width: 24px
+                - height: 24px
+                - color: var(--contrast8)
+              name:
+                - justify-self: start
+                - font-size: 14px
+                - margin: 4px 0 12px 0
+                - color: var(--contrast8)
+            state:
+              - value: 'on'
+                styles:
+                  card:
+                    - background: var(--yellow)
+                  icon:
+                    - color: var(--black)
+                  name:
+                    - color: var(--black)
+              - value: 'off'
+                styles:
+                  icon:
+                    - color: var(--contrast20)
+                  name:
+                    - color: var(--contrast20)
+
+          - type: custom:button-card
+            name: Лампа Влада
+            icon: mdi:track-light
+            entity: light.guestroom_desk_lamp
+            tap_action:
+              action: toggle
+              haptic: medium
+            hold_action:
+              action: more-info
+              haptic: medium
+            custom_fields:
+              slider:
+                card:
+                  type: custom:my-slider-v2
+                  entity: light.guestroom_desk_lamp
+                  colorMode: brightness
+                  styles:
+                    container:
+                      - background: none
+                      - border-radius: 100px
+                      - overflow: visible
+                    card:
+                      - height: 16px
+                      - padding: 0 8px
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                            else return "var(--contrast4)";
+                          ]]]
+                    track:
+                      - overflow: visible
+                      - background: none
+                    progress:
+                      - background: none
+                    thumb:
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "var(--black)";
+                            if (entity.state == "off") return "var(--contrast20)";
+                            else return "var(--contrast8)";
+                          ]]]
+                      - top: 2px
+                      - right: '-6px'
+                      - height: 12px
+                      - width: 12px
+                      - border-radius: 100px
+            styles:
+              grid:
+                - grid-template-areas: '"i" "n" "slider"'
+                - grid-template-columns: 1fr
+                - grid-template-rows: 1fr min-content min-content
+              card:
+                - font-family: Roboto
+                - background: var(--contrast2)
+                - padding: 16px
+                - '--mdc-ripple-press-opacity': 0
+              img_cell:
+                - justify-self: start
+                - width: 24px
+              icon:
+                - width: 24px
+                - height: 24px
+                - color: var(--contrast8)
+              name:
+                - justify-self: start
+                - font-size: 14px
+                - margin: 4px 0 12px 0
+                - color: var(--contrast8)
+            state:
+              - value: 'on'
+                styles:
+                  card:
+                    - background: var(--yellow)
+                  icon:
+                    - color: var(--black)
+                  name:
+                    - color: var(--black)
+              - value: 'off'
+                styles:
+                  icon:
+                    - color: var(--contrast20)
+                  name:
+                    - color: var(--contrast20)
 
   # Climate / Energy
   - type: vertical-stack
@@ -124,22 +760,9 @@ cards:
         heading_style: subtitle
         heading: Климат
 
-      - type: custom:swipe-card
-        card_width: '185px'
-        start_card: 2
-        parameters:
-          effect: 'coverflow'
-          grabCursor: true
-          centeredSlides: true
-          slidesPerView: 'auto'
-          coverflowEffect:
-            rotate: 50
-            stretch: 0
-            depth: 100
-            modifier: 1
-            slideShadows : true
-          pagination:
-            type: 'bullets'
+      - type: grid
+        columns: 3
+        square: false
         cards:
           - type: sensor
             entity: sensor.bedroom_temperature
@@ -168,32 +791,10 @@ cards:
             icon: none
             card_mod:
               class: graph
-          # - type: sensor
-          #   entity: sensor.street_temperature
-          #   hours_to_show: 24
-          #   detail: 1
-          #   graph: line
-          #   name: Улица
-          #   icon: none
-          #   card_mod:
-          #     class: graph
 
-      - type: custom:swipe-card
-        card_width: '185px'
-        start_card: 2
-        parameters:
-          effect: 'coverflow'
-          grabCursor: true
-          centeredSlides: true
-          slidesPerView: 'auto'
-          coverflowEffect:
-            rotate: 50
-            stretch: 0
-            depth: 100
-            modifier: 1
-            slideShadows : true
-          pagination:
-            type: 'bullets'
+      - type: grid
+        columns: 3
+        square: false
         cards:
           - type: sensor
             entity: sensor.bedroom_humidity
@@ -329,27 +930,31 @@ cards:
         heading_style: subtitle
         heading: Погода на улице
 
-      - type: "custom:decluttering-card"
-        template: multi_graph_card
-        variables:
-          - title: Температура на улице
-          - entities:
-              - entity: sensor.street_temperature
-                # attribute: temperature
-                unit: °C
-                name: Снаружи
-          - line_width: 1
-      
-      - type: "custom:decluttering-card"
-        template: multi_graph_card
-        variables:
-          - title: Влажность на улице
-          - entities:
-              - entity: sensor.street_humidity
-                # attribute: temperature
-                unit: "%"
-                name: Снаружи
-          - line_width: 1
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+          - type: "custom:decluttering-card"
+            template: multi_graph_card
+            variables:
+              - title: Температура на улице
+              - entities:
+                  - entity: sensor.street_temperature
+                    # attribute: temperature
+                    unit: °C
+                    name: Снаружи
+              - line_width: 1
+          
+          - type: "custom:decluttering-card"
+            template: multi_graph_card
+            variables:
+              - title: Влажность на улице
+              - entities:
+                  - entity: sensor.street_humidity
+                    # attribute: temperature
+                    unit: "%"
+                    name: Снаружи
+              - line_width: 1
 
       - type: heading
         heading_style: subtitle
