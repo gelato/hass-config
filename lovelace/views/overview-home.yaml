@@ -47,19 +47,64 @@ cards:
                 - background-color: var(--blue)
               icon:
                 - color: var(--black)
+          - type: custom:button-card
+            icon: mdi:brightness-7
+            aspect_ratio: 1/1
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              haptic: medium
+              service_data:
+                entity_id: scene.home_lights_bright
+            styles:
+              card:
+                - border-radius: 24px
+                - background-color: var(--white)
+              icon:
+                - color: var(--black)
+          - type: custom:button-card
+            icon: mdi:brightness-6
+            aspect_ratio: 1/1
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              haptic: medium
+              service_data:
+                entity_id: scene.home_lights_bright
+            styles:
+              card:
+                - border-radius: 24px
+                - background-color: var(--yellow)
+              icon:
+                - color: var(--black)
+          - type: custom:button-card
+            icon: mdi:brightness-4
+            aspect_ratio: 1/1
+            tap_action:
+              action: call-service
+              service: scene.turn_on
+              haptic: medium
+              service_data:
+                entity_id: scene.home_lights_bright
+            styles:
+              card:
+                - border-radius: 24px
+                - background-color: var(--orange)
+              icon:
+                - color: var(--black)
 
-          - type: "custom:mushroom-person-card"
-            name: Филипп
-            entity: sensor.holder_geocoded_location
-            layout: vertical
-            fill_container: true
-            use_entity_picture: true
+          # - type: "custom:mushroom-person-card"
+          #   name: Филипп
+          #   entity: sensor.holder_geocoded_location
+          #   layout: vertical
+          #   fill_container: true
+          #   use_entity_picture: true
 
-          - type: "custom:mushroom-person-card"
-            entity: sensor.nesyk_geocoded_location
-            layout: vertical
-            fill_container: true
-            use_entity_picture: true
+          # - type: "custom:mushroom-person-card"
+          #   entity: sensor.nesyk_geocoded_location
+          #   layout: vertical
+          #   fill_container: true
+          #   use_entity_picture: true
 
       - type: heading
         heading_style: subtitle
@@ -71,7 +116,7 @@ cards:
         cards:
           - type: custom:button-card
             name: Свет в гостиной
-            icon: mdi:track-light
+            icon: mdi:ceiling-light
             entity: light.guestroom_ceiling_light
             tap_action:
               action: toggle
@@ -155,7 +200,7 @@ cards:
 
           - type: custom:button-card
             name: Боковой свет в гостиной
-            icon: '[[[ return entity.attributes.icon ]]]'
+            icon: mdi:ceiling-light-flat
             entity: light.guestroom_ceiling_sidelight
             tap_action:
               action: toggle
@@ -251,7 +296,7 @@ cards:
       
           - type: custom:button-card
             name: Свет в столовой
-            icon: mdi:track-light
+            icon: mdi:ceiling-light
             entity: light.dining_room_light
             tap_action:
               action: toggle
@@ -334,8 +379,8 @@ cards:
                     - color: var(--contrast20)
 
           - type: custom:button-card
-            name: Ночник в столовой
-            icon: mdi:track-light
+            name: Тусклый свет в столовой
+            icon: mdi:ceiling-light-outline
             entity: light.dining_room_light_nightlight
             tap_action:
               action: toggle
@@ -419,7 +464,7 @@ cards:
 
           - type: custom:button-card
             name: Свет в спальне
-            icon: mdi:track-light
+            icon: mdi:ceiling-light
             entity: light.bedroom_ceiling_light
             tap_action:
               action: toggle
@@ -502,8 +547,8 @@ cards:
                     - color: var(--contrast20)
 
           - type: custom:button-card
-            name: Ночник в спальне
-            icon: mdi:track-light
+            name: Тусклый свет в спальне
+            icon: mdi:ceiling-light-outline
             entity: light.bedroom_ceiling_nightlight
             tap_action:
               action: toggle
@@ -587,7 +632,7 @@ cards:
 
           - type: custom:button-card
             name: Свет на кухне
-            icon: mdi:track-light
+            icon: mdi:ceiling-light-multiple
             entity: light.kukhnia_potolochnyi_svet
             tap_action:
               action: toggle
@@ -671,7 +716,7 @@ cards:
 
           - type: custom:button-card
             name: Лампа Влада
-            icon: mdi:track-light
+            icon: mdi:desk-lamp
             entity: light.guestroom_desk_lamp
             tap_action:
               action: toggle
@@ -752,13 +797,373 @@ cards:
                     - color: var(--contrast20)
                   name:
                     - color: var(--contrast20)
+          
+          - type: custom:button-card
+            name: Элементы
+            icon: mdi:hexagon-multiple
+            entity: light.elements_3270
+            tap_action:
+              action: toggle
+              haptic: medium
+            hold_action:
+              action: more-info
+              haptic: medium
+            custom_fields:
+              slider:
+                card:
+                  type: custom:my-slider-v2
+                  entity: light.elements_3270
+                  colorMode: brightness
+                  styles:
+                    container:
+                      - background: none
+                      - border-radius: 100px
+                      - overflow: visible
+                    card:
+                      - height: 16px
+                      - padding: 0 8px
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                            else return "var(--contrast4)";
+                          ]]]
+                    track:
+                      - overflow: visible
+                      - background: none
+                    progress:
+                      - background: none
+                    thumb:
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "var(--black)";
+                            if (entity.state == "off") return "var(--contrast20)";
+                            else return "var(--contrast8)";
+                          ]]]
+                      - top: 2px
+                      - right: '-6px'
+                      - height: 12px
+                      - width: 12px
+                      - border-radius: 100px
+            styles:
+              grid:
+                - grid-template-areas: '"i" "n" "slider"'
+                - grid-template-columns: 1fr
+                - grid-template-rows: 1fr min-content min-content
+              card:
+                - font-family: Roboto
+                - background: var(--contrast2)
+                - padding: 16px
+                - '--mdc-ripple-press-opacity': 0
+              img_cell:
+                - justify-self: start
+                - width: 24px
+              icon:
+                - width: 24px
+                - height: 24px
+                - color: var(--contrast8)
+              name:
+                - justify-self: start
+                - font-size: 14px
+                - margin: 4px 0 12px 0
+                - color: var(--contrast8)
+            state:
+              - value: 'on'
+                styles:
+                  card:
+                    - background: var(--yellow)
+                  icon:
+                    - color: var(--black)
+                  name:
+                    - color: var(--black)
+              - value: 'off'
+                styles:
+                  icon:
+                    - color: var(--contrast20)
+                  name:
+                    - color: var(--contrast20)
+
+          - type: custom:button-card
+            name: Линии
+            icon: mdi:chart-timeline-variant-shimmer
+            entity: light.lines_965a
+            tap_action:
+              action: toggle
+              haptic: medium
+            hold_action:
+              action: more-info
+              haptic: medium
+            custom_fields:
+              slider:
+                card:
+                  type: custom:my-slider-v2
+                  entity: light.lines_965a
+                  colorMode: brightness
+                  styles:
+                    container:
+                      - background: none
+                      - border-radius: 100px
+                      - overflow: visible
+                    card:
+                      - height: 16px
+                      - padding: 0 8px
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                            else return "var(--contrast4)";
+                          ]]]
+                    track:
+                      - overflow: visible
+                      - background: none
+                    progress:
+                      - background: none
+                    thumb:
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "var(--black)";
+                            if (entity.state == "off") return "var(--contrast20)";
+                            else return "var(--contrast8)";
+                          ]]]
+                      - top: 2px
+                      - right: '-6px'
+                      - height: 12px
+                      - width: 12px
+                      - border-radius: 100px
+            styles:
+              grid:
+                - grid-template-areas: '"i" "n" "slider"'
+                - grid-template-columns: 1fr
+                - grid-template-rows: 1fr min-content min-content
+              card:
+                - font-family: Roboto
+                - background: var(--contrast2)
+                - padding: 16px
+                - '--mdc-ripple-press-opacity': 0
+              img_cell:
+                - justify-self: start
+                - width: 24px
+              icon:
+                - width: 24px
+                - height: 24px
+                - color: var(--contrast8)
+              name:
+                - justify-self: start
+                - font-size: 14px
+                - margin: 4px 0 12px 0
+                - color: var(--contrast8)
+            state:
+              - value: 'on'
+                styles:
+                  card:
+                    - background: var(--yellow)
+                  icon:
+                    - color: var(--black)
+                  name:
+                    - color: var(--black)
+              - value: 'off'
+                styles:
+                  icon:
+                    - color: var(--contrast20)
+                  name:
+                    - color: var(--contrast20)
+
+          - type: custom:button-card
+            name: Ночник Нес
+            icon: mdi:lamp
+            entity: light.bedroom_mi_bedside_lamp_nes
+            tap_action:
+              action: toggle
+              haptic: medium
+            hold_action:
+              action: more-info
+              haptic: medium
+            custom_fields:
+              slider:
+                card:
+                  type: custom:my-slider-v2
+                  entity: "[[[ return entity.entity_id ]]]"
+                  colorMode: brightness
+                  styles:
+                    container:
+                      - background: none
+                      - border-radius: 100px
+                      - overflow: visible
+                    card:
+                      - height: 16px
+                      - padding: 0 8px
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                            else return "var(--contrast4)";
+                          ]]]
+                    track:
+                      - overflow: visible
+                      - background: none
+                    progress:
+                      - background: none
+                    thumb:
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "var(--black)";
+                            if (entity.state == "off") return "var(--contrast20)";
+                            else return "var(--contrast8)";
+                          ]]]
+                      - top: 2px
+                      - right: '-8px'
+                      - height: 12px
+                      - width: 12px
+                      - border-radius: 10px
+            styles:
+              grid:
+                - grid-template-areas: '"i" "n" "slider"'
+                - grid-template-columns: 1fr
+                - grid-template-rows: 1fr min-content min-content
+              card:
+                - font-family: Roboto
+                - background: var(--contrast2)
+                - padding: 16px
+                - '--mdc-ripple-press-opacity': 0
+              img_cell:
+                - justify-self: start
+                - width: 24px
+              icon:
+                - width: 24px
+                - height: 24px
+                - color: var(--contrast8)
+              name:
+                - justify-self: start
+                - font-size: 14px
+                - margin: 4px 0 12px 0
+                - color: var(--contrast8)
+            state:
+              - value: 'on'
+                styles:
+                  card:
+                    - background: |
+                          [[[
+                              var color = entity.attributes?.rgb_color;
+                              if (entity.state != "on"){
+                                return 'var(--contrast20)';
+                              }
+                              else if (color){
+                                return 'rgba(' + color + ')'
+                              }
+                              else{
+                                return 'var(--yellow)'
+                              }
+                          ]]]
+                  icon:
+                    - color: var(--black)
+                  name:
+                    - color: var(--black)
+              - value: 'off'
+                styles:
+                  icon:
+                    - color: var(--contrast20)
+                  name:
+                    - color: var(--contrast20)
+          
+          - type: custom:button-card
+            name: Ночник Фила
+            icon: mdi:lamp
+            entity: light.yeelink_bslamp2_9967_light
+            tap_action:
+              action: toggle
+              haptic: medium
+            hold_action:
+              action: more-info
+              haptic: medium
+            custom_fields:
+              slider:
+                card:
+                  type: custom:my-slider-v2
+                  entity: "[[[ return entity.entity_id ]]]"
+                  colorMode: brightness
+                  styles:
+                    container:
+                      - background: none
+                      - border-radius: 100px
+                      - overflow: visible
+                    card:
+                      - height: 16px
+                      - padding: 0 8px
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "linear-gradient(90deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                            else return "var(--contrast4)";
+                          ]]]
+                    track:
+                      - overflow: visible
+                      - background: none
+                    progress:
+                      - background: none
+                    thumb:
+                      - background: |
+                          [[[
+                            if (entity.state == "on") return "var(--black)";
+                            if (entity.state == "off") return "var(--contrast20)";
+                            else return "var(--contrast8)";
+                          ]]]
+                      - top: 2px
+                      - right: '-8px'
+                      - height: 12px
+                      - width: 12px
+                      - border-radius: 10px
+            styles:
+              grid:
+                - grid-template-areas: '"i" "n" "slider"'
+                - grid-template-columns: 1fr
+                - grid-template-rows: 1fr min-content min-content
+              card:
+                - font-family: Roboto
+                - background: var(--contrast2)
+                - padding: 16px
+                - '--mdc-ripple-press-opacity': 0
+              img_cell:
+                - justify-self: start
+                - width: 24px
+              icon:
+                - width: 24px
+                - height: 24px
+                - color: var(--contrast8)
+              name:
+                - justify-self: start
+                - font-size: 14px
+                - margin: 4px 0 12px 0
+                - color: var(--contrast8)
+            state:
+              - value: 'on'
+                styles:
+                  card:
+                    - background: |
+                          [[[
+                              var color = entity.attributes?.rgb_color;
+                              if (entity.state != "on"){
+                                return 'var(--contrast20)';
+                              }
+                              else if (color){
+                                return 'rgba(' + color + ')'
+                              }
+                              else{
+                                return 'var(--yellow)'
+                              }
+                          ]]]
+                  icon:
+                    - color: var(--black)
+                  name:
+                    - color: var(--black)
+              - value: 'off'
+                styles:
+                  icon:
+                    - color: var(--contrast20)
+                  name:
+                    - color: var(--contrast20)
 
   # Climate / Energy
   - type: vertical-stack
     cards:
       - type: heading
         heading_style: subtitle
-        heading: Климат
+        heading: Температура
 
       - type: grid
         columns: 3
@@ -792,6 +1197,10 @@ cards:
             card_mod:
               class: graph
 
+      - type: heading
+        heading_style: subtitle
+        heading: Влажность %
+
       - type: grid
         columns: 3
         square: false
@@ -823,15 +1232,10 @@ cards:
             icon: none
             card_mod:
               class: graph
-          # - type: sensor
-          #   entity: sensor.street_humidity
-          #   hours_to_show: 24
-          #   detail: 1
-          #   graph: line
-          #   name: Улица
-          #   icon: none
-          #   card_mod:
-          #     class: graph
+
+      - type: heading
+        heading_style: subtitle
+        heading: Климат
 
       - type: custom:mushroom-climate-card
         name: Кондиционер в спальне
@@ -845,12 +1249,18 @@ cards:
         show_temperature_control: true
         fill_container: true
 
+
       - type: custom:mushroom-fan-card
         name: Вентилятор в столовой
         entity: fan.dmaker_p45_cfbf_fan
         show_percentage_control: true
         icon_animation: true
         fill_container: true
+        card_mod:
+          style: |
+            ha-card {
+              background-color: var(--blue-tint);
+            }
         tap_action:
           action: more-info
 
@@ -1008,3 +1418,105 @@ cards:
         media: video,audio
         muted: true
         style: '.mode {display: none}'
+
+  - type: vertical-stack
+    cards:
+      - type: heading
+        heading_style: subtitle
+        heading: Комнаты
+
+      - type: "custom:multiple-entity-row"
+        entity: binary_sensor.aqara_door_and_window_sensor_t1_dver
+        name: Спальня
+        icon: mdi:coat-rack
+        show_state: false
+        entities:
+          - entity: binary_sensor.aqara_door_and_window_sensor_t1_dver
+            name: Дверь
+            icon: true
+            state_color: true
+
+          - entity: binary_sensor.aqara_motion_sensor_bedroom_p1_zaniatost
+            name: Датчик движения
+            icon: true
+            state_color: true
+
+          - entity: binary_sensor.window_open
+            name: Окно
+            icon: true
+            state_color: true
+
+      - type: "custom:multiple-entity-row"
+        entity: binary_sensor.open_door
+        name: Гостиная
+        icon: mdi:sofa
+        show_state: false
+        entities:
+          - entity: binary_sensor.open_door
+            name: Дверь
+            icon: true
+            state_color: true
+          - entity: binary_sensor.living_room_window_contact
+            name: Window
+            icon: true
+            state_color: true
+          - entity: binary_sensor.living_room_motion_sensor_occupancy
+            name: Motion
+            icon: true
+            state_color: true
+
+      - type: "custom:multiple-entity-row"
+        entity: binary_sensor.aqara_motion_sensor_zaniatost
+        name: Столовая
+        icon: mdi:table-furniture
+        show_state: false
+        entities:
+          - entity: binary_sensor.dining_window_open
+            name: Окно
+            icon: true
+            state_color: true
+          - entity: binary_sensor.aqara_motion_sensor_zaniatost
+            name: Движение проход
+            icon: true
+            state_color: true
+
+      # - type: "custom:multiple-entity-row"
+      #   entity: binary_sensor.kitchen_motion_sensor_occupancy
+      #   name: Кухня
+      #   icon: mdi:countertop
+      #   show_state: false
+      #   entities:
+      #     - entity: binary_sensor.kitchen_motion_sensor_occupancy
+      #       name: Motion
+      #       icon: true
+      #       state_color: true
+
+      # - type: "custom:multiple-entity-row"
+      #   entity: binary_sensor.utility_room_door_contact
+      #   name: Кладовка
+      #   icon: mdi:washing-machine
+      #   show_state: false
+      #   entities:
+      #     - entity: binary_sensor.utility_room_door_contact
+      #       name: Door
+      #       icon: true
+      #       state_color: true
+      #     - entity: binary_sensor.utility_room_garden_door_contact
+      #       name: Garden door
+      #       icon: true
+      #       state_color: true
+
+      - type: "custom:multiple-entity-row"
+        entity: binary_sensor.bathroom_zaniatost
+        name: Ванная
+        icon: mdi:car
+        show_state: false
+        entities:
+          - entity: binary_sensor.bathroom_zaniatost
+            name: Занятость
+            icon: true
+            state_color: true
+          - entity: binary_sensor.garage_door_contact
+            name: Garage door
+            icon: true
+            state_color: true
