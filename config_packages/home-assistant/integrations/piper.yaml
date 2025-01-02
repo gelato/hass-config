@@ -1,0 +1,4 @@
+tts:
+  - platform: piper
+    host: wyoming-piper.home.svc
+    port: 10200
