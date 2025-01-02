@@ -1,0 +1,7 @@
+tts:
+  - platform: marytts
+    host: silerotts # Адрес сервера
+    port: 9898
+    codec: WAVE_FILE
+    voice: xenia # Имя голоса который хотите использовать.
+    language: ru # Не используется. Настройки языка указываются в настройках сервера.
